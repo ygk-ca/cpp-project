@@ -29,9 +29,9 @@ const getProject = async (req, res) => {
 // create new project
 const createProject = async (req, res) => {
     // adding in a new project
-    const {title, reps, load} = req.body
+    const {sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, statement} = req.body
     try {
-        const project  = await Project.create({title, load, reps})
+        const project  = await Project.create({sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, statement})
         res.status(200).json(project)
     } catch (error) {
         res.status(400).json({error: error.message})

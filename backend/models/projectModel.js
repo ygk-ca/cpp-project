@@ -2,21 +2,55 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
+// Project schematic
 const projectSchema = new Schema({
-    title: {
+    // description of sdg
+    sdg_desc: {
         type: String,
         required: true
     },
-    reps: {
+    // sdg number
+    sdg_num: {
         type: Number,
         required: true
     },
-    load: {
+    // goal of the project
+    goal: {
+        type: String,
+        required: true
+    },
+    orginization: {
+        type: String,
+        required: true
+    },
+    source: {
+        type: String,
+        required: true
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    // year published
+    published: { 
         type: Number,
         required: true
+    },
+    website_url: {
+        type: String,
+        required: true
+    },
+    // Numbered 1-3
+    assignment_type: {
+        type: Number,
+        required: true
+    },
+    // ONLY APPLIES TO TIER 1 ASSIGNMENTS, NOT REQUIRED
+    statement: {
+        type: String
     }
-
 }, { timestamps: true })
 
 module.exports = mongoose.model('Project', projectSchema)
+
 
