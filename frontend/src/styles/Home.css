@@ -1,0 +1,33 @@
+.homeBackground {
+    height: 120vh;
+    background: url("../assets/titleImage.jpg") no-repeat;
+    background-color: #cccccc;
+    height: 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    padding-left: 10%;
+    padding-top: 10%;
+    padding-right: 10%;
+}
+
+
+.test {
+    height: 120vh;
+}
+
+.testing {
+    height: 75%;
+    font-size: large;
+    justify-content: center;
+    border: 1px solid blue;
+    color: white;
+}
+
+.projects {
+    color: blue;
+}
