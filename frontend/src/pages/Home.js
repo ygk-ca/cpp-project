@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 
 // components
 import ProjectDetails from '../components/ProjectDetails'
+import ProjectAdminForm from '../components/ProjectAdminForm'
 
 const Home = () => {
     const [projects, setProjects] = useState(null)
@@ -24,13 +25,14 @@ const Home = () => {
     }, [])
 
     return (
-        <div className="test">
-            HomePage body
+        <div className="home">
+            {/* Temp HomePage body */}
             <div className="projects">
                 {projects && projects.map((project) => (
                     <ProjectDetails key={project._id} project={project}/>
                 ))}
             </div>
+            <ProjectAdminForm />
         </div>
     )
 }

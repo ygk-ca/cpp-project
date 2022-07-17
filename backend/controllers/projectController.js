@@ -27,16 +27,45 @@ const getProject = async (req, res) => {
 }
 
 // create new project
+// const createProject = async (req, res) => {
+//     // adding in a new project
+//     const {sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement} = req.body
+    
+    
+//     try {
+//         const project  = await Project.create({sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement})
+//         res.status(200).json(project)
+//     } catch (error) {
+//         res.status(400).json({error: error.message})
+//     }
+// }
 const createProject = async (req, res) => {
-    // adding in a new project
-    const {sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, statement} = req.body
+
+    const {sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement} = req.body
+   
+    const newProject = new Project({
+        sdg_desc: sdg_desc,
+        sdg_num : sdg_num,
+        goal : goal,
+        orginization : orginization,
+        source : source,
+        location : location,
+        published : published,
+        website_url : website_url,
+        assignment_type : assignment_type,
+        sharepoint_link : sharepoint_link,
+        statement : statement
+    });
     try {
-        const project  = await Project.create({sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, statement})
-        res.status(200).json(project)
+        await newProject.save();
     } catch (error) {
         res.status(400).json({error: error.message})
     }
+   
+    res.status(201).json({project: newProject});
 }
+
+
 
 // delete a project
 const deleteProject = async (req, res) => {

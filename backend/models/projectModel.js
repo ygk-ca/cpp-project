@@ -4,6 +4,8 @@ const Schema = mongoose.Schema
 
 // Project schematic
 const projectSchema = new Schema({
+    // general schema templates
+    
     // description of sdg
     sdg_desc: {
         type: String,
@@ -44,6 +46,13 @@ const projectSchema = new Schema({
     assignment_type: {
         type: Number,
         required: true
+    },
+
+    // assignment specific schema templates
+
+    // ONLY APPLIES TO TIER 2 ASSIGNMENTS, NOT REQUIRED
+    sharepoint_link: {
+        type: String
     },
     // ONLY APPLIES TO TIER 1 ASSIGNMENTS, NOT REQUIRED
     statement: {
