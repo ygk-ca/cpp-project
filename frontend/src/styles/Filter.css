@@ -1,0 +1,13 @@
+.filterBackground {
+    height: 25vh;
+    
+    background: url('https://magsbc.com/wp-content/uploads/2022/07/placeholder.png') no-repeat;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    
+}

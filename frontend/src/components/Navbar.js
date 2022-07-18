@@ -32,21 +32,21 @@ const Navbar = () => {
                   <nav className={"nav " + (scrolled ? "affix" : "")}>
                     <div className="container">
                         <div className="logo">
-                            <a href="https://www.queensu.ca/artsci/">
-                            <img src={QueensLogoH} height="80"></img>
+                            <a href="/">
+                                <img src={QueensLogoH} height="80"></img>
                             </a>
                         </div>
                         <div id="mainListDiv" className="main_list" ref={mainListDivRef}>
                             <ul className="navlinks">
-                            <li>
-                                <a href="#">About</a>
-                            </li>
-                            <li>
-                                <a href="#">Services</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact</a>
-                            </li>
+                                <li>
+                                    <a href="#">About</a>
+                                </li>
+                                <li>
+                                    <a href="/filter">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
                             </ul>
                         </div>
                         <span className={`navTrigger ${isActive ? "active" : ""}`} onClick={onClickNavTrigger}>
