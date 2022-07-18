@@ -5,15 +5,10 @@ const Schema = mongoose.Schema
 // Project schematic
 const projectSchema = new Schema({
     // general schema templates
-    
-    // description of sdg
-    sdg_desc: {
+
+    // sdg
+    sdg: {
         type: String,
-        required: true
-    },
-    // sdg number
-    sdg_num: {
-        type: Number,
         required: true
     },
     // goal of the project

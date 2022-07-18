@@ -1,7 +1,7 @@
-// import "../styles/Home.css";
+import "../styles/Home.css";
 import { useEffect, useState } from 'react'
-// import TitleBackground from "../components/HomeComponents/TitleBackground";
-// import HomeBody from "../components/HomeComponents/HomeBody";
+import TitleBackground from "../components/HomeComponents/TitleBackground";
+import HomeBody from "../components/HomeComponents/HomeBody";
 
 // components
 import ProjectDetails from '../components/ProjectDetails'
@@ -25,14 +25,9 @@ const Home = () => {
     }, [])
 
     return (
-        <div className="home">
-            {/* Temp HomePage body */}
-            <div className="projects">
-                {projects && projects.map((project) => (
-                    <ProjectDetails key={project._id} project={project}/>
-                ))}
-            </div>
-            <ProjectAdminForm />
+        <div className="">
+            <TitleBackground/>
+            <HomeBody/>
         </div>
     )
 }

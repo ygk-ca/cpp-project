@@ -15,9 +15,9 @@ header {
   background: #fff;
 }
 header .container {
-  max-width: 1400px;
+  /* max-width: 1400px; */
   margin: 0 auto;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,8 +27,8 @@ header a {
   text-decoration: none;
 }
 .pages{
-  max-width: 1400px;
-  padding: 20px;
+  /* max-width: 1400px; */
+  /* padding: 20px; */
   margin: 0 auto;
 }
 

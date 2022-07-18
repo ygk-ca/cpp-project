@@ -1,7 +1,7 @@
 const ProjectDetails = ({ project }) => {
     return (
         <div className="project-details">
-            <h4>{project.sdg_desc}, SDG: {project.sdg_num}</h4>
+            <h4>{project.sdg}</h4>
             <p><strong>Goal: </strong>{project.goal}</p>
             <p><strong>Orginization: </strong>{project.orginization}</p>
             <p><strong>Source: </strong>{project.source}</p>

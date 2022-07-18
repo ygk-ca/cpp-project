@@ -1,8 +1,7 @@
 .homeBackground {
-    height: 120vh;
+    height: 85vh;
     background: url("../assets/titleImage.jpg") no-repeat;
-    background-color: #cccccc;
-    height: 60vh;
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,19 +14,133 @@
     padding-right: 10%;
 }
 
-
-.test {
-    height: 120vh;
+.background {
+  align-items: center;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  /* overflow: hidden; */
+  position: relative;
+  
 }
 
-.testing {
-    height: 75%;
-    font-size: large;
-    justify-content: center;
-    border: 1px solid blue;
-    color: white;
+.background::before {
+  animation: fade-slide-down 2s 500ms cubic-bezier(0, 0.5, 0, 1) forwards;
+  
+  background-size: cover;
+  bottom: 0;
+  content: "";
+  left: -5%;
+  opacity: 0;
+  position: absolute;
+  right: -5%;
+  top: 0;
+  z-index: -1;
 }
 
-.projects {
-    color: blue;
+.background::after {
+  animation: rotate-up 500ms 500ms cubic-bezier(0, 0.5, 0, 1) forwards;
+  /* background: #fff; */
+  content: "";
+  /* height: 40rem; */
+  left: -5%;
+  position: absolute;
+  right: -5%;
+  top: 90%;
+  transform-origin: 0 0;
+  /* z-index: 0; */
 }
+
+#header-content {
+  margin-top: -10%;
+  overflow: visible;
+  text-align: center;
+  width: 100%;
+}
+
+.title, .subtitle { 
+  color: #fff;
+  margin : 0;
+  opacity: 0;
+}
+
+.title {
+  animation: fade-slide-down-rotate 2s 2s cubic-bezier(0, 0.5, 0, 1) forwards;
+  animation-delay: 800ms;
+  font-family: 'Satisfy', cursive;
+  
+  font-size: calc(6vw + 1vmin);
+  font-weight: 400;
+  margin-bottom: 2.5%;
+}
+
+.subtitle {
+  animation: fade-slide-up 3s 3s cubic-bezier(0, 0.5, 0, 1) forwards;
+  animation-delay: 800ms;
+  font-size: calc(1.25vw + 0.8vmin);
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.fun-subtitle {
+  color: #A1E545;
+  font-family: 'Satisfy', cursive;
+  font-size: 2em;
+  letter-spacing: 0;
+  opacity: 0.8;
+  padding: 0 0.25em;
+  text-transform: none;
+}
+
+/* Animations */
+@keyframes fade-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-slide-down-rotate {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    /* transform: rotate(-4deg); */
+  }
+}
+
+@keyframes fade-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rotate-up {
+    100% {
+      transform: rotateZ(-4deg);
+    }
+  }
+  
+  @keyframes flip-scale-up {
+    0% {
+      transform: scale(1) rotateX(0);
+    }
+    50% {
+      transform: scale(2.5) rotateX(-90deg)
+    }
+    100% {
+      transform: scale(1) rotateX(-180deg)
+    }
+  }

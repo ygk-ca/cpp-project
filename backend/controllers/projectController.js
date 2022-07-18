@@ -40,12 +40,10 @@ const getProject = async (req, res) => {
 //     }
 // }
 const createProject = async (req, res) => {
-
-    const {sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement} = req.body
+    const {sdg, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement} = req.body
    
     const newProject = new Project({
-        sdg_desc: sdg_desc,
-        sdg_num : sdg_num,
+        sdg: sdg,
         goal : goal,
         orginization : orginization,
         source : source,
@@ -59,10 +57,11 @@ const createProject = async (req, res) => {
     try {
         await newProject.save();
     } catch (error) {
-        res.status(400).json({error: error.message})
+        return res.status(400).json({error: error.message})
+
     }
    
-    res.status(201).json({project: newProject});
+    return res.status(201).json({project: newProject});
 }
 
 

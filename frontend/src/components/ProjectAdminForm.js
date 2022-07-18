@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 const ProjectAdminForm = () => {
-    const [sdg_desc, setSDGDesc] = useState('')
-    const [sdg_num, setSDGNum] = useState('')
+    const [sdg, setSDG] = useState('')
     const [goal, setGoal] = useState('')
     const [orginization, setOrginization] = useState('')
     const [source, setSource] = useState('')
@@ -18,7 +17,7 @@ const ProjectAdminForm = () => {
         e.preventDefault() // Prevents refresh of page from happening
 
         console.log('button clicked')
-        const project = {sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement}
+        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement}
         console.log(project)                
         // Sending form response to backend
         const response = await fetch('/api/projects', {
@@ -37,8 +36,7 @@ const ProjectAdminForm = () => {
         }
         if (response.ok) {
             // Reset form inputs back to empty string
-            setSDGDesc('')
-            setSDGNum('')
+            setSDG('')
             setGoal('')
             setOrginization('')
             setSource('')
@@ -58,18 +56,11 @@ const ProjectAdminForm = () => {
         <form className="create" onSubmit={handleSubmit}>
             <h3>Add a New Project</h3>
 
-            <label>SDG Name:</label>
+            <label>SDG:</label>
             <input 
                 type="text"
-                onChange={(e) => setSDGDesc(e.target.value)}
-                value={sdg_desc}
-            />
-
-            <label>SDG Num:</label>
-            <input 
-                type="text"
-                onChange={(e) => setSDGNum(e.target.value)}
-                value={sdg_num}
+                onChange={(e) => setSDG(e.target.value)}
+                value={sdg}
             />
 
             <label>Goal:</label>
@@ -135,7 +126,7 @@ const ProjectAdminForm = () => {
                 value={statement}
             />
 
-            <button onClick={handleSubmit}>Add Project</button>
+            <button>Add Project</button>
             {error && <div className="error">{error}</div>}
         </form>
     )
