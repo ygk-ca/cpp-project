@@ -9,15 +9,15 @@ const ProjectAdminForm = () => {
     const [published, setPublished] = useState('')
     const [website_url, setWebsiteURL] = useState('')
     const [assignment_type, setAssignmentType] = useState('')
+    const [theme, setTheme] = useState('')
     const [sharepoint_link, setSharepointLink] = useState('')
     const [statement, setStatement] = useState('')
     const [error, setError] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault() // Prevents refresh of page from happening
-
         console.log('button clicked')
-        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement}
+        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme, sharepoint_link, statement}
         console.log(project)                
         // Sending form response to backend
         const response = await fetch('/api/projects', {
@@ -44,6 +44,7 @@ const ProjectAdminForm = () => {
             setPublished('')
             setWebsiteURL('')
             setAssignmentType('')
+            setTheme('')
             setSharepointLink('')
             setStatement('')
             
@@ -56,9 +57,10 @@ const ProjectAdminForm = () => {
         <form className="create" onSubmit={handleSubmit}>
             <h3>Add a New Project</h3>
 
-            <label>SDG:</label>
+            <label>SDG (Num + Name):</label>
             <input 
                 type="text"
+                placeholder="e.g. SDG 2: Zero Hunger"
                 onChange={(e) => setSDG(e.target.value)}
                 value={sdg}
             />
@@ -110,6 +112,13 @@ const ProjectAdminForm = () => {
                 type="text"
                 onChange={(e) => setAssignmentType(e.target.value)}
                 value={assignment_type}
+            />
+
+            <label>Theme:</label>
+            <input 
+                type="text"
+                onChange={(e) => setTheme(e.target.value)}
+                value={theme}
             />
 
             <label>Sharepoint Link:</label>

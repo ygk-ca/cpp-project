@@ -1,6 +1,7 @@
 import ProjectDetails from '../ProjectDetails'
-
+import Dropdown from './Dropdown'
 import { useEffect, useState } from 'react'
+
 
 const FilterBody = () => {
     const [projects, setProjects] = useState(null)
@@ -20,12 +21,23 @@ const FilterBody = () => {
 
     return (
         <div className="home">
+            <div className="filterTableContainer">
+                <div className="filterTableTitle">
+                    Filter Table
+                </div>
+                <div className="filterSDGDropDown">
+                    <Dropdown />
+                </div>
+            </div>
+            <div>
+
+            </div>
             {/* Temp HomePage body */}
-            <div className="projects">
+            {/* <div className="projects">
                 {projects && projects.map((project) => (
                     <ProjectDetails key={project._id} project={project}/>
                 ))}
-            </div>
+            </div> */}
         </div>
     )
 }

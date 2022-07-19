@@ -9,6 +9,7 @@ const ProjectDetails = ({ project }) => {
             <p><strong>Published: </strong>{project.published}</p>
             <p><strong>Website URL: </strong>{project.website_url}</p>
             <p><strong>Assignment Type: </strong>{project.assignment_type}</p>
+            <p><strong>Themes: </strong>{project.theme}</p>
             <p><strong>Sharepoint link: </strong>{project.sharepoint_link}</p>
             <p><strong>Statement: </strong>{project.statement}</p>
             <p>{project.createdAt}</p>

@@ -40,7 +40,7 @@ const getProject = async (req, res) => {
 //     }
 // }
 const createProject = async (req, res) => {
-    const {sdg, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement} = req.body
+    const {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme, sharepoint_link, statement} = req.body
    
     const newProject = new Project({
         sdg: sdg,
@@ -51,6 +51,7 @@ const createProject = async (req, res) => {
         published : published,
         website_url : website_url,
         assignment_type : assignment_type,
+        theme: theme,
         sharepoint_link : sharepoint_link,
         statement : statement
     });

@@ -42,6 +42,11 @@ const projectSchema = new Schema({
         type: Number,
         required: true
     },
+    // array of themes
+    theme: [{
+        type: String,
+        required: true
+    }],
 
     // assignment specific schema templates
 

@@ -102,3 +102,17 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+
+/* Italicize placeholder  */
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;  
+}
+::-moz-placeholder {
+  font-style: italic;  
+}
+:-ms-input-placeholder {  
+  font-style: italic; 
+}
