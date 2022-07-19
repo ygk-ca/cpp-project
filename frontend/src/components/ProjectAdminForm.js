@@ -14,6 +14,40 @@ const ProjectAdminForm = () => {
     const [statement, setStatement] = useState('')
     const [error, setError] = useState(null)
 
+
+    // testing out theme array
+    const [themes, setThemes] = useState({});
+    const available_themes = ['magic', 'joy', 'fun', 'more'];
+
+    const addTheme = (name) =>{
+        if(typeof themes[name] == 'undefined') {
+          let temp_themes = {...themes};
+          temp_themes[name] = name;
+          setThemes(temp_themes);
+        }
+ 
+   }
+ 
+   const removeTheme = (name) =>{
+     if(typeof themes[name] !== 'undefined') {
+       let temp_themes = {...themes};
+       delete temp_themes[name];
+       setThemes(temp_themes);
+     }
+ 
+   }
+ 
+   const themeselector = available_themes.map((name)=>{
+         let checked = false;
+         if(typeof themes[name] !== 'undefined'){
+            checked = true;
+         }
+ 
+         return <div><input type="checkbox" {...(checked ? {checked: 'checked'}: {})}  value={name} onClick={(ev)=>{ if(ev.target.checked) {  addTheme(name)  } else { removeTheme(name)} } } /> {name}</div>;
+   });
+
+
+
     const handleSubmit = async (e) => {
         e.preventDefault() // Prevents refresh of page from happening
         console.log('button clicked')
@@ -134,6 +168,8 @@ const ProjectAdminForm = () => {
                 onChange={(e) => setStatement(e.target.value)}
                 value={statement}
             />
+
+            {themeselector}
 
             <button>Add Project</button>
             {error && <div className="error">{error}</div>}

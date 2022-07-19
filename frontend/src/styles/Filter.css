@@ -13,7 +13,7 @@
 }
 
 .filterTableContainer {
-    width: 50%;
+    width: 100%;
     display: flex;
     border: 1px solid black;
     height: 30vh;

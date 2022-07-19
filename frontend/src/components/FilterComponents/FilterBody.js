@@ -29,8 +29,14 @@ const FilterBody = () => {
                     <Dropdown />
                 </div>
             </div>
-            <div>
 
+            {/* Lists projects */}
+            <div>
+                <div className="projects">
+                    {projects && projects.map((project) => (
+                        <ProjectDetails key={project._id} project={project}/>
+                    ))}
+                </div>
             </div>
             {/* Temp HomePage body */}
             {/* <div className="projects">

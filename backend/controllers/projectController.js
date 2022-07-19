@@ -4,7 +4,8 @@ const mongoose = require('mongoose')
 // get all projects
 const getProjects = async (req, res) => {
     const projects = await Project.find({}).sort({ createdAt: -1 }) // Specify 
-
+    // const test = await Project.find({sdg: "SDG 1: No Poverty", assignment_type: 1})
+    // console.log(test)
     res.status(200).json(projects)
 }
 
@@ -105,6 +106,16 @@ const updateProject = async (req, res) => {
     }
 
     res.status(200).json(project)
+}
+
+// filtering a project, calling this everytime filter is changed
+const filterProject = async (req, res) => {
+    // ADD THEME LATER ON
+    const {sdg, assignment_type} = req.body
+    
+    
+    const filteredProjects = await Project.find({sdg: sdg, assignment_type: assignment_type})
+
 }
 
 
