@@ -33,7 +33,8 @@
     border: 1px solid blue;
     height: 20%;
     width: 100%;
-    margin: 10px;
+    /* margin: 10px; */
+    padding: 15px;
     justify-content: center;
 }
 
@@ -59,7 +60,7 @@ select {
     box-shadow: none;
     /* Personalize */
     flex: 1;
-    padding: 0 1em;
+    padding: 0.5em 1em;
     color: rgb(255, 255, 255);
     background-color: #9baab9;
     background-image: none;
@@ -85,7 +86,7 @@ select {
     top: 0;
     right: 0;
     padding: 1em;
-    background-color: #9baab9;
+    background-color: #2d3946;
     transition: .25s all ease;
     pointer-events: none;
   }

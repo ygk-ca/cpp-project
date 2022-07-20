@@ -7,6 +7,11 @@ const getProjects = async (req, res) => {
     // const test = await Project.find({sdg: "SDG 1: No Poverty", assignment_type: 1})
     // console.log(test)
     res.status(200).json(projects)
+    // const {sdg, assignment_type, theme} = req.body
+    
+    // const filteredProjects = await Project.find({sdg: sdg, assignment_type: assignment_type, theme: theme})
+
+    // res.status(200).json(filteredProjects)
 }
 
 // get a single project
@@ -96,14 +101,13 @@ const updateProject = async (req, res) => {
 }
 
 // filtering a project, calling this everytime filter is changed
-const filterProject = async (req, res) => {
-    // ADD THEME LATER ON
-    const {sdg, assignment_type} = req.body
+// const filterProject = async (req, res) => {
+//     const {sdg, assignment_type, theme} = req.body
     
-    
-    const filteredProjects = await Project.find({sdg: sdg, assignment_type: assignment_type})
+//     const filteredProjects = await Project.find({sdg: sdg, assignment_type: assignment_type, theme: theme})
 
-}
+//     res.status(200).json(filteredProjects)
+// }
 
 
 module.exports = {
@@ -111,5 +115,5 @@ module.exports = {
     getProject,
     createProject,
     deleteProject,
-    updateProject
+    updateProject,
 }

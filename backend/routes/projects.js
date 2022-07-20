@@ -4,24 +4,24 @@ const {
     getProject,
     getProjects,
     deleteProject,
-    updateProject
+    updateProject,
 } = require('../controllers/projectController')
 
 const router = express.Router()
 
-// GET all workouts
+// GET all projects
 router.get('/', getProjects) // Base route for /api/projects
 
-// GET a single workout
+// GET a single project
 router.get('/:id', getProject)
 
-// POST all workouts
+// POST a project
 router.post('/', createProject)
 
-// DELETE a single workout
+// DELETE a single project
 router.delete('/:id', deleteProject)
 
-// UPDATE a single workout
+// UPDATE a single project
 router.patch('/:id', updateProject)
 
 
