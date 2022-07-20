@@ -1,16 +1,3 @@
-// const TitleBackground = () => {
-//     return (
-//         <div className="homeBackground">
-//             <div className="testing">
-//                 Community Partnership Project
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default TitleBackground
-
-
 const TitleBackground = () => {
     return (
         <div className="homeBackground">

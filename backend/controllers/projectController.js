@@ -28,21 +28,8 @@ const getProject = async (req, res) => {
 }
 
 // create new project
-// const createProject = async (req, res) => {
-//     // adding in a new project
-//     const {sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement} = req.body
-    
-    
-//     try {
-//         const project  = await Project.create({sdg_desc, sdg_num, goal, orginization, source, location, published, website_url, assignment_type, sharepoint_link, statement})
-//         res.status(200).json(project)
-//     } catch (error) {
-//         res.status(400).json({error: error.message})
-//     }
-// }
 const createProject = async (req, res) => {
     const {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme, sharepoint_link, statement} = req.body
-   
     const newProject = new Project({
         sdg: sdg,
         goal : goal,

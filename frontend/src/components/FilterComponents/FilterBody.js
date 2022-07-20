@@ -20,7 +20,7 @@ const FilterBody = () => {
     }, [])
 
     return (
-        <div className="home">
+        <div className="filterHome">
             <div className="filterTableContainer">
                 <div className="filterTableTitle">
                     Filter Table
@@ -38,12 +38,6 @@ const FilterBody = () => {
                     ))}
                 </div>
             </div>
-            {/* Temp HomePage body */}
-            {/* <div className="projects">
-                {projects && projects.map((project) => (
-                    <ProjectDetails key={project._id} project={project}/>
-                ))}
-            </div> */}
         </div>
     )
 }

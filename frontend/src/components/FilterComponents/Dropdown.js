@@ -38,11 +38,11 @@ class Dropdown extends React.Component {
     
     // Handling all 3 input changes
     handleSDGChange(event) {
-      this.setState({sdg: event.target.sdg});
+      this.setState({sdg: event.target.value});
     }
 
     handleAssignmentChange(event) {
-        this.setState({assignment_type: event.target.assignment_type});
+        this.setState({assignment_type: event.target.value});
     }
 
     // Handling all 3 input submissions

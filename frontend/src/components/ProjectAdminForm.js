@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const ProjectAdminForm = () => {
+    // Adding basic info
     const [sdg, setSDG] = useState('')
     const [goal, setGoal] = useState('')
     const [orginization, setOrginization] = useState('')
@@ -9,42 +11,40 @@ const ProjectAdminForm = () => {
     const [published, setPublished] = useState('')
     const [website_url, setWebsiteURL] = useState('')
     const [assignment_type, setAssignmentType] = useState('')
-    const [theme, setTheme] = useState('')
     const [sharepoint_link, setSharepointLink] = useState('')
     const [statement, setStatement] = useState('')
     const [error, setError] = useState(null)
 
 
-    // testing out theme array
-    const [themes, setThemes] = useState({});
-    const available_themes = ['magic', 'joy', 'fun', 'more'];
+    // Adding themes
+    const [theme, setThemes] = useState([]);
+    const available_themes = ['Demographic', 'Economical', 'Socio-cultural', 'Technological', 'Ecological', 'Political'];
 
     const addTheme = (name) =>{
-        if(typeof themes[name] == 'undefined') {
-          let temp_themes = {...themes};
-          temp_themes[name] = name;
-          setThemes(temp_themes);
+        if(!theme.includes(name)){
+        setThemes([...theme, name])
         }
- 
-   }
- 
-   const removeTheme = (name) =>{
-     if(typeof themes[name] !== 'undefined') {
-       let temp_themes = {...themes};
-       delete temp_themes[name];
-       setThemes(temp_themes);
-     }
- 
-   }
- 
-   const themeselector = available_themes.map((name)=>{
-         let checked = false;
-         if(typeof themes[name] !== 'undefined'){
-            checked = true;
-         }
- 
-         return <div><input type="checkbox" {...(checked ? {checked: 'checked'}: {})}  value={name} onClick={(ev)=>{ if(ev.target.checked) {  addTheme(name)  } else { removeTheme(name)} } } /> {name}</div>;
-   });
+
+    }
+
+    const removeTheme = (name) =>{
+        const index = theme.indexOf(name);
+        if(index !== -1) {
+        let temp_themes = [...theme];
+        temp_themes.splice(index, 1);
+        setThemes(temp_themes);
+        }
+
+    }
+
+    const themeselector = available_themes.map((name)=>{
+            let checked = false;
+            if(theme.includes(name)){
+                checked = true;
+            }
+            
+            return <div key={uuidv4()} className=""><input type="checkbox" {...(checked ? {checked: 'checked'}: {})}  value={name} onClick={(ev)=>{ if(ev.target.checked) {  addTheme(name)  } else { removeTheme(name)} } } /> {name}</div>;
+    });
 
 
 
@@ -52,7 +52,8 @@ const ProjectAdminForm = () => {
         e.preventDefault() // Prevents refresh of page from happening
         console.log('button clicked')
         const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme, sharepoint_link, statement}
-        console.log(project)                
+        console.log(project)
+        console.log(theme)                
         // Sending form response to backend
         const response = await fetch('/api/projects', {
             method: 'POST',
@@ -78,7 +79,7 @@ const ProjectAdminForm = () => {
             setPublished('')
             setWebsiteURL('')
             setAssignmentType('')
-            setTheme('')
+            setThemes([])
             setSharepointLink('')
             setStatement('')
             
@@ -148,12 +149,8 @@ const ProjectAdminForm = () => {
                 value={assignment_type}
             />
 
-            <label>Theme:</label>
-            <input 
-                type="text"
-                onChange={(e) => setTheme(e.target.value)}
-                value={theme}
-            />
+            <label>Select Theme(s):</label>
+            {themeselector}
 
             <label>Sharepoint Link:</label>
             <input 
@@ -169,8 +166,7 @@ const ProjectAdminForm = () => {
                 value={statement}
             />
 
-            {themeselector}
-
+            
             <button>Add Project</button>
             {error && <div className="error">{error}</div>}
         </form>

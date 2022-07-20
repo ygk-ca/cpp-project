@@ -12,6 +12,12 @@
     
 }
 
+.filterHome {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    gap: 100px;
+}
+
 .filterTableContainer {
     width: 100%;
     display: flex;
