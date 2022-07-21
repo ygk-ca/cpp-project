@@ -34,7 +34,7 @@ class FilterBody extends React.Component {
     // Handling all 3 input submissions
     handleSubmit(event) {
         console.log(this.state.sdg)
-        alert(this.state.sdg + '--- Assignment Type: ' + this.state.assignment_type + '--- Theme: ' + this.state.theme);
+        // alert(this.state.sdg + '--- Assignment Type: ' + this.state.assignment_type + '--- Theme: ' + this.state.theme);
         event.preventDefault();
 
         console.log(this.state.projects)
@@ -78,15 +78,29 @@ class FilterBody extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         <label>SDG:</label>
                         <select value={this.state.sdg} onChange={this.handleSDGChange}>
-                            <option value="">Select SDG</option>
+                            <option value="">Any SDG</option>
                             <option value="SDG 1: No Poverty">SDG 1: No Poverty</option>
                             <option value="SDG 2: Zero Hunger">SDG 2: Zero Hunger</option>
                             <option value="SDG 3: Good Health & Well Being">SDG 3: Good Health & Well Being</option>
+                            <option value="SDG 4: Quality Education">SDG 4: Quality Education</option>
+                            <option value="SDG 5: Gender Equality">SDG 5: Gender Equality</option>
+                            <option value="SDG 6: Decent Work & Economic Growth">SDG 6: Decent Work & Economic Growth</option>
+                            <option value="SDG 7: Affordable & Clean Energy">SDG 7: Affordable & Clean Energy</option>
+                            <option value="SDG 8: Decent Work & Economic Growth">SDG 8: Decent Work & Economic Growth</option>
+                            <option value="SDG 9: Industry, Innovation, and Infrastructure">SDG 9: Industry, Innovation, and Infrastructure</option>
+                            <option value="SDG 10: Reducing Inequality">SDG 10: Reducing Inequality</option>
+                            <option value="SDG 11: Sustainable Cities & Communities">SDG 11: Sustainable Cities & Communities</option>
+                            <option value="SDG 12: Responsible Consumption & Production">SDG 12: Responsible Consumption & Production</option>
+                            <option value="SDG 13: Climate Action">SDG 13: Climate Action</option>
+                            <option value="SDG 14: Life Below Water">SDG 14: Life Below Water</option>
+                            <option value="SDG 15: Life on Land">SDG 15: Life on Land</option>
+                            <option value="SDG 16: Peace and Justice Strong Institutions">SDG 16: Peace and Justice Strong Institutions</option>
+                            <option value="SDG 17: Partnerships for the Goals">SDG 17: Partnerships for the Goals</option>
                         </select>
 
                         <label>Assignment Type:</label>
                         <select value={this.state.assignment_type} onChange={this.handleAssignmentChange}>
-                            <option value="">Select Assignment Type</option>
+                            <option value="">Any Assignment Type</option>
                             <option value="1">1: Discussion Project</option>
                             <option value="2">2: PDF Case study</option>
                             <option value="3">3: Community Project</option>
@@ -94,13 +108,13 @@ class FilterBody extends React.Component {
 
                         <label>Theme:</label>
                         <select value={this.state.theme} onChange={this.handleThemeChange}>
-                            <option value="">Select Theme</option>
+                            <option value="">Any Theme</option>
                             <option value="Demographic">Demographic</option>
                             <option value="Economical">Economical</option>
                             <option value="Socio-cultural">Socio-cultural</option>
                             <option value="Technological">Technological</option>
                             <option value="Ecological">Ecological</option>
-                            <option value="Poltical">Poltical</option>
+                            <option value="Political">Poltical</option>
                         </select>
 
                         <input type="submit" value="Submit" />

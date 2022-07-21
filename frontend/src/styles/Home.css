@@ -42,20 +42,22 @@
 .title {
   animation: fade-slide-down-rotate 2s 2s cubic-bezier(0, 0.5, 0, 1) forwards;
   animation-delay: 800ms;
-  font-family: 'Satisfy', cursive;
-  
-  font-size: calc(6vw + 1vmin);
+  /* font-family: 'Satisfy', cursive; */
+  /* letter-spacing: 0.05em; */
+  font-size: calc(5.5vw + 1vmin);
   font-weight: 400;
   margin-bottom: 2.5%;
+  
 }
 
 .subtitle {
   animation: fade-slide-up 3s 3s cubic-bezier(0, 0.5, 0, 1) forwards;
   animation-delay: 800ms;
-  font-size: calc(1.25vw + 0.8vmin);
+  font-size: calc(1.10vw + 0.8vmin);
   font-weight: 300;
   letter-spacing: 0.5em;
   text-transform: uppercase;
+  
 }
 
 .fun-subtitle {
