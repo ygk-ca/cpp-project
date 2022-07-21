@@ -3,16 +3,35 @@ const mongoose = require('mongoose')
 
 // get all projects
 const getProjects = async (req, res) => {
-    const projects = await Project.find({}).sort({ createdAt: -1 }) // Specify 
-    // const test = await Project.find({sdg: "SDG 1: No Poverty", assignment_type: 1})
-    // console.log(test)
-    res.status(200).json(projects)
-    // const {sdg, assignment_type, theme} = req.body
-    
-    // const filteredProjects = await Project.find({sdg: sdg, assignment_type: assignment_type, theme: theme})
+    const projects = await Project.find().sort({ createdAt: -1 }) // Specify
 
-    // res.status(200).json(filteredProjects)
+    res.status(200).json(projects)
 }
+
+// get filtered project
+const getFilteredProjects = async (req, res) => {
+    console.log(req.query)
+    var request = {}
+
+    // See if sdg selected
+    if (req.query.sdg !== '') {
+        request["sdg"] = req.query.sdg
+    }
+    // See if assignment type selected
+    if (req.query.assignment_type !== '') {
+        request["assignment_type"] = req.query.assignment_type
+    }
+    // See if theme selected
+    if (req.query.theme !== '') {
+        request["theme"] = req.query.theme
+    }
+
+    const projects = await Project.find(request).sort({ createdAt: -1 }) // Specify
+    console.log(projects) 
+    
+    res.status(200).json(projects)
+}
+
 
 // get a single project
 const getProject = async (req, res) => {
@@ -116,4 +135,5 @@ module.exports = {
     createProject,
     deleteProject,
     updateProject,
+    getFilteredProjects
 }

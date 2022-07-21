@@ -1,8 +1,8 @@
 import "../styles/Filter.css";
 
 import { useEffect, useState } from 'react'
-import FilterBody from "../components/FilterComponents/FilterBody";
 import FilterTitle from "../components/FilterComponents/FilterTitle";
+import FilterBody from "../components/FilterComponents/FilterBody";
 
 const Filter = () => {
     return (
