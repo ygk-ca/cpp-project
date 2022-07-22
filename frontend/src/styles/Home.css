@@ -1,8 +1,8 @@
 .homeBackground {
     height: 85vh;
     /* background: url("../assets/titleImage.jpg") no-repeat; */
-    background: url("../assets/titleImage.jpg") no-repeat;
-
+    background: rgba(0, 0, 0, 0.5) url('../assets/titleImage.jpg');
+    background-blend-mode: darken;
     background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,7 +44,7 @@
   animation-delay: 800ms;
   /* font-family: 'Satisfy', cursive; */
   /* letter-spacing: 0.05em; */
-  font-size: calc(5.5vw + 1vmin);
+  font-size: calc(5vw + 1vmin);
   font-weight: 400;
   margin-bottom: 2.5%;
   
@@ -124,3 +124,57 @@
 
 
 /* SDG boxes section */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 16px;
+    background-color: linear-gradient(90deg,rgba(244,247,252,0.5) 0%,rgba(244,247,252,0.5) 100%);
+    justify-content: center;
+}
+  
+.flex-container > div {
+    background-color: white;
+    width: 18vh;
+    margin: 15px;
+    text-align: center;
+    line-height: 18vh;
+    font-size: 30px;
+}
+
+/* All SDG icons */
+.sdg1 {
+    background: url("../assets/SDGIcons/sdg1.png"); 
+    background-size: contain;
+}
+
+.sdg2 {
+    background: url("../assets/SDGIcons/sdg2.png"); 
+    background-size: contain;
+}
+
+.sdg3 {
+    background: url("../assets/SDGIcons/sdg3.png"); 
+    background-size: contain;
+}
+
+.sdg4 {
+    background: url("../assets/SDGIcons/sdg4.png"); 
+    background-size: contain;
+}
+
+.sdg5 {
+    background: url("../assets/SDGIcons/sdg5.png"); 
+    background-size: contain;
+}
+
+.sdg6 {
+    background: url("../assets/SDGIcons/sdg6.png"); 
+    background-size: contain;
+}
+
+.sdg7 {
+    background: url("../assets/SDGIcons/sdg7.png"); 
+    background-size: contain;
+}
+
+

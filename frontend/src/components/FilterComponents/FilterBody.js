@@ -114,7 +114,7 @@ class FilterBody extends React.Component {
                             <option value="Socio-cultural">Socio-cultural</option>
                             <option value="Technological">Technological</option>
                             <option value="Ecological">Ecological</option>
-                            <option value="Political">Poltical</option>
+                            <option value="Political">Political</option>
                         </select>
 
                         <input type="submit" value="Submit" />

@@ -1,5 +1,6 @@
 import ProjectDetails from '../ProjectDetails'
 import ProjectAdminForm from '../ProjectAdminForm'
+import SdgBackground from './SdgSection'
 
 import { useEffect, useState } from 'react'
 
@@ -20,15 +21,18 @@ const HomeBody = () => {
     }, [])
 
     return (
-        <div className="home">
-            {/* Temp HomePage body */}
-            <div className="projects">
-                {projects && projects.map((project) => (
-                    <ProjectDetails key={project._id} project={project}/>
-                ))}
+        <>
+            <SdgBackground />
+            <div className="home">
+                {/* Temp HomePage body */}
+                <div className="projects">
+                    {projects && projects.map((project) => (
+                        <ProjectDetails key={project._id} project={project}/>
+                    ))}
+                </div>
+                <ProjectAdminForm />
             </div>
-            <ProjectAdminForm />
-        </div>
+        </>
     )
 }
 
