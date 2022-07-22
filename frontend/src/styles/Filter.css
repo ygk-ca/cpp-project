@@ -1,7 +1,9 @@
 .filterBackground {
-    height: 25vh;
+    height: 60vh;
     
-    background: url('https://magsbc.com/wp-content/uploads/2022/07/placeholder.png') no-repeat;
+    /* background: url('https://magsbc.com/wp-content/uploads/2022/07/placeholder.png') no-repeat; */
+    background: rgba(0, 0, 0, 0.2) url('../assets/l.png');
+    background-blend-mode: darken;
     background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;

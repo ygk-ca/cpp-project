@@ -3,14 +3,16 @@ const mongoose = require('mongoose')
 
 // get all projects
 const getProjects = async (req, res) => {
-    const projects = await Project.find().sort({ createdAt: -1 }) // Specify
+    const projects = await Project.find().sort({ createdAt: -1 }) 
+
+    // const test = await Project.find({assignment_type: 1 || 2}).sort({ createdAt: -1 })
+    // console.log(test)
 
     res.status(200).json(projects)
 }
 
 // get filtered project
 const getFilteredProjects = async (req, res) => {
-    console.log(req.query)
     var request = {}
 
     // See if sdg selected
@@ -26,8 +28,9 @@ const getFilteredProjects = async (req, res) => {
         request["theme"] = req.query.theme
     }
 
-    const projects = await Project.find(request).sort({ createdAt: -1 }) // Specify
-    console.log(projects) 
+    const projects = await Project.find(request).sort({ createdAt: -1 })
+
+    
     
     res.status(200).json(projects)
 }

@@ -7,9 +7,9 @@ class FilterBody extends React.Component {
         super(props);
         this.state = {
             projects: null,
-            sdg: 'SDG 1: No Poverty',
-            assignment_type: 1,
-            theme: 'Demographic'
+            sdg: '',
+            assignment_type: "",
+            theme: ''
         };
   
         this.handleSDGChange = this.handleSDGChange.bind(this);

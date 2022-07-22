@@ -132,49 +132,12 @@
     justify-content: center;
 }
   
-.flex-container > div {
-    background-color: white;
+.sdgBox {
+    /* background-color: white; */
     width: 18vh;
     margin: 15px;
     text-align: center;
     line-height: 18vh;
     font-size: 30px;
 }
-
-/* All SDG icons */
-.sdg1 {
-    background: url("../assets/SDGIcons/sdg1.png"); 
-    background-size: contain;
-}
-
-.sdg2 {
-    background: url("../assets/SDGIcons/sdg2.png"); 
-    background-size: contain;
-}
-
-.sdg3 {
-    background: url("../assets/SDGIcons/sdg3.png"); 
-    background-size: contain;
-}
-
-.sdg4 {
-    background: url("../assets/SDGIcons/sdg4.png"); 
-    background-size: contain;
-}
-
-.sdg5 {
-    background: url("../assets/SDGIcons/sdg5.png"); 
-    background-size: contain;
-}
-
-.sdg6 {
-    background: url("../assets/SDGIcons/sdg6.png"); 
-    background-size: contain;
-}
-
-.sdg7 {
-    background: url("../assets/SDGIcons/sdg7.png"); 
-    background-size: contain;
-}
-
 
