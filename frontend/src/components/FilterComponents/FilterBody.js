@@ -52,6 +52,7 @@ class FilterBody extends React.Component {
                 },
         })
             .then(response => response.json())
+            // Add a loader here
             .then(json => this.setState({projects: json}))
     }
 
@@ -101,9 +102,9 @@ class FilterBody extends React.Component {
                         <label>Assignment Type:</label>
                         <select value={this.state.assignment_type} onChange={this.handleAssignmentChange}>
                             <option value="">Any Assignment Type</option>
-                            <option value="1">1: Discussion Project</option>
-                            <option value="2">2: PDF Case study</option>
-                            <option value="3">3: Community Project</option>
+                            <option value="1">1: Discussion Topics</option>
+                            <option value="2">2: Assessment Ideas</option>
+                            <option value="3">3: Mini Case Study</option>
                         </select>
 
                         <label>Theme:</label>

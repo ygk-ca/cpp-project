@@ -16,16 +16,215 @@ import SDG15 from './SDGIcons/sdg15.png'
 import SDG16 from './SDGIcons/sdg16.png'
 import SDG17 from './SDGIcons/sdg17.png'
 
+
 const SdgBackground = () => {
+    // Creating constant styles for each sdg
+    
     return (
         <div className="flex-container">
-            {/* SDG 1 */}
-
-            {/* Change to flip card thing */}
-            <a href="https://www.un.org/sustainabledevelopment/poverty/"><img className="sdgBox" alt="No Poverty" src={SDG1} /></a>
-            <a href="https://www.un.org/sustainabledevelopment/poverty/"><img className="sdgBox" alt="Zero Hunger" src={SDG2} /></a>
-            <a href="https://www.un.org/sustainabledevelopment/poverty/"><img className="sdgBox" alt="Good Health & Well Being" src={SDG3} /></a>
+            {/* No Poverty */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="No Poverty" src={SDG1}/>
+                    </div>
+                    <div class="flip-card-back sdg1Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/poverty/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
             
+            {/* Zero Hunger */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Zero Hunger" src={SDG2}/>
+                    </div>
+                    <div class="flip-card-back sdg2Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/hunger/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Good Health & Well Being */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Good Health & Well Being" src={SDG3}/>
+                    </div>
+                    <div class="flip-card-back sdg3Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/health/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Quality Education */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Quality Education" src={SDG4}/>
+                    </div>
+                    <div class="flip-card-back sdg4Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/education/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Gender Equality */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Gender Equality" src={SDG5}/>
+                    </div>
+                    <div class="flip-card-back sdg5Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/gender-equality/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Clean Water and Sanitation */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Clean Water and Sanitation" src={SDG6}/>
+                    </div>
+                    <div class="flip-card-back sdg6Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/water-and-sanitation/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Affordable and Clean Energy */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Affordable and Clean Energy" src={SDG7}/>
+                    </div>
+                    <div class="flip-card-back sdg7Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/energy/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+            
+            {/* Decent Work and Economic Growth */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Decent Work and Economic Growth" src={SDG8}/>
+                    </div>
+                    <div class="flip-card-back sdg8Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/economic-growth/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Industry, Innovation and Infrastructure */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Industry, Innovation and Infrastructure" src={SDG9}/>
+                    </div>
+                    <div class="flip-card-back sdg9Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/infrastructure-industrialization/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Reduced Inequalities */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Reduced Inequalities" src={SDG10}/>
+                    </div>
+                    <div class="flip-card-back sdg10Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/inequality/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Sustainable Cities and Communities */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Sustainable Cities and Communities" src={SDG11}/>
+                    </div>
+                    <div class="flip-card-back sdg11Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/cities/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Responsible Consumption and Production */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Responsible Consumption and Production" src={SDG12}/>
+                    </div>
+                    <div class="flip-card-back sdg12Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/sustainable-consumption-production/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+            
+            {/* Climate Action */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Climate Action" src={SDG13}/>
+                    </div>
+                    <div class="flip-card-back sdg13Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/climate-change/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Life Below Water */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Life Below Water" src={SDG14}/>
+                    </div>
+                    <div class="flip-card-back sdg14Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/oceans/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Life on Land */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Life on Land" src={SDG15}/>
+                    </div>
+                    <div class="flip-card-back sdg15Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/biodiversity/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Peace and Justice Strong Institutions */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Peace and Justice Strong Institutions" src={SDG16}/>
+                    </div>
+                    <div class="flip-card-back sdg16Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/peace-justice/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Partnerships for the Goals */}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img className="sdgBox" alt="Partnerships for the Goals" src={SDG17}/>
+                    </div>
+                    <div class="flip-card-back sdg17Color">
+                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/globalpartnerships/"><h3>Read More</h3></a>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

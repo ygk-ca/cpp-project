@@ -42,8 +42,6 @@
 .title {
   animation: fade-slide-down-rotate 2s 2s cubic-bezier(0, 0.5, 0, 1) forwards;
   animation-delay: 800ms;
-  /* font-family: 'Satisfy', cursive; */
-  /* letter-spacing: 0.05em; */
   font-size: calc(5vw + 1vmin);
   font-weight: 400;
   margin-bottom: 2.5%;
@@ -62,7 +60,6 @@
 
 .fun-subtitle {
   color: #A1E545;
-  font-family: 'Satisfy', cursive;
   font-size: 2em;
   letter-spacing: 0;
   opacity: 0.8;
@@ -130,14 +127,139 @@
     border-radius: 16px;
     background-color: linear-gradient(90deg,rgba(244,247,252,0.5) 0%,rgba(244,247,252,0.5) 100%);
     justify-content: center;
+    padding-top: 3.5vh;
+    padding-bottom: 3.5vh;
+    padding-left: 7vh;
+    padding-right: 7vh;
 }
   
 .sdgBox {
     /* background-color: white; */
-    width: 18vh;
-    margin: 15px;
-    text-align: center;
-    line-height: 18vh;
-    font-size: 30px;
+    width: 20vh;
+    /* margin: 15px;
+    text-align: center; */
+    height: 20vh;
+    /* font-size: 30px; */
 }
 
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 20vh;
+    height: 20vh;
+    margin: 15px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    color: white;
+    transform: rotateY(180deg);
+    align-items: center;
+    font-family: "Poppins";
+  }
+
+.sdg1Color {
+    background-color: rgba(229, 36, 59);
+}
+
+.sdg2Color {
+    background-color: rgba(221, 166, 58);
+}
+
+.sdg3Color {
+    background-color: rgba(86, 159, 56);
+}
+
+.sdg4Color {
+    background-color: rgba(197, 25, 45);
+}
+
+.sdg5Color {
+    background-color: rgba(255, 58, 33);
+}
+
+.sdg6Color {
+    background-color: rgba(38, 189, 226);
+}
+
+.sdg7Color {
+    background-color: rgba(252, 195, 11);
+}
+
+.sdg8Color {
+    background-color: rgba(162, 25, 66);
+}
+
+.sdg9Color {
+    background-color: rgba(253, 105, 37);
+}
+
+.sdg10Color {
+    background-color: rgba(221, 19, 103);
+}
+
+.sdg11Color {
+    background-color: rgba(253, 157, 36);
+}
+
+.sdg12Color {
+    background-color: rgba(191, 139, 46);
+}
+
+.sdg13Color {
+    background-color: rgba(63, 126, 68);
+}
+
+.sdg14Color {
+    background-color: rgba(10, 151, 217);
+}
+
+.sdg15Color {
+    background-color: rgba(86, 192, 43);
+}
+
+.sdg16Color {
+    background-color: rgba(0, 104, 157);
+}
+
+.sdg17Color {
+    background-color: rgba(25, 72, 106);
+}
+
+
+
+
+
+a:link { text-decoration: none; color: white; }
