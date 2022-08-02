@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ProjectDetails from '../ProjectDetails'
-
+import Multiselect from "multiselect-react-dropdown"
 
 class FilterBody extends React.Component {
     constructor(props) {
@@ -9,7 +9,10 @@ class FilterBody extends React.Component {
             projects: null,
             sdg: '',
             assignment_type: "",
-            theme: ''
+            theme: '',
+            themesArray: ["Demographic", "Economical", "Socio-cultural", "Technological", "Ecological", "Political"],
+            testThemes: [],
+
         };
   
         this.handleSDGChange = this.handleSDGChange.bind(this);
@@ -70,6 +73,7 @@ class FilterBody extends React.Component {
 
     render() {
       return (
+        <>
         <div className="filterHome">
             <div className="filterTableContainer">
                 <div className="filterTableTitle">
@@ -108,7 +112,7 @@ class FilterBody extends React.Component {
                         </select>
 
                         <label>Theme:</label>
-                        <select value={this.state.theme} onChange={this.handleThemeChange}>
+                        <select value={this.state.theme} onChange={this.handleThemeChange} multiple="multiple" size="7">
                             <option value="">Any Theme</option>
                             <option value="Demographic">Demographic</option>
                             <option value="Economical">Economical</option>
@@ -121,6 +125,21 @@ class FilterBody extends React.Component {
                         <input type="submit" value="Submit" />
                         
                     </form>
+
+                    <Multiselect
+                        isObject={false}
+                        onRemove={(e) => {
+                            this.setState({testThemes: e});
+                        }}
+                        onSelect={(e) => {
+                            this.setState({testThemes: e});
+                        }}
+                        options={this.state.testObjs}>
+                            
+                        {console.log(this.state.testThemes)}
+                    </Multiselect>
+                    
+
                 </div>
             </div>
 
@@ -133,6 +152,22 @@ class FilterBody extends React.Component {
                 </div>
             </div>
         </div>
+            {/* Test form */}
+            <div className="test">
+                <Multiselect
+                    isObject={false}
+                    onRemove={(e) => {
+                        this.setState({testThemes: e});
+                    }}
+                    onSelect={(e) => {
+                        this.setState({testThemes: e});
+                    }}
+                    options={this.state.testObjs}>
+                        
+                    {console.log(this.state.testThemes)}
+                </Multiselect>
+            </div>
+        </>
       );
     }
   }

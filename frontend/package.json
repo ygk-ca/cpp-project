@@ -9,6 +9,9 @@
   "dependencies": {
   
     
+  "@syncfusion/ej2-react-dropdowns": "^20.2.40",
+  
+    
   "@testing-library/jest-dom": "^5.16.4",
   
     
@@ -19,6 +22,9 @@
   
     
   "http-proxy-middleware": "^2.0.6",
+  
+    
+  "multiselect-react-dropdown": "^2.0.25",
   
     
   "react": "^18.2.0",

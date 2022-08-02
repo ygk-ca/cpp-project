@@ -10,6 +10,8 @@ body {
   background: #f1f1f1;
   margin: 0;
   font-family: "Poppins";
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 header {
   background: #fff;
@@ -37,11 +39,9 @@ header a {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 100px;
-  
-  
   background-color: #fff;
-  
 }
+
 .project-details {
   background: #fff;
   border-radius: 4px;
