@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import ProjectDetails from '../ProjectDetails'
 import Multiselect from "multiselect-react-dropdown"
+import Select from 'react-select';
+
+
+const SDGOptions = ["No Poverty", "Zero Hunger", "Good Health & Well Being", "Quality Education", "Gender Equality"]
+
+const themesOptions = ["Demographic", "Economical", "Socio-cultural", "Technological", "Ecological", "Political"]
+
+const assingmentOptions = ["Discussion Topics", "Assessment Ideas", "Mini Case Studies"]
 
 class FilterBody extends React.Component {
     constructor(props) {
@@ -10,8 +18,12 @@ class FilterBody extends React.Component {
             sdg: '',
             assignment_type: "",
             theme: '',
-            themesArray: ["Demographic", "Economical", "Socio-cultural", "Technological", "Ecological", "Political"],
-            testThemes: [],
+            
+            testAssignments: "",
+
+            testSDG: [""],
+
+            testThemes: [""],
 
         };
   
@@ -19,6 +31,7 @@ class FilterBody extends React.Component {
         this.handleAssignmentChange = this.handleAssignmentChange.bind(this);
         this.handleThemeChange = this.handleThemeChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.testSubmit = this.testSubmit.bind(this);
     }
     
     // Handling all 3 input changes
@@ -33,6 +46,13 @@ class FilterBody extends React.Component {
     handleThemeChange(event) {
         this.setState({theme: event.target.value});
     }
+
+    // FOR TESTING ONLY
+
+    testSubmit() {
+        alert(this.state.sdg + '--- Assignment Type: ' + this.state.assignment_type + '--- Theme: ' + this.state.theme);
+    }
+
 
     // Handling all 3 input submissions
     handleSubmit(event) {
@@ -80,7 +100,58 @@ class FilterBody extends React.Component {
                     Filter Table
                 </div>
                 <div className="filterSDGDropDown">
-                    <form onSubmit={this.handleSubmit}>
+                    <div className="themeDropdown">
+                        <Multiselect
+                            isObject={false}
+                            onRemove={(e) => {
+                                this.setState({testSDG: e});
+                            }}
+                            onSelect={(e) => {
+                                this.setState({testSDG: e});
+                            }}
+                            options={SDGOptions}
+                            >
+                                
+                            {console.log(this.state.testSDG)}
+                        </Multiselect>
+                        <br></br>
+
+                        <br></br>
+                        <Multiselect
+                            isObject={false}
+                            onRemove={(e) => {
+                                this.setState({testThemes: e});
+                            }}
+                            onSelect={(e) => {
+                                this.setState({testThemes: e});
+                            }}
+                            options={themesOptions}
+                            >
+                                
+                            {console.log(this.state.testThemes)}
+                        </Multiselect>
+                    </div>
+
+                </div>
+                <div>
+                    <button onClick={this.testSubmit}>
+                        Click
+                    </button>
+                </div>
+            </div>
+
+            {/* Lists projects */}
+            <div>
+                <div className="projects">
+                    {this.state.projects && this.state.projects.map((project) => (
+                        <ProjectDetails key={project._id} project={project}/>
+                    ))}
+                </div>
+            </div>
+        </div>
+            {/* Test form */}
+            <div className="test">
+                <form onSubmit={this.handleSubmit}>
                         <label>SDG:</label>
                         <select value={this.state.sdg} onChange={this.handleSDGChange}>
                             <option value="">Any SDG</option>
@@ -125,47 +196,6 @@ class FilterBody extends React.Component {
                         <input type="submit" value="Submit" />
                         
                     </form>
-
-                    <Multiselect
-                        isObject={false}
-                        onRemove={(e) => {
-                            this.setState({testThemes: e});
-                        }}
-                        onSelect={(e) => {
-                            this.setState({testThemes: e});
-                        }}
-                        options={this.state.testObjs}>
-                            
-                        {console.log(this.state.testThemes)}
-                    </Multiselect>
-                    
-
-                </div>
-            </div>
-
-            {/* Lists projects */}
-            <div>
-                <div className="projects">
-                    {this.state.projects && this.state.projects.map((project) => (
-                        <ProjectDetails key={project._id} project={project}/>
-                    ))}
-                </div>
-            </div>
-        </div>
-            {/* Test form */}
-            <div className="test">
-                <Multiselect
-                    isObject={false}
-                    onRemove={(e) => {
-                        this.setState({testThemes: e});
-                    }}
-                    onSelect={(e) => {
-                        this.setState({testThemes: e});
-                    }}
-                    options={this.state.testObjs}>
-                        
-                    {console.log(this.state.testThemes)}
-                </Multiselect>
             </div>
         </>
       );

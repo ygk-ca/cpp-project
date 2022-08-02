@@ -31,15 +31,12 @@ const projectSchema = new Schema({
     // year published
     published: { 
         type: Number,
-        required: true
     },
     website_url: {
         type: String,
-        required: true
     },
-    // Numbered 1-3
     assignment_type: {
-        type: Number,
+        type: String,
         required: true
     },
     // array of themes
