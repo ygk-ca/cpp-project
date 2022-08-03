@@ -2,7 +2,7 @@
     height: 60vh;
     
     /* background: url('https://magsbc.com/wp-content/uploads/2022/07/placeholder.png') no-repeat; */
-    background: rgba(0, 0, 0, 0.2) url('../assets/l.png');
+    background: rgba(0, 0, 0, 0.2) url('../assets/t1.jpg');
     background-blend-mode: darken;
     background-position: center; 
     background-repeat: no-repeat;
@@ -39,12 +39,15 @@
     height: 60vh;
     margin: 50px;
     flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    
 }
 
 .filterTableTitle {
     display: flex;
     
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 10%;
     width: 100%;
     /* margin: 10px; */
@@ -55,7 +58,7 @@
 .filterSDGDropDown {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 30vh;
     /* height: 80vh; */
 }

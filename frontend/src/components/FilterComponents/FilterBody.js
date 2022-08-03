@@ -4,11 +4,27 @@ import Multiselect from "multiselect-react-dropdown"
 import Select from 'react-select';
 
 
-const SDGOptions = ["No Poverty", "Zero Hunger", "Good Health & Well Being", "Quality Education", "Gender Equality"]
+const SDGOptions = [
+    "No Poverty", 
+    "Zero Hunger", 
+    "Good Health & Well Being", 
+    "Quality Education", 
+    "Gender Equality", 
+    "Clean Water & Sanitation", 
+    "Affordable & Clean Energy", 
+    "Decent Work & Economic Growth", 
+    "Industry, Innovation, & Infrastructure",
+]
 
 const themesOptions = ["Demographic", "Economical", "Socio-cultural", "Technological", "Ecological", "Political"]
 
-const assingmentOptions = ["Discussion Topics", "Assessment Ideas", "Mini Case Studies"]
+// const assingmentOptions = ["Discussion Topics", "Assessment Ideas", "Mini Case Studies"]
+const assingmentOptions = [
+    { value: '', label: 'Any'},
+    { value: 'Discussion Topics', label: 'Discussion Topics'},
+    { value: 'Assessment Ideas', label: 'Assessment Ideas'},
+    { value: 'Mini Case Studies', label: 'Mini Case Studies'}
+]
 
 class FilterBody extends React.Component {
     constructor(props) {
@@ -24,6 +40,9 @@ class FilterBody extends React.Component {
             testSDG: [""],
 
             testThemes: [""],
+
+            isClearable: true,
+            isSearchable: true,
 
         };
   
@@ -50,7 +69,7 @@ class FilterBody extends React.Component {
     // FOR TESTING ONLY
 
     testSubmit() {
-        alert(this.state.sdg + '--- Assignment Type: ' + this.state.assignment_type + '--- Theme: ' + this.state.theme);
+        alert(this.state.testSDG + '-------ASSIGNMENT: ' + this.state.testAssignments + '------ Theme: ' + this.state.testThemes);
     }
 
 
@@ -112,10 +131,23 @@ class FilterBody extends React.Component {
                             options={SDGOptions}
                             >
                                 
-                            {console.log(this.state.testSDG)}
+                            {console.log('SDG: ' + this.state.testSDG)}
                         </Multiselect>
                         <br></br>
-
+                        <Select
+                            className="basic-single"
+                            classNamePrefix="select"
+                            // isClearable={this.state.isClearable}
+                            isSearchable={this.state.isSearchable}
+                            name="color"
+                            onChange={(e) => {
+                                console.log(e.value)
+                                this.setState({ testAssignments: e.value })
+                            }}
+                            options={assingmentOptions}                 
+                        >
+                            {console.log('ASSIGNMENT: ' + this.state.testAssignments)}
+                        </Select>
                         <br></br>
                         <Multiselect
                             isObject={false}
@@ -128,7 +160,7 @@ class FilterBody extends React.Component {
                             options={themesOptions}
                             >
                                 
-                            {console.log(this.state.testThemes)}
+                            {console.log('THEMES: ' + this.state.testThemes)}
                         </Multiselect>
                     </div>
 
@@ -163,27 +195,27 @@ class FilterBody extends React.Component {
                             <option value="SDG 6: Decent Work & Economic Growth">SDG 6: Decent Work & Economic Growth</option>
                             <option value="SDG 7: Affordable & Clean Energy">SDG 7: Affordable & Clean Energy</option>
                             <option value="SDG 8: Decent Work & Economic Growth">SDG 8: Decent Work & Economic Growth</option>
-                            <option value="SDG 9: Industry, Innovation, and Infrastructure">SDG 9: Industry, Innovation, and Infrastructure</option>
+                            <option value="SDG 9: Industry, Innovation, & Infrastructure">SDG 9: Industry, Innovation, & Infrastructure</option>
                             <option value="SDG 10: Reducing Inequality">SDG 10: Reducing Inequality</option>
                             <option value="SDG 11: Sustainable Cities & Communities">SDG 11: Sustainable Cities & Communities</option>
                             <option value="SDG 12: Responsible Consumption & Production">SDG 12: Responsible Consumption & Production</option>
                             <option value="SDG 13: Climate Action">SDG 13: Climate Action</option>
                             <option value="SDG 14: Life Below Water">SDG 14: Life Below Water</option>
                             <option value="SDG 15: Life on Land">SDG 15: Life on Land</option>
-                            <option value="SDG 16: Peace and Justice Strong Institutions">SDG 16: Peace and Justice Strong Institutions</option>
+                            <option value="SDG 16: Peace & Justice Strong Institutions">SDG 16: Peace & Justice Strong Institutions</option>
                             <option value="SDG 17: Partnerships for the Goals">SDG 17: Partnerships for the Goals</option>
                         </select>
 
                         <label>Assignment Type:</label>
                         <select value={this.state.assignment_type} onChange={this.handleAssignmentChange}>
                             <option value="">Any Assignment Type</option>
-                            <option value="1">1: Discussion Topics</option>
-                            <option value="2">2: Assessment Ideas</option>
-                            <option value="3">3: Mini Case Study</option>
+                            <option value="Discussion Topics">1: Discussion Topics</option>
+                            <option value="Assessment Ideas">2: Assessment Ideas</option>
+                            <option value="Mini Case Study">3: Mini Case Study</option>
                         </select>
 
                         <label>Theme:</label>
-                        <select value={this.state.theme} onChange={this.handleThemeChange} multiple="multiple" size="7">
+                        <select value={this.state.theme} onChange={this.handleThemeChange}>
                             <option value="">Any Theme</option>
                             <option value="Demographic">Demographic</option>
                             <option value="Economical">Economical</option>
