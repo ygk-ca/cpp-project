@@ -14,6 +14,44 @@ const getProjects = async (req, res) => {
 // get filtered project
 const getFilteredProjects = async (req, res) => {
     var request = {}
+    console.log(req.query.sdg)
+    console.log('t' +  req.query.theme)
+    console.log('a' + req.query.assignment_type)
+    // var t = ["Economical", "Technological"]
+    // const test = await Project.find({theme: ("Technological" && "Economical")}).sort({ createdAt: -1 })
+    // const test = await Project.find({
+    //     $and: 
+    // }).sort({ createdAt: -1 })
+    // console.log(test)
+
+    // Function to separate commas from string
+    function separateCommas(str) {
+        let t = []
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === ',') {
+                console.log(i)
+                t.push(i)
+            }
+        }
+        let themeArray = []
+
+        if (t.length === 1) {
+            let theme1 = str.slice(0, t[0])
+            let theme2 = str.slice(t[0]+1)
+            themeArray.push(theme1)
+            themeArray.push(theme2)
+        }
+
+        if (t.length === 2) {
+            let theme1 = str.slice(0, t[0])
+            let theme2 = str.slice(t[0]+1, t[1])
+            let theme3 = str.slice(t[1]+1)
+            themeArray.push(theme1)
+            themeArray.push(theme2)
+            themeArray.push(theme3)
+        }
+        request["theme"] = themeArray.sort()
+    }
 
     // See if sdg selected
     if (req.query.sdg !== '') {
@@ -25,9 +63,15 @@ const getFilteredProjects = async (req, res) => {
     }
     // See if theme selected
     if (req.query.theme !== '') {
-        request["theme"] = req.query.theme
+        if (req.query.theme.length > 14) {
+            separateCommas(req.query.theme)
+        }
+        else {
+            request["theme"] = req.query.theme
+        }
+        
     }
-
+    console.log(request)
     const projects = await Project.find(request).sort({ createdAt: -1 })
 
     

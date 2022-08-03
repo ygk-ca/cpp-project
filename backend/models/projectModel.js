@@ -7,10 +7,10 @@ const projectSchema = new Schema({
     // general schema templates
 
     // sdg
-    sdg: {
+    sdg: [{
         type: String,
         required: true
-    },
+    }],
     // goal of the project
     goal: {
         type: String,

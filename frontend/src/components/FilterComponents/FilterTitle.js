@@ -3,7 +3,7 @@ const FilterTitle = () => {
         <div className="filterBackground">
             <div className="background">
                 <div id="header-content">
-                    <div className="filterTitle">Navigation Tool</div>
+                    <div className="filterTitle">Activity Catalogue</div>
                 </div>
             </div>
         </div>

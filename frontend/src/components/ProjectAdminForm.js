@@ -18,7 +18,7 @@ const ProjectAdminForm = () => {
 
     // Adding themes
     const [theme, setThemes] = useState([]);
-    const available_themes = ['Demographic', 'Economical', 'Socio-cultural', 'Technological', 'Ecological', 'Political'];
+    const available_themes = ['People', 'Economy', 'Culture', 'Technology', 'Environment', 'Politic'];
 
     const addTheme = (name) =>{
         if(!theme.includes(name)){
@@ -47,11 +47,12 @@ const ProjectAdminForm = () => {
     });
 
 
-
     const handleSubmit = async (e) => {
+
+        
         e.preventDefault() // Prevents refresh of page from happening
         console.log('button clicked')
-        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme, sharepoint_link, statement}
+        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme: [...theme].sort(), sharepoint_link, statement}
         console.log(project)
         console.log(theme)                
         // Sending form response to backend
@@ -152,14 +153,17 @@ const ProjectAdminForm = () => {
             <label>Select Theme(s):</label>
             {themeselector}
 
-            <label>Sharepoint Link:</label>
+            <label>Select More SDGs:</label>
+
+
+            <label>Sharepoint Link (Tier 2):</label>
             <input 
                 type="text"
                 onChange={(e) => setSharepointLink(e.target.value)}
                 value={sharepoint_link}
             />
 
-            <label>Statement:</label>
+            <label>Statement (Tier 1):</label>
             <input 
                 type="text"
                 onChange={(e) => setStatement(e.target.value)}

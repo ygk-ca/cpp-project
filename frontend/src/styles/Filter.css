@@ -1,6 +1,5 @@
 .filterBackground {
     height: 60vh;
-    
     /* background: url('https://magsbc.com/wp-content/uploads/2022/07/placeholder.png') no-repeat; */
     background: rgba(0, 0, 0, 0.2) url('../assets/t1.jpg');
     background-blend-mode: darken;
@@ -11,8 +10,8 @@
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    
 }
+
 .filterTitle {
     color: #fff;
     margin : 0;
@@ -32,11 +31,15 @@
     gap: 100px;
 }
 
+/* Dummy class */
+.filterContainer {}
+
 .filterTableContainer {
     width: 100%;
     display: flex;
     border: 1px solid black;
-    height: 60vh;
+    /* height: 60vh; */
+    /* height: 60vh; */
     margin: 50px;
     flex-direction: column;
     background-color: white;
@@ -46,9 +49,6 @@
 
 .filterTableTitle {
     display: flex;
-    
-    /* border: 1px solid blue; */
-    height: 10%;
     width: 100%;
     /* margin: 10px; */
     padding: 15px;
@@ -58,11 +58,26 @@
 .filterSDGDropDown {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid black; */
-    height: 30vh;
-    /* height: 80vh; */
+    padding: 20px;
+
 }
 
+.filterButtonContainer {
+    justify-content: center;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+}
+
+.filterButton {
+    background: #0069eb;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 15px 30px;
+    text-decoration: none;
+}
 
 
 @media only screen and (max-width: 832px) {

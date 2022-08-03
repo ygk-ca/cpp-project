@@ -3,22 +3,23 @@ import ProjectDetails from '../ProjectDetails'
 import Multiselect from "multiselect-react-dropdown"
 import Select from 'react-select';
 
-
+// Array to hold the 17 options of SDG's
 const SDGOptions = [
-    "No Poverty", 
-    "Zero Hunger", 
-    "Good Health & Well Being", 
-    "Quality Education", 
-    "Gender Equality", 
-    "Clean Water & Sanitation", 
-    "Affordable & Clean Energy", 
-    "Decent Work & Economic Growth", 
-    "Industry, Innovation, & Infrastructure",
+    "SDG 1: No Poverty", 
+    "SDG 2: Zero Hunger", 
+    "SDG 3: Good Health & Well Being", 
+    "SDG 4: Quality Education", 
+    "SDG 5: Gender Equality", 
+    "SDG 6: Clean Water & Sanitation", 
+    "SDG 7: Affordable & Clean Energy", 
+    "SDG 8: Decent Work & Economic Growth", 
+    "SDG 9: Industry, Innovation, & Infrastructure",
 ]
 
-const themesOptions = ["Demographic", "Economical", "Socio-cultural", "Technological", "Ecological", "Political"]
+// Array of list to hold all 6 options for themes
+const themesOptions = ["People", "Economy", "Culture", "Technology", "Environment", "Politic"]
 
-// const assingmentOptions = ["Discussion Topics", "Assessment Ideas", "Mini Case Studies"]
+// Array of list to hold options for assignments
 const assingmentOptions = [
     { value: '', label: 'Any'},
     { value: 'Discussion Topics', label: 'Discussion Topics'},
@@ -26,31 +27,27 @@ const assingmentOptions = [
     { value: 'Mini Case Studies', label: 'Mini Case Studies'}
 ]
 
+// Main component handling the filter body
 class FilterBody extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            // Variables
             projects: null,
-            sdg: '',
             assignment_type: "",
-            theme: '',
+            sdg: [""],
+            theme: [""],
             
-            testAssignments: "",
-
-            testSDG: [""],
-
-            testThemes: [""],
-
+            // Select module features
             isClearable: true,
             isSearchable: true,
-
         };
   
         this.handleSDGChange = this.handleSDGChange.bind(this);
         this.handleAssignmentChange = this.handleAssignmentChange.bind(this);
         this.handleThemeChange = this.handleThemeChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.testSubmit = this.testSubmit.bind(this);
+        // this.testSubmit = this.testSubmit.bind(this);
     }
     
     // Handling all 3 input changes
@@ -67,18 +64,18 @@ class FilterBody extends React.Component {
     }
 
     // FOR TESTING ONLY
-
-    testSubmit() {
-        alert(this.state.testSDG + '-------ASSIGNMENT: ' + this.state.testAssignments + '------ Theme: ' + this.state.testThemes);
-    }
+    // testSubmit() {
+    //     alert(this.state.sdg + '-------ASSIGNMENT: ' + this.state.assignment_type + '------ Theme: ' + this.state.theme);
+    //     console.log(this.state.sdg)
+    //     console.log(this.state.assignment_type)
+    //     console.log(this.state.theme)
+    // }
 
 
     // Handling all 3 input submissions
     handleSubmit(event) {
-        console.log(this.state.sdg)
-        // alert(this.state.sdg + '--- Assignment Type: ' + this.state.assignment_type + '--- Theme: ' + this.state.theme);
         event.preventDefault();
-
+        console.log(this.state.theme)
         console.log(this.state.projects)
 
         const data = {
@@ -114,63 +111,68 @@ class FilterBody extends React.Component {
       return (
         <>
         <div className="filterHome">
-            <div className="filterTableContainer">
-                <div className="filterTableTitle">
-                    Filter Table
-                </div>
-                <div className="filterSDGDropDown">
-                    <div className="themeDropdown">
-                        <Multiselect
-                            isObject={false}
-                            onRemove={(e) => {
-                                this.setState({testSDG: e});
-                            }}
-                            onSelect={(e) => {
-                                this.setState({testSDG: e});
-                            }}
-                            options={SDGOptions}
-                            >
-                                
-                            {console.log('SDG: ' + this.state.testSDG)}
-                        </Multiselect>
-                        <br></br>
-                        <Select
-                            className="basic-single"
-                            classNamePrefix="select"
-                            // isClearable={this.state.isClearable}
-                            isSearchable={this.state.isSearchable}
-                            name="color"
-                            onChange={(e) => {
-                                console.log(e.value)
-                                this.setState({ testAssignments: e.value })
-                            }}
-                            options={assingmentOptions}                 
-                        >
-                            {console.log('ASSIGNMENT: ' + this.state.testAssignments)}
-                        </Select>
-                        <br></br>
-                        <Multiselect
-                            isObject={false}
-                            onRemove={(e) => {
-                                this.setState({testThemes: e});
-                            }}
-                            onSelect={(e) => {
-                                this.setState({testThemes: e});
-                            }}
-                            options={themesOptions}
-                            >
-                                
-                            {console.log('THEMES: ' + this.state.testThemes)}
-                        </Multiselect>
+            <div className="filterContainer">
+                <div className="filterTableContainer">
+                    <div className="filterTableTitle">
+                        Filter Table
                     </div>
+                    
+                    <div className="filterSDGDropDown">
+                        <div className="themeDropdown">
+                            <Multiselect
+                                isObject={false}
+                                onRemove={(e) => {
+                                    this.setState({sdg: e});
+                                }}
+                                onSelect={(e) => {
+                                    this.setState({sdg: e});
+                                }}
+                                options={SDGOptions}
+                                >
+                                    
+                                {console.log('SDG: ' + this.state.sdg)}
+                            </Multiselect>
+                            <br></br>
+                            <Select
+                                className="basic-single"
+                                classNamePrefix="select"
+                                placeholder="Select"
+                                // isClearable={this.state.isClearable}
+                                isSearchable={this.state.isSearchable}
+                                name="color"
+                                onChange={(e) => {
+                                    console.log(e.value)
+                                    this.setState({ assignment_type: e.value })
+                                }}
+                                options={assingmentOptions}                 
+                            >
+                                {console.log('ASSIGNMENT: ' + this.state.assignment_type)}
+                            </Select>
+                            <br></br>
+                            <Multiselect
+                                isObject={false}
+                                onRemove={(e) => {
+                                    this.setState({theme: e});
+                                }}
+                                onSelect={(e) => {
+                                    this.setState({theme: e});
+                                }}
+                                options={themesOptions}
+                                >
+                                    
+                                {console.log('THEMES: ' + this.state.theme)}
+                            </Multiselect>
+                        </div>
 
-                </div>
-                <div>
-                    <button onClick={this.testSubmit}>
-                        Click
-                    </button>
+                    </div>
+                    <div className="filterButtonContainer">
+                        <button className="filterButton" onClick={this.handleSubmit}>
+                            Filter
+                        </button>
+                    </div>
                 </div>
             </div>
+            
 
             {/* Lists projects */}
             <div>
@@ -183,7 +185,7 @@ class FilterBody extends React.Component {
         </div>
             {/* Test form */}
             <div className="test">
-                <form onSubmit={this.handleSubmit}>
+                {/* <form onSubmit={this.handleSubmit}>
                         <label>SDG:</label>
                         <select value={this.state.sdg} onChange={this.handleSDGChange}>
                             <option value="">Any SDG</option>
@@ -227,7 +229,7 @@ class FilterBody extends React.Component {
 
                         <input type="submit" value="Submit" />
                         
-                    </form>
+                    </form> */}
             </div>
         </>
       );
