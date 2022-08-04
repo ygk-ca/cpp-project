@@ -38,6 +38,7 @@ class FilterBody extends React.Component {
             sdg: [""],
             theme: [""],
             
+            showProjects: false,
             // Select module features
             isClearable: true,
             isSearchable: true,
@@ -77,6 +78,8 @@ class FilterBody extends React.Component {
         event.preventDefault();
         console.log(this.state.theme)
         console.log(this.state.projects)
+
+        this.setState({ showProjects: true })
 
         const data = {
             sdg: this.state.sdg, 
@@ -176,11 +179,14 @@ class FilterBody extends React.Component {
 
             {/* Lists projects */}
             <div>
-                <div className="projects">
-                    {this.state.projects && this.state.projects.map((project) => (
-                        <ProjectDetails key={project._id} project={project}/>
-                    ))}
-                </div>
+                {this.state.showProjects === true &&
+                    <div className="projects">
+                        {this.state.projects && this.state.projects.map((project) => (
+                            <ProjectDetails key={project._id} project={project}/>
+                        ))}
+                    </div>
+                }
+                
             </div>
         </div>
             {/* Test form */}
