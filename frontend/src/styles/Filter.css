@@ -27,19 +27,21 @@
 
 .filterHome {
     display: grid;
-    grid-template-columns: 1.5fr 3fr;
+    grid-template-columns: 1fr 2fr;
     gap: 100px;
 }
 
 /* Dummy class */
-.filterContainer {}
+.filterContainer {
+    flex-direction: row;
+}
 
 .filterTableContainer {
     width: 100%;
     display: flex;
-    border: 1px solid black;
     /* height: 60vh; */
     /* height: 60vh; */
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
     margin: 50px;
     flex-direction: column;
     background-color: white;
@@ -70,7 +72,7 @@
 }
 
 .filterButton {
-    background: #0069eb;
+    background: #0dc06a;
     border-radius: 30px;
     border: none;
     color: #fff;
@@ -79,20 +81,17 @@
     text-decoration: none;
 }
 
-
-@media only screen and (max-width: 832px) {
-    .filterTableContainer {
-        border: 5px solid blue;
-    }
+.projects {
+    /* flex-direction: row; */
 }
 
+.initial-screen {
+    border: 1px solid black;
+}
 
 .test {
 
     height: 50vh;
 }
 
-.themeDropdown {
 
-
-}

@@ -178,12 +178,17 @@ class FilterBody extends React.Component {
             
 
             {/* Lists projects */}
-            <div>
+            <div className="projects">
                 {this.state.showProjects === true &&
-                    <div className="projects">
+                    <div>
                         {this.state.projects && this.state.projects.map((project) => (
                             <ProjectDetails key={project._id} project={project}/>
                         ))}
+                    </div>
+                }
+                {this.state.showProjects === false &&
+                    <div className="initial-screen"> 
+                        Enter filter options to get started!
                     </div>
                 }
                 
