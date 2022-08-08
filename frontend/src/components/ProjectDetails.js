@@ -1,5 +1,8 @@
 import "../styles/ProjectDetails.css";
 
+
+
+
 const ProjectDetails = ({ project }) => {
     return (
         // <div className="details-project">
@@ -29,11 +32,17 @@ const ProjectDetails = ({ project }) => {
         <div className="card-grid">
             <div className="card">
                 <div className="card-header card-image">
-                    <img src="https://media.istockphoto.com/photos/forest-wooden-table-background-summer-sunny-meadow-with-green-grass-picture-id1353553203?b=1&k=20&m=1353553203&s=170667a&w=0&h=QTyTGI9tWQluIlkmwW0s7Q4z7R_IT8egpzzHjW3cSas="/>
+                    <img src="https://c4.wallpaperflare.com/wallpaper/672/357/220/road-background-color-hd-wallpaper-thumb.jpg"/>
                 </div>
-                <div className="card-header">{project.sdg}</div>
+                <div className="card-title"><strong>{project.sdg}</strong></div>
                 <div className="card-body">
-                    {project.goal}
+                    <strong>Goal:</strong> {project.goal}
+                </div>
+                <div className="card-themes">
+                    <strong>Themes:</strong> {project.theme.map((theme)=>{return theme + ', '})}
+                </div>
+                <div className="card-assignment">
+                    <strong>Assignment Type:</strong> {project.assignment_type}
                 </div>
                 <div className="card-footer">
                     <button className="btn">Details</button>
@@ -41,7 +50,10 @@ const ProjectDetails = ({ project }) => {
                         <button className="btn btn-outline">Download</button>
                     }
                     {project.assignment_type !== 'Mini Case Studies' &&
-                        <button className="btn btn-outline">Copy to Clipboard</button>
+                        <button className="btn btn-outline" onClick={function(event){ navigator.clipboard.writeText(project.goal); alert('Text copied to clipboard!') }}
+                            >
+                            Copy to Clipboard
+                        </button>
                     }
                 </div>
             </div>

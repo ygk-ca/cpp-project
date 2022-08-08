@@ -5,16 +5,29 @@
 }
 
 .card {
+    --padding: 1rem;
     background: white;
-    padding: 1rem;
+
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
     border-radius: .5rem;
     margin: 1rem;
+    overflow: hidden;
 }
 
 .card-header {
     font-size: 1.5rem;
     margin-bottom: .5rem;
+    font-size: 1.2em;
+    color: #1aac83;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    font-size: 1.2em;
+    color: #1aac83;
+    padding: var(--padding);
+    padding-bottom: 0;
 }
 
 .card-header.card-image {
@@ -24,14 +37,38 @@
 .card-header.card-image > img {
     display: block;
     width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    max-height: 250px;
+    object-position: center;
+    transition: 200ms transform ease-in-out;
+}
+
+.card:hover > .card-header.card-image > img {
+    transform: scale(1.025);
 }
 
 .card-body {
     margin-bottom: 1rem;
+    padding: 0 var(--padding);
+    color: #555;
+}
+
+.card-themes {
+    color: #555;
+    padding: 0 var(--padding);
+}
+
+.card-assignment {
+    padding: var(--padding);
+    padding-bottom: 0;
+    color: #555;
 }
 
 .card-footer {
     margin-top: 1rem;
+    padding: var(--padding);
+    padding-top: 0;
 }
 
 .btn {
