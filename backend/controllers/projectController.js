@@ -89,53 +89,50 @@ const mongoose = require('mongoose')
 const getProjects = async (req, res) => {
     const projects = await Project.find().sort({ createdAt: -1 }) 
 
-    // const test = await Project.find({assignment_type: 1 || 2}).sort({ createdAt: -1 })
-    // console.log(test)
-
     res.status(200).json(projects)
 }
 
-// get filtered project
+// get filtered projects
 const getFilteredProjects = async (req, res) => {
+    // Initializing request object that will be sent to retrieve DB information
     var request = {}
-    console.log(req.query.sdg)
-    console.log('t' +  req.query.theme)
-    console.log('a' + req.query.assignment_type)
-    // var t = ["Economical", "Technological"]
-    // const test = await Project.find({theme: ("Technological" && "Economical")}).sort({ createdAt: -1 })
-    // const test = await Project.find({
-    //     $and: 
-    // }).sort({ createdAt: -1 })
-    // console.log(test)
 
-    // Function to separate commas from string
+    // --------- Theme functions ---------
+
+    // Function to separate commas from string - Complexity: O(n + n)
     function separateCommas(str) {
-        let t = []
+        // O(n) algorithm to find indices of location of commas
+        let commaLocations = []
         for (let i = 0; i < str.length; i++) {
             if (str[i] === ',') {
                 console.log(i)
-                t.push(i)
+                commaLocations.push(i)
             }
         }
-        let themeArray = []
+        
+        // O(n) algorithm to separate commas from strings and extract words
+        let themes = []
+        var l = 0 // Left pointer
 
-        if (t.length === 1) {
-            let theme1 = str.slice(0, t[0])
-            let theme2 = str.slice(t[0]+1)
-            themeArray.push(theme1)
-            themeArray.push(theme2)
+        for (let i = 0; i <= commaLocations.length; i++) {
+            var tempTheme = str.slice(l, commaLocations[i])
+            l = commaLocations[i]+1
+            themes.push(tempTheme)
         }
 
-        if (t.length === 2) {
-            let theme1 = str.slice(0, t[0])
-            let theme2 = str.slice(t[0]+1, t[1])
-            let theme3 = str.slice(t[1]+1)
-            themeArray.push(theme1)
-            themeArray.push(theme2)
-            themeArray.push(theme3)
-        }
-        request["theme"] = themeArray.sort()
+        // Add the themes to the search query
+        addThemeToRequest(themes.sort())
     }
+
+    // Function to add theme to request object
+    function addThemeToRequest(themes) {
+        if (themes.length) {
+            request['theme'] = { $all: themes }
+        }
+    }
+
+
+    // ------ Checking for whether categories are specified by user ------
 
     // See if sdg selected
     if (req.query.sdg !== '') {
@@ -147,19 +144,35 @@ const getFilteredProjects = async (req, res) => {
     }
     // See if theme selected
     if (req.query.theme !== '') {
+        // If there are more than one themes 
         if (req.query.theme.length > 14) {
             separateCommas(req.query.theme)
         }
+        // If there is just one theme
         else {
-            request["theme"] = req.query.theme
+            addThemeToRequest(req.query.theme)
         }
-        
     }
+
+
+    // t = []
+    // const filter = {}
+    // if (t.length) {
+    //     filter['theme'] = { $all: t }
+    //     // filter.$all = {theme: t};
+    // }
+    // const test = await Project.find(filter)
+    // console.log('asdasda' + test + 'sadasdas')
+    // var t = [ 'Economy', 'Environment']
+    // const test = await Project.find( {
+    //     theme: { $all: t }
+    // }).sort({ createdAt: -1 })
+    // console.log(test)
+
     console.log(request)
+
     const projects = await Project.find(request).sort({ createdAt: -1 })
 
-    
-    
     res.status(200).json(projects)
 }
 
