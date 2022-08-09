@@ -14,6 +14,14 @@ const SDGOptions = [
     "SDG 7: Affordable & Clean Energy", 
     "SDG 8: Decent Work & Economic Growth", 
     "SDG 9: Industry, Innovation, & Infrastructure",
+    "SDG 10: Reduced Inequalities",
+    "SDG 11: Sustainable Cities & Communities",
+    "SDG 12: Responsible Consumption & Production",
+    "SDG 13: Climate Action",
+    "SDG 14: Life Below Water",
+    "SDG 15: Life on Land",
+    "SDG 16: Peace, Justice, & Strong Institutions",
+    "SDG 17: Partnerships for the Goals"
 ]
 
 // Array of list to hold all 6 options for themes
@@ -38,7 +46,7 @@ class FilterBody extends React.Component {
             sdg: [""],
             theme: [""],
             
-            showProjects: false,
+            showProjects: true,
             // Select module features
             isClearable: true,
             isSearchable: true,
@@ -180,7 +188,7 @@ class FilterBody extends React.Component {
             {/* Lists projects */}
             <div className="projects">
                 {this.state.showProjects === true &&
-                    <div>
+                    <div className="content">
                         {this.state.projects && this.state.projects.map((project) => (
                             <ProjectDetails key={project._id} project={project}/>
                         ))}
@@ -191,6 +199,15 @@ class FilterBody extends React.Component {
                         Enter filter options to get started!
                     </div>
                 }
+                {/* <div className=`test content ${this.state.showProjects && 'active'}`>
+                    {this.state.projects && this.state.projects.map((project) => (
+                        <ProjectDetails key={project._id} project={project}/>
+                    ))}
+                </div>
+                <div className=`initial-screen content ${!this.state.showProjects && 'active'}`> 
+                    Enter filter options to get started!
+                </div>  */}
+                
                 
             </div>
         </div>

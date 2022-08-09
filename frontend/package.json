@@ -9,6 +9,9 @@
   "dependencies": {
   
     
+  "@react-pdf-viewer/core": "^3.6.0",
+  
+    
   "@syncfusion/ej2-react-dropdowns": "^20.2.40",
   
     
@@ -31,6 +34,9 @@
   
     
   "react-dom": "^18.2.0",
+  
+    
+  "react-pdf": "^5.7.2",
   
     
   "react-router-dom": "^6.3.0",

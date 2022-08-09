@@ -1,11 +1,28 @@
 require('dotenv').config()
 
 const express =  require('express')
+const multer = require('multer')
 const mongoose = require('mongoose')
 const projectRoutes = require('./routes/projects')
 
 // express app
 const app = express()
+
+// multer app engine
+const fileStorageEngine = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "./files")
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '--' + file.originalname)
+    }
+})
+const upload = multer({ storage: fileStorageEngine })
+
+app.post("/single", upload.single("file"), (req, res) => {
+    console.log(req.file);
+    res.send('Single file upload success');
+})
 
 // middleware
 app.use(express.json())

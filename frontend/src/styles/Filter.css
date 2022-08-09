@@ -1,7 +1,7 @@
 .filterBackground {
     height: 60vh;
     /* background: url('https://magsbc.com/wp-content/uploads/2022/07/placeholder.png') no-repeat; */
-    background: rgba(0, 0, 0, 0.2) url('../assets/t1.jpg');
+    background: rgba(0, 0, 0, 0.5) url('../assets/t5.jpg');
     background-blend-mode: darken;
     background-position: center; 
     background-repeat: no-repeat;
@@ -94,4 +94,11 @@
     height: 50vh;
 }
 
-
+.content {
+    opacity: 100;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+}
+    .active {
+        opacity: 100;
+    }

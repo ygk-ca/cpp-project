@@ -33,7 +33,7 @@ const Navbar = () => {
                     <div className="container">
                         <div className="logo">
                             <a href="/">
-                                <img src={QueensLogoH} height="80"></img>
+                                <img src={QueensLogoH} height="63" width="256"></img>
                             </a>
                         </div>
                         <div id="mainListDiv" className="main_list" ref={mainListDivRef}>

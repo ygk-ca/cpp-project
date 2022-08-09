@@ -120,17 +120,17 @@
   }
 
 
-/* SDG boxes section */
+/* --------------- SDG boxes section ------------- */
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     border-radius: 16px;
     background-color: linear-gradient(90deg,rgba(244,247,252,0.5) 0%,rgba(244,247,252,0.5) 100%);
     justify-content: center;
-    padding-top: 3.5vh;
-    padding-bottom: 3.5vh;
-    padding-left: 7vh;
-    padding-right: 7vh;
+    padding-top: 3.5vw;
+    padding-bottom: 3.5vw;
+    padding-left: 7vw;
+    padding-right: 7vw;
 }
   
 .sdgBox {
@@ -259,7 +259,17 @@
 }
 
 
-
-
-
 a:link { text-decoration: none; color: white; }
+
+/* ----------- Introduction Page Section ------------ */
+
+
+.intro-container {
+    /* Temp */
+    height: 50vh; 
+    background-color: white;
+}
+
+.intro-left-container {
+
+}

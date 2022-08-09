@@ -1,11 +1,10 @@
 import "../styles/Home.css";
 import { useEffect, useState } from 'react'
+
+// import home specific components
 import TitleBackground from "../components/HomeComponents/TitleBackground";
 import HomeBody from "../components/HomeComponents/HomeBody";
 
-// components
-import ProjectDetails from '../components/ProjectDetails'
-import ProjectAdminForm from '../components/ProjectAdminForm'
 
 const Home = () => {
     const [projects, setProjects] = useState(null)

@@ -1,6 +1,7 @@
 import ProjectDetails from '../ProjectDetails'
 import ProjectAdminForm from '../ProjectAdminForm'
 import SdgBackground from './SdgSection'
+import IntroductionSection from './IntroductionSection'
 
 import { useEffect, useState } from 'react'
 
@@ -22,6 +23,8 @@ const HomeBody = () => {
 
     return (
         <>
+
+            <IntroductionSection/>
             <SdgBackground />
             <div className="home">
                 {/* Temp HomePage body */}

@@ -29,7 +29,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="No Poverty" src={SDG1}/>
                     </div>
                     <div class="flip-card-back sdg1Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/poverty/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/poverty/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Zero Hunger" src={SDG2}/>
                     </div>
                     <div class="flip-card-back sdg2Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/hunger/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/hunger/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Good Health & Well Being" src={SDG3}/>
                     </div>
                     <div class="flip-card-back sdg3Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/health/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/health/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Quality Education" src={SDG4}/>
                     </div>
                     <div class="flip-card-back sdg4Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/education/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/education/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Gender Equality" src={SDG5}/>
                     </div>
                     <div class="flip-card-back sdg5Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/gender-equality/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/gender-equality/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Clean Water and Sanitation" src={SDG6}/>
                     </div>
                     <div class="flip-card-back sdg6Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/water-and-sanitation/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/water-and-sanitation/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Affordable and Clean Energy" src={SDG7}/>
                     </div>
                     <div class="flip-card-back sdg7Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/energy/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/energy/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Decent Work and Economic Growth" src={SDG8}/>
                     </div>
                     <div class="flip-card-back sdg8Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/economic-growth/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/economic-growth/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Industry, Innovation and Infrastructure" src={SDG9}/>
                     </div>
                     <div class="flip-card-back sdg9Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/infrastructure-industrialization/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/infrastructure-industrialization/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Reduced Inequalities" src={SDG10}/>
                     </div>
                     <div class="flip-card-back sdg10Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/inequality/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/inequality/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Sustainable Cities and Communities" src={SDG11}/>
                     </div>
                     <div class="flip-card-back sdg11Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/cities/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/cities/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -161,7 +161,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Responsible Consumption and Production" src={SDG12}/>
                     </div>
                     <div class="flip-card-back sdg12Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/sustainable-consumption-production/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/sustainable-consumption-production/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -173,7 +173,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Climate Action" src={SDG13}/>
                     </div>
                     <div class="flip-card-back sdg13Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/climate-change/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/climate-change/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Life Below Water" src={SDG14}/>
                     </div>
                     <div class="flip-card-back sdg14Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/oceans/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/oceans/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -197,7 +197,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Life on Land" src={SDG15}/>
                     </div>
                     <div class="flip-card-back sdg15Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/biodiversity/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/biodiversity/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -209,7 +209,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Peace and Justice Strong Institutions" src={SDG16}/>
                     </div>
                     <div class="flip-card-back sdg16Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/peace-justice/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/peace-justice/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
@@ -221,7 +221,7 @@ const SdgBackground = () => {
                         <img className="sdgBox" alt="Partnerships for the Goals" src={SDG17}/>
                     </div>
                     <div class="flip-card-back sdg17Color">
-                        <a style={{color: "white"}} href="https://www.un.org/sustainabledevelopment/globalpartnerships/" target="_blank"><h3>Read More</h3></a>
+                        <a style={{color: "white"}} rel="noopener noreferrer" href="https://www.un.org/sustainabledevelopment/globalpartnerships/" target="_blank"><h3>Read More</h3></a>
                     </div>
                 </div>
             </div>
