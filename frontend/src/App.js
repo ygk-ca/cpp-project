@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Filter from './pages/Filter'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Contact from './pages/Contact'
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
           <Route 
             path="/filter"
             element={<Filter />}
+          />
+          <Route 
+            path="/contact"
+            element={<Contact />}
           />
         </Routes>
       </div>

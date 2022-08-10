@@ -90,7 +90,7 @@
 // export default ProjectDetails
 
 import "../styles/ProjectDetails.css";
-import React from 'react';
+import React, { useState } from 'react';
 import PDF from './s.pdf'
 
 
@@ -145,7 +145,12 @@ const ProjectDetails = ({ project }) => {
                             </a>
                         </>
                     }
-                   
+                    {project.assignment_type !== 'Mini Case Studies' &&
+                        <button className="btn btn-outline" onClick={function(event){ navigator.clipboard.writeText(project.goal); alert('Text copied to clipboard!') }}
+                            >
+                            Copy to Clipboard
+                        </button>
+                    }
                 </div>
             </div>
         </div>

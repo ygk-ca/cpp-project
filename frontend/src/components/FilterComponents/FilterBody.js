@@ -19,7 +19,7 @@ const SDGOptions = [
     "SDG 12: Responsible Consumption & Production",
     "SDG 13: Climate Action",
     "SDG 14: Life Below Water",
-    "SDG 15: Life on Land",
+    "SDG 15: Life On Land",
     "SDG 16: Peace, Justice, & Strong Institutions",
     "SDG 17: Partnerships for the Goals"
 ]

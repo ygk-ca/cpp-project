@@ -102,3 +102,9 @@
     .active {
         opacity: 100;
     }
+
+
+.contact-container {
+    height: 30vh; 
+    background-color: rgb(4, 4, 20);
+}
