@@ -1,7 +1,14 @@
 const IntroductionSection = () => {
     return (
         <div className="intro-container">
-            s
+            <div className="intro-left-container">
+                asd
+            </div>
+            <div className="intro-right-container">
+                <div className="right-image-container">
+                    asd
+                </div>
+            </div>
         </div>
         
     )

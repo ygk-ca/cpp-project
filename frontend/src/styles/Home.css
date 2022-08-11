@@ -271,5 +271,19 @@ a:link { text-decoration: none; color: white; }
 }
 
 .intro-left-container {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background: yellow;
+}
 
+.intro-right-container {
+    background: green;
+    height: 100%;
+}
+
+.right-image-container {
+    height: 80%;
+    padding-top: 20px;
+    border: 1px solid black;
 }
