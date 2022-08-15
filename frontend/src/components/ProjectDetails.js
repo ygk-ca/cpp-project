@@ -1,15 +1,23 @@
 import "../styles/ProjectDetails.css";
+import Banner1 from "../assets/SDGBanners/banner17.jpg"
 import React, { useState } from 'react';
 import PDF from './s.pdf'
 
 
 const ProjectDetails = ({ project }) => {
+    // Extracting SDG title name's number and storing it
+    var str = project.sdg.toString()
+    var sdg_num = str.match(/(\d+)/)
+    console.log(sdg_num[0])
     return (
      <>
         <div className="card-grid">
             <div className="card">
                 <div className="card-header card-image">
-                    <img src="https://c4.wallpaperflare.com/wallpaper/672/357/220/road-background-color-hd-wallpaper-thumb.jpg" alt="temp banner"/>
+                    <img 
+                        src={require('../assets/SDGBanners/banner' + sdg_num[0] + '.jpg')}
+                        alt="Banner to indicate different SDG's"
+                    />
                 </div>
                 <div className="card-title"><strong>{project.sdg}</strong></div>
                 <div className="card-body">

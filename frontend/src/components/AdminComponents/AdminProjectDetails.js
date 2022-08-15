@@ -3,6 +3,18 @@ import PDF from '../s.pdf'
 
 
 const AdminProjectDetails = ({ project }) => {
+    // Handles deleting projects
+    const handleClick = async () => {
+        const response = await fetch('/api/projects/' + project._id, {
+            method: 'DELETE'
+        })
+        const json = await response.json()
+        
+        if (response.ok) {
+            alert('Item deleted!')
+        }
+    }
+
     return (
      <>
         <div className="card-grid">
@@ -44,7 +56,9 @@ const AdminProjectDetails = ({ project }) => {
                             Copy to Clipboard
                         </button>
                     }
+                    <button className="del-btn" onClick={handleClick}>Delete</button>
                 </div>
+                
             </div>
         </div>
      </>

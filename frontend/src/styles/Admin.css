@@ -5,6 +5,17 @@
     background-color: #fff;
 }
 
+.del-btn {
+    background: #c0130d;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: .5em .75em;
+    border-radius: .25em;
+    margin: .25rem;
+    cursor: pointer;
+}
+
 .form {
     padding: 35px;
 }

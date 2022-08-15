@@ -136,7 +136,7 @@ const ProjectAdminForm = () => {
                 value={published}
             />
 
-            <label>Website URL:</label>
+            <label>OPTIONAL - Website URL:</label>
             <input 
                 type="text"
                 onChange={(e) => setWebsiteURL(e.target.value)}
