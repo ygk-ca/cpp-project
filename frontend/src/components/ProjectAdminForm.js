@@ -108,7 +108,7 @@ const ProjectAdminForm = () => {
                 value={goal}
             />
 
-            <label>Orginization:</label>
+            <label>Organization:</label>
             <input 
                 type="text"
                 onChange={(e) => setOrginization(e.target.value)}

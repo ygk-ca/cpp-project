@@ -264,26 +264,51 @@ a:link { text-decoration: none; color: white; }
 /* ----------- Introduction Page Section ------------ */
 
 
-.intro-container {
-    /* Temp */
-    height: 50vh; 
-    background-color: white;
+h1 {
+  font-size: 1.75rem;
+  margin: 0 0 0.75rem 0;
+  border: 1px solid black;
+  display: flex;
+  justify-content: left;
+  padding-left: 1em;
 }
 
-.intro-left-container {
-    float: left;
-    width: 50%;
-    height: 100%;
-    background: yellow;
+.para-text {
+  font-size: 1em;
+  border: 1px solid black;
+  padding: 2em;
+  
 }
 
-.intro-right-container {
-    background: green;
-    height: 100%;
+/* Pattern styles */
+.intro-container1 {
+  display: flex;
+  background-color: white;
 }
 
-.right-image-container {
-    height: 80%;
-    padding-top: 20px;
-    border: 1px solid black;
+.left-half {
+  flex: 1.5;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.right-half {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+@media (max-width: 1000px) {
+  .intro-container1 {
+    flex-direction: column;
+  }
 }
