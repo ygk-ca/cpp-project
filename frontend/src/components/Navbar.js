@@ -49,7 +49,7 @@ const Navbar = () => {
                                 </li>
                             </ul>
                         </div>
-                        <span className={`navTrigger ${isActive ? "active" : ""}`} onClick={onClickNavTrigger}>
+                        <span className={`navTrigger ${isActive ? "active" : ""}` + (scrolled ? "nav-logo-padding" : "")} onClick={onClickNavTrigger}>
                             <i></i>
                             <i></i>
                             <i></i>

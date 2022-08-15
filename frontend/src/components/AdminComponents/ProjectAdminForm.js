@@ -90,10 +90,10 @@ const ProjectAdminForm = () => {
     }
 
     return (
-        <form className="create" onSubmit={handleSubmit}>
+        <form className="create project-form" onSubmit={handleSubmit}>
             <h3>Add a New Project</h3>
 
-            <label>SDG (Num + Name):</label>
+            <label>Sustainable Development Goal:</label>
             <input 
                 type="text"
                 placeholder="e.g. SDG 2: Zero Hunger"
@@ -101,7 +101,7 @@ const ProjectAdminForm = () => {
                 value={sdg}
             />
 
-            <label>Goal:</label>
+            <label>Description:</label>
             <input 
                 type="text"
                 onChange={(e) => setGoal(e.target.value)}
@@ -153,23 +153,20 @@ const ProjectAdminForm = () => {
             <label>Select Theme(s):</label>
             {themeselector}
 
-            <label>Select More SDGs:</label>
 
-
-            <label>Sharepoint Link (Tier 2):</label>
-            <input 
-                type="text"
-                onChange={(e) => setSharepointLink(e.target.value)}
-                value={sharepoint_link}
-            />
-
-            <label>Statement (Tier 1):</label>
+            <label>OPTIONAL - Statement (Tier 1):</label>
             <input 
                 type="text"
                 onChange={(e) => setStatement(e.target.value)}
                 value={statement}
             />
 
+            <label>OPTIONAL - Qualtrics Link (Tier 2):</label>
+            <input 
+                type="text"
+                onChange={(e) => setSharepointLink(e.target.value)}
+                value={sharepoint_link}
+            />
             
             <button>Add Project</button>
             {error && <div className="error">{error}</div>}

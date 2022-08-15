@@ -6,6 +6,7 @@ import Filter from './pages/Filter'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Contact from './pages/Contact'
+import Admin from './pages/Admin'
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
           <Route 
             path="/contact"
             element={<Contact />}
+          />
+          <Route 
+            path="/admin-page"
+            element={<Admin />}
           />
         </Routes>
       </div>

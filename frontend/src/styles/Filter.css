@@ -1,7 +1,6 @@
 .filterBackground {
     height: 60vh;
-    /* background: url('https://magsbc.com/wp-content/uploads/2022/07/placeholder.png') no-repeat; */
-    background: rgba(0, 0, 0, 0.5) url('../assets/t5.jpg');
+    background: rgba(0, 0, 0, 0.55) url('../assets/t5.jpg');
     background-blend-mode: darken;
     background-position: center; 
     background-repeat: no-repeat;
@@ -10,6 +9,14 @@
     display: flex;
     flex-direction: column;
     justify-content: stretch;
+}
+
+.background {
+    align-items: center;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    position: relative;
 }
 
 .filterTitle {
@@ -61,7 +68,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-
+    
 }
 
 .filterButtonContainer {
@@ -102,9 +109,3 @@
     .active {
         opacity: 100;
     }
-
-
-.contact-container {
-    height: 30vh; 
-    background-color: rgb(4, 4, 20);
-}

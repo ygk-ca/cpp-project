@@ -1,9 +1,8 @@
-import "../styles/ProjectDetails.css";
 import React, { useState } from 'react';
-import PDF from './s.pdf'
+import PDF from '../s.pdf'
 
 
-const ProjectDetails = ({ project }) => {
+const AdminProjectDetails = ({ project }) => {
     return (
      <>
         <div className="card-grid">
@@ -53,4 +52,4 @@ const ProjectDetails = ({ project }) => {
     )
 }
 
-export default ProjectDetails
+export default AdminProjectDetails

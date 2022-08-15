@@ -5,7 +5,6 @@ const TitleBackground = () => {
                 <div id="header-content">
                     <div className="title">Social Impact Learning Lab</div>
                     <div className="subtitle">Consciously creating opportunities for change</div>
-                    {/* <div className="subtitle">Conciously creating <span className="fun-subtitle">opportunities</span> for change</div> */}
                 </div>
             </div>
         </div>

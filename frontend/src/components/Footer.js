@@ -9,6 +9,7 @@ const Footer = () => {
                 <a href="#">Back to Top</a>
                 <a href="#">Terms of Use</a>
                 <a href="#">Privacy</a>
+                <a href="admin-page">Admin Page</a>
             </nav>
             </div>
         </footer>

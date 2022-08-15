@@ -1,0 +1,54 @@
+.admin-page {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    gap: 15px;
+    background-color: #fff;
+}
+
+.form {
+    padding: 35px;
+}
+
+.project-form {
+    background-color: whitesmoke;
+    padding: 30px;
+    display: block;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+}
+
+.adminBackground {
+    height: 60vh;
+    /* background: url('https://magsbc.com/wp-content/uploads/2022/07/placeholder.png') no-repeat; */
+    background: rgba(0, 0, 0, 0.7) url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80');
+    background-blend-mode: darken;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.background {
+    align-items: center;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    /* overflow: hidden; */
+    position: relative;
+    
+}
+
+.adminTitle {
+    color: #fff;
+    margin : 0;
+    opacity: 0;
+    animation: fade-slide-up 3s 3s cubic-bezier(0, 0.5, 0, 1) forwards;
+    animation-delay: 800ms;
+    font-size: calc(1.80vw + 1.6vmin);
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+}

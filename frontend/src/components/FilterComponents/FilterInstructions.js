@@ -1,4 +1,4 @@
-const ContactBanner = () => {
+const FilterInstructions = () => {
     return (
         <div className="contact-container">
             s
@@ -7,4 +7,4 @@ const ContactBanner = () => {
     )
 }
 
-export default ContactBanner
+export default FilterInstructions

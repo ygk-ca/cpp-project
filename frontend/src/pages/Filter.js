@@ -2,13 +2,13 @@ import "../styles/Filter.css";
 
 import FilterTitle from "../components/FilterComponents/FilterTitle";
 import FilterBody from "../components/FilterComponents/FilterBody";
-import ContactBanner from "../components/FilterComponents/ContactBanner";
+import FilterInstructions from "../components/FilterComponents/FilterInstructions";
 
 const Filter = () => {
     return (
         <div className="">
             <FilterTitle />
-            <ContactBanner />
+            <FilterInstructions />
             <div>
                 <FilterBody/>
             </div>
