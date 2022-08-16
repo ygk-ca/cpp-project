@@ -51,11 +51,22 @@
 .subtitle {
   animation: fade-slide-up 3s 3s cubic-bezier(0, 0.5, 0, 1) forwards;
   animation-delay: 800ms;
+  /* font-size: 1.5em; */
   font-size: calc(1.10vw + 0.8vmin);
   font-weight: 300;
   letter-spacing: 0.5em;
   text-transform: uppercase;
   
+}
+
+@media (max-width: 1000px) {
+  .title {
+    font-size: 4em;
+  }
+
+  .subtitle {
+    font-size: 1.5em;
+  }
 }
 
 .fun-subtitle {

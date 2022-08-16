@@ -39,7 +39,10 @@ const Navbar = () => {
                         <div id="mainListDiv" className="main_list" ref={mainListDivRef}>
                             <ul className="navlinks">
                                 <li>
-                                    <a href="#">About</a>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://queensuca-my.sharepoint.com/:x:/g/personal/cd88_queensu_ca/EQPKQCyBZV9IgN8bef55Xc4Bw1eC8idlkICHTwXJ5C8lyg?e=V91bfJ">Resources</a>
                                 </li>
                                 <li>
                                     <a href="/filter">Catalogue</a>
