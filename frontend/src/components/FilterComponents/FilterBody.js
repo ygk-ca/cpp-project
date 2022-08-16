@@ -74,16 +74,7 @@ class FilterBody extends React.Component {
         this.setState({theme: event.target.value});
     }
 
-    // FOR TESTING ONLY
-    // testSubmit() {
-    //     alert(this.state.sdg + '-------ASSIGNMENT: ' + this.state.assignment_type + '------ Theme: ' + this.state.theme);
-    //     console.log(this.state.sdg)
-    //     console.log(this.state.assignment_type)
-    //     console.log(this.state.theme)
-    // }
-
     handleSearchChange(event) {
-        console.log(event.target.value)
         this.setState({search: event.target.value});
     }
 
@@ -99,17 +90,17 @@ class FilterBody extends React.Component {
         const data = {
             sdg: this.state.sdg, 
             assignment_type: this.state.assignment_type,
-            theme: this.state.theme
+            theme: this.state.theme,
+            keywords: this.state.search
         }
 
-        fetch(`/api/projects/filter?sdg=${encodeURIComponent(data.sdg)}&assignment_type=${encodeURIComponent(data.assignment_type)}&theme=${encodeURIComponent(data.theme)}`, {
+        fetch(`/api/projects/filter?sdg=${encodeURIComponent(data.sdg)}&assignment_type=${encodeURIComponent(data.assignment_type)}&theme=${encodeURIComponent(data.theme)}&keywords=${encodeURIComponent(data.keywords)}`, {
             method: "GET",
             headers: {
                     'Content-Type': 'application/json;charset=utf-8', 
                 },
         })
             .then(response => response.json())
-            // Add a loader here
             .then(json => this.setState({projects: json}))
     }
 

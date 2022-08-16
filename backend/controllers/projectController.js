@@ -12,6 +12,7 @@ const getProjects = async (req, res) => {
 const getFilteredProjects = async (req, res) => {
     // Initializing request object that will be sent to retrieve DB information
     var request = {}
+    console.log(req.query.keywords)
 
     // --------- Theme functions ---------
 
@@ -68,6 +69,9 @@ const getFilteredProjects = async (req, res) => {
         else {
             addThemeToRequest(req.query.theme)
         }
+    }
+    if (req.query.keywords !== '') {
+        request["keywords"] = { $all: req.query.keywords}
     }
 
     console.log(request)
