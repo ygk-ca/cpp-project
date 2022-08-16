@@ -109,3 +109,19 @@
     .active {
         opacity: 100;
     }
+
+    @media (max-width: 1110px) {
+        .filterHome {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .filterTableContainer {
+            margin: 50px;
+        }
+        .filterContainer {
+            flex-direction: row;
+            justify-content: center;
+            display: flex;
+        }
+    }

@@ -31,7 +31,7 @@ const AdminProjectDetails = ({ project }) => {
                 </div>
                 <div className="card-title"><strong>{project.sdg}</strong></div>
                 <div className="card-body">
-                    <strong>Goal:</strong> {project.goal}
+                    <strong>Description:</strong> {project.goal}
                 </div>
                 <div className="card-themes">
                     <strong>Theme(s):</strong> {project.theme.map((theme)=>{
@@ -47,12 +47,16 @@ const AdminProjectDetails = ({ project }) => {
                 <div className="card-assignment">
                     <strong>Assignment Type:</strong> {project.assignment_type}
                 </div>
+
+                <div className="card-assignment">
+                    <strong>Keywords:</strong> {project.keywords.map((kw)=>{return kw})}
+                </div>
                 <div className="card-footer">
                     <button className="btn">Details</button>
                     {project.assignment_type === 'Mini Case Studies' &&
                         <>
                             <button className="btn btn-outline">Download</button>
-                            <a href={PDF} without rel="noopener noreferrer" target="_blank">
+                            <a href={PDF} rel="noopener noreferrer" target="_blank">
                                 <button className="btn">Preview</button>
                             </a>
                         </>

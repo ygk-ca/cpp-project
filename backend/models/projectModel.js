@@ -11,22 +11,19 @@ const projectSchema = new Schema({
         type: String,
         required: true
     }],
-    // goal of the project
+    // description of the project
     goal: {
         type: String,
         required: true
     },
     orginization: {
         type: String,
-        required: true
     },
     source: {
         type: String,
-        required: true
     },
     location: {
         type: String,
-        required: true
     },
     // year published
     published: { 
@@ -41,6 +38,12 @@ const projectSchema = new Schema({
     },
     // array of themes
     theme: [{
+        type: String,
+        required: true
+    }],
+
+    // array of keywords
+    keywords: [{
         type: String,
         required: true
     }],

@@ -15,6 +15,11 @@ const ProjectAdminForm = () => {
     const [statement, setStatement] = useState('')
     const [error, setError] = useState(null)
 
+    // Adding keywords
+    const [keywords, setKeywords] = useState([]);
+    const [kw1, setKW1] = useState('');
+    const [kw2, setKW2] = useState('');
+    const [kw3, setKW3] = useState('');
 
     // Adding themes
     const [theme, setThemes] = useState([]);
@@ -38,21 +43,18 @@ const ProjectAdminForm = () => {
     }
 
     const themeselector = available_themes.map((name)=>{
-            let checked = false;
-            if(theme.includes(name)){
-                checked = true;
-            }
-            
-            return <div key={uuidv4()} className=""><input type="checkbox" {...(checked ? {checked: 'checked'}: {})}  value={name} onClick={(ev)=>{ if(ev.target.checked) {  addTheme(name)  } else { removeTheme(name)} } } /> {name}</div>;
+        let checked = false;
+        if(theme.includes(name)){
+            checked = true;
+        }
+        return <div key={uuidv4()} className=""><input type="checkbox" {...(checked ? {checked: 'checked'}: {})}  value={name} onClick={(ev)=>{ if(ev.target.checked) {  addTheme(name)  } else { removeTheme(name)} } } /> {name}</div>;
     });
 
 
     const handleSubmit = async (e) => {
-
-        
-        e.preventDefault() // Prevents refresh of page from happening
+        // e.preventDefault() // Prevents refresh of page from happening
         console.log('button clicked')
-        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme: [...theme].sort(), sharepoint_link, statement}
+        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme: [...theme].sort(), keywords: [kw1, kw2, kw3], sharepoint_link, statement}
         console.log(project)
         console.log(theme)                
         // Sending form response to backend
@@ -80,6 +82,9 @@ const ProjectAdminForm = () => {
             setPublished('')
             setWebsiteURL('')
             setAssignmentType('')
+            setKW1('')
+            setKW2('')
+            setKW3('')
             setThemes([])
             setSharepointLink('')
             setStatement('')
@@ -150,9 +155,35 @@ const ProjectAdminForm = () => {
                 value={assignment_type}
             />
 
+            <hr></hr>
+
             <label>Select Theme(s):</label>
             {themeselector}
 
+            <hr></hr>
+
+            <label>Enter Keyword 1:</label>
+            <input 
+                type="text"
+                onChange={(e) => setKW1(e.target.value)}
+                value={kw1}
+            />
+
+            <label>Enter Keyword 2:</label>
+            <input 
+                type="text"
+                onChange={(e) => setKW2(e.target.value)}
+                value={kw2}
+            />
+
+            <label>Enter Keyword 3:</label>
+            <input 
+                type="text"
+                onChange={(e) => setKW3(e.target.value)}
+                value={kw3}
+            />
+
+            <hr></hr>
 
             <label>OPTIONAL - Statement (Tier 1):</label>
             <input 

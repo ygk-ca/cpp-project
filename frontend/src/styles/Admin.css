@@ -63,3 +63,11 @@
     letter-spacing: 0.4em;
     text-transform: uppercase;
 }
+
+@media (max-width: 1110px) {
+    .admin-page {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+}

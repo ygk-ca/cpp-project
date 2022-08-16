@@ -51,7 +51,7 @@ header a {
 .project-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
-  color: var(--primary);
+  color: #1aac83;
 }
 .project-details p {
   margin: 0;

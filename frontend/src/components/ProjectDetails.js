@@ -20,7 +20,7 @@ const ProjectDetails = ({ project }) => {
                 </div>
                 <div className="card-title"><strong>{project.sdg}</strong></div>
                 <div className="card-body">
-                    <strong>Goal:</strong> {project.goal}
+                    <strong>Description:</strong> {project.goal}
                 </div>
                 <div className="card-themes">
                     <strong>Theme(s):</strong> {project.theme.map((theme)=>{
@@ -35,6 +35,10 @@ const ProjectDetails = ({ project }) => {
                 </div>
                 <div className="card-assignment">
                     <strong>Assignment Type:</strong> {project.assignment_type}
+                </div>
+
+                <div className="card-assignment">
+                    <strong>Keywords:</strong> {project.keywords.map((kw)=>{return kw})}
                 </div>
                 <div className="card-footer">
                     <button className="btn">Details</button>
