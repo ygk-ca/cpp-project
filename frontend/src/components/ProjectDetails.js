@@ -1,5 +1,4 @@
 import "../styles/ProjectDetails.css";
-import Banner1 from "../assets/SDGBanners/banner17.jpg"
 import React, { useState } from 'react';
 import PDF from './s.pdf'
 

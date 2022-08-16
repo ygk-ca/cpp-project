@@ -4,7 +4,7 @@ import PDF from '../s.pdf'
 
 const AdminProjectDetails = ({ project }) => {
     // Handles deleting projects
-    const handleClick = async () => {
+    const handleDelete = async () => {
         const response = await fetch('/api/projects/' + project._id, {
             method: 'DELETE'
         })
@@ -15,12 +15,19 @@ const AdminProjectDetails = ({ project }) => {
         }
     }
 
+    // Extracting SDG title name's number and storing it
+    var str = project.sdg.toString()
+    var sdg_num = str.match(/(\d+)/)
+
     return (
      <>
         <div className="card-grid">
             <div className="card">
                 <div className="card-header card-image">
-                    <img src="https://c4.wallpaperflare.com/wallpaper/672/357/220/road-background-color-hd-wallpaper-thumb.jpg" alt="temp banner"/>
+                    <img 
+                        src={require('../../assets/SDGBanners/banner' + sdg_num[0] + '.jpg')}
+                        alt="Banner to indicate different SDG's"
+                    />
                 </div>
                 <div className="card-title"><strong>{project.sdg}</strong></div>
                 <div className="card-body">
@@ -56,7 +63,7 @@ const AdminProjectDetails = ({ project }) => {
                             Copy to Clipboard
                         </button>
                     }
-                    <button className="del-btn" onClick={handleClick}>Delete</button>
+                    <button className="del-btn" onClick={handleDelete}>Delete</button>
                 </div>
                 
             </div>
