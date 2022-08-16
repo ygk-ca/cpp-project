@@ -35,6 +35,12 @@ const assingmentOptions = [
     { value: 'Mini Case Studies', label: 'Mini Case Studies'}
 ]
 
+// Array to hold all possible keywords
+const keywordsOptions = [
+    "Homeless",
+    ""
+]
+
 // Main component handling the filter body
 class FilterBody extends React.Component {
     constructor(props) {
@@ -128,7 +134,7 @@ class FilterBody extends React.Component {
                         
                         <div className="filterSDGDropDown">
                             <div className="themeDropdown">
-                                <div className="filter-subtitle">Sustainable Development Goals:</div>
+                                <div className="filter-subtitle">Sustainable Development Goal:</div>
                                 <Multiselect
                                     isObject={false}
                                     onRemove={(e) => {
@@ -213,3 +219,4 @@ class FilterBody extends React.Component {
     }
   }
 export default FilterBody
+

@@ -2,7 +2,7 @@
 
 
 .intro-title {
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 800;
     /* margin-top: 0.75em; */
     display: flex;
@@ -10,23 +10,24 @@
     padding-left: 1em;
     width: 75%;
     margin-left: 50px;
+    margin-top: 20px;
     color: #002452;
   }
   
 
   .para-text {
-    font-size: 1.15em;
+    font-size: 1.05em;
     padding: 1.5em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     letter-spacing: 1.5px;
-    margin-right: 50px;
+    margin-right: 0px;
     margin-left: 50px;
-    width: 75%;
+    width: 85%;
     color: #212121;
-    background-color:  #f1f2f2;
+    /* background-color:  #f1f2f2;
     box-shadow: 5px 10px 8px #888888;
-    border-radius: 25px;
+    border-radius: 25px; */
   }
   
   /* Pattern styles */
@@ -63,9 +64,11 @@
     .intro-title {
         width: 100%;
         margin: 0 0 0 0;
+        margin-top: 20px;
         justify-content: center;
         text-align: center;
         display: flex;
+        
     }
       
     .para-text {
