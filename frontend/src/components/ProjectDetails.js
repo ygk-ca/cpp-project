@@ -7,7 +7,7 @@ const ProjectDetails = ({ project }) => {
     // Extracting SDG title name's number and storing it
     var str = project.sdg.toString()
     var sdg_num = str.match(/(\d+)/)
-    console.log(sdg_num[0])
+
     return (
      <>
         <div className="card-grid">
@@ -38,14 +38,24 @@ const ProjectDetails = ({ project }) => {
                 </div>
 
                 <div className="card-assignment">
-                    <strong>Keywords:</strong> {project.keywords.map((kw)=>{return kw})}
+                    <strong>Keywords:</strong> {project.keywords.map((kw)=>{
+                                if (kw !== project.keywords[project.keywords.length - 1]) {
+                                    return kw + ', '
+                                }
+                                else {
+                                    return kw
+                                }
+                            }
+                        )}
                 </div>
                 <div className="card-footer">
                     <button className="btn">Details</button>
                     {project.assignment_type === 'Mini Case Studies' &&
                         <>
-                            <button className="btn btn-outline">Download</button>
-                            <a href={PDF} without rel="noopener noreferrer" target="_blank">
+                            <a href={project.sharepoint_link} without="true" rel="noopener noreferrer" target="_blank">
+                                <button className="btn btn-outline">Download</button>
+                            </a>
+                            <a href={PDF} without="true" rel="noopener noreferrer" target="_blank">
                                 <button className="btn">Preview</button>
                             </a>
                         </>

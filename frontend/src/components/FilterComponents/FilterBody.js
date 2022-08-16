@@ -45,6 +45,7 @@ class FilterBody extends React.Component {
             assignment_type: "",
             sdg: [""],
             theme: [""],
+            search: "",
             
             showProjects: true,
             // Select module features
@@ -55,6 +56,7 @@ class FilterBody extends React.Component {
         this.handleSDGChange = this.handleSDGChange.bind(this);
         this.handleAssignmentChange = this.handleAssignmentChange.bind(this);
         this.handleThemeChange = this.handleThemeChange.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.testSubmit = this.testSubmit.bind(this);
     }
@@ -79,6 +81,11 @@ class FilterBody extends React.Component {
     //     console.log(this.state.assignment_type)
     //     console.log(this.state.theme)
     // }
+
+    handleSearchChange(event) {
+        console.log(event.target.value)
+        this.setState({search: event.target.value});
+    }
 
 
     // Handling all 3 input submissions
@@ -130,6 +137,7 @@ class FilterBody extends React.Component {
                         
                         <div className="filterSDGDropDown">
                             <div className="themeDropdown">
+                                <div className="filter-subtitle">Sustainable Development Goals:</div>
                                 <Multiselect
                                     isObject={false}
                                     onRemove={(e) => {
@@ -139,11 +147,10 @@ class FilterBody extends React.Component {
                                         this.setState({sdg: e});
                                     }}
                                     options={SDGOptions}
-                                    >
-                                        
-                                    {console.log('SDG: ' + this.state.sdg)}
-                                </Multiselect>
+                                />
                                 <br></br>
+
+                                <div className="filter-subtitle">Assignment Type:</div>
                                 <Select
                                     className="basic-single"
                                     classNamePrefix="select"
@@ -156,10 +163,11 @@ class FilterBody extends React.Component {
                                         this.setState({ assignment_type: e.value })
                                     }}
                                     options={assingmentOptions}                 
-                                >
-                                    {console.log('ASSIGNMENT: ' + this.state.assignment_type)}
-                                </Select>
+                                />
+
                                 <br></br>
+
+                                <div className="filter-subtitle">Theme(s):</div>
                                 <Multiselect
                                     isObject={false}
                                     onRemove={(e) => {
@@ -169,10 +177,16 @@ class FilterBody extends React.Component {
                                         this.setState({theme: e});
                                     }}
                                     options={themesOptions}
-                                    >
-                                        
-                                    {console.log('THEMES: ' + this.state.theme)}
-                                </Multiselect>
+                                />
+
+                                <br></br>
+                                <div className="filter-subtitle">Keyword Search:</div>
+                                <input
+                                    type="text"
+                                    placeholder='Enter a Keyword'
+                                    className="search-bar"
+                                    onChange={this.handleSearchChange}
+                                />
                             </div>
 
                         </div>

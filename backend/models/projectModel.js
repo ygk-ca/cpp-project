@@ -28,6 +28,7 @@ const projectSchema = new Schema({
     // year published
     published: { 
         type: Number,
+        required: true
     },
     website_url: {
         type: String,

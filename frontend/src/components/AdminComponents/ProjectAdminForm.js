@@ -35,9 +35,9 @@ const ProjectAdminForm = () => {
     const removeTheme = (name) =>{
         const index = theme.indexOf(name);
         if(index !== -1) {
-        let temp_themes = [...theme];
-        temp_themes.splice(index, 1);
-        setThemes(temp_themes);
+            let temp_themes = [...theme];
+            temp_themes.splice(index, 1);
+            setThemes(temp_themes);
         }
 
     }
@@ -47,12 +47,12 @@ const ProjectAdminForm = () => {
         if(theme.includes(name)){
             checked = true;
         }
-        return <div key={uuidv4()} className=""><input type="checkbox" {...(checked ? {checked: 'checked'}: {})}  value={name} onClick={(ev)=>{ if(ev.target.checked) {  addTheme(name)  } else { removeTheme(name)} } } /> {name}</div>;
+        return <div key={uuidv4()} className=""><input type="checkbox" {...(checked ? {checked: 'checked'}: {})}  value={name} onChange={(ev)=>{ if(ev.target.checked) {  addTheme(name)  } else { removeTheme(name)} } } /> {name}</div>;
     });
 
 
     const handleSubmit = async (e) => {
-        // e.preventDefault() // Prevents refresh of page from happening
+        e.preventDefault() // Prevents refresh of page from happening
         console.log('button clicked')
         const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme: [...theme].sort(), keywords: [kw1, kw2, kw3], sharepoint_link, statement}
         console.log(project)
@@ -96,7 +96,9 @@ const ProjectAdminForm = () => {
 
     return (
         <form className="create project-form" onSubmit={handleSubmit}>
-            <h3>Add a New Project</h3>
+            <h2 style={{"textAlign": "center"}}>Add a New Project</h2>
+
+            <hr></hr>
 
             <label>Sustainable Development Goal:</label>
             <input 
@@ -104,6 +106,7 @@ const ProjectAdminForm = () => {
                 placeholder="e.g. SDG 2: Zero Hunger"
                 onChange={(e) => setSDG(e.target.value)}
                 value={sdg}
+                required
             />
 
             <label>Description:</label>
@@ -111,6 +114,7 @@ const ProjectAdminForm = () => {
                 type="text"
                 onChange={(e) => setGoal(e.target.value)}
                 value={goal}
+                required
             />
 
             <label>Organization:</label>
@@ -139,6 +143,7 @@ const ProjectAdminForm = () => {
                 type="text"
                 onChange={(e) => setPublished(e.target.value)}
                 value={published}
+                required
             />
 
             <label>OPTIONAL - Website URL:</label>
@@ -153,6 +158,7 @@ const ProjectAdminForm = () => {
                 type="text"
                 onChange={(e) => setAssignmentType(e.target.value)}
                 value={assignment_type}
+                required
             />
 
             <hr></hr>
@@ -167,6 +173,7 @@ const ProjectAdminForm = () => {
                 type="text"
                 onChange={(e) => setKW1(e.target.value)}
                 value={kw1}
+                required
             />
 
             <label>Enter Keyword 2:</label>
@@ -185,21 +192,24 @@ const ProjectAdminForm = () => {
 
             <hr></hr>
 
-            <label>OPTIONAL - Statement (Tier 1):</label>
+            <label>OPTIONAL - Statement (Tier 1 & 2):</label>
             <input 
                 type="text"
                 onChange={(e) => setStatement(e.target.value)}
                 value={statement}
             />
 
-            <label>OPTIONAL - Qualtrics Link (Tier 2):</label>
+            <label>OPTIONAL - Qualtrics Link (Tier 3):</label>
             <input 
                 type="text"
                 onChange={(e) => setSharepointLink(e.target.value)}
                 value={sharepoint_link}
             />
             
-            <button>Add Project</button>
+            <div className="add-proj">
+                <button>Add Project</button>
+            </div>
+            
             {error && <div className="error">{error}</div>}
         </form>
     )
