@@ -3,8 +3,9 @@ import React from "react";
 const ContactForm = () => {
     return (
 
-        <div className="t1">
-            <form action="https://formsubmit.co/vs61@queensu.ca" method="POST">
+        <div className="contact-page-body">
+            {/* change string query when activating new email */}
+            <form action="https://formsubmit.co/7e9607ca308334260faec51a813cd22e" method="POST">
                 <h1>Contact Us</h1>
                 <p>Please take a moment to get in touch, we will get back to you shortly.</p>
 

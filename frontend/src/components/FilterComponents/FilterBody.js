@@ -104,15 +104,17 @@ class FilterBody extends React.Component {
                         <div className="filterSDGDropDown">
                             <div className="themeDropdown">
                                 <div className="filter-subtitle">Sustainable Development Goal:</div>
-                                <Multiselect
-                                    isObject={false}
-                                    onRemove={(e) => {
-                                        this.setState({sdg: e});
+                                <Select
+                                    className="basic-single"
+                                    classNamePrefix="select"
+                                    placeholder="Select"
+                                    // isClearable={this.state.isClearable}
+                                    isSearchable={this.state.isSearchable}
+                                    name="color"
+                                    onChange={(e) => {
+                                        this.setState({ sdg: e.value })
                                     }}
-                                    onSelect={(e) => {
-                                        this.setState({sdg: e});
-                                    }}
-                                    options={SDGOptions}
+                                    options={SDGOptions}   
                                 />
 
                                 <br></br>
@@ -130,7 +132,7 @@ class FilterBody extends React.Component {
                                 />
 
                                 <br></br>
-                                <div className="filter-subtitle">Keyword Search:</div>
+                                <div className="filter-subtitle">Keyword(s):</div>
                                 <Multiselect
                                     isObject={false}
                                     onRemove={(e) => {
@@ -153,7 +155,6 @@ class FilterBody extends React.Component {
                                     isSearchable={this.state.isSearchable}
                                     name="color"
                                     onChange={(e) => {
-                                        console.log(e.value)
                                         this.setState({ assignment_type: e.value })
                                     }}
                                     options={assingmentOptions}                 

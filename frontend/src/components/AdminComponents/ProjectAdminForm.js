@@ -91,6 +91,7 @@ const ProjectAdminForm = () => {
             setStatement('')
             
             setError(null)
+            alert('Project added!')
             console.log('new project added', json)
         }
     }
