@@ -12,12 +12,11 @@ const getProjects = async (req, res) => {
 const getFilteredProjects = async (req, res) => {
     // Initializing request object that will be sent to retrieve DB information
     var request = {}
-    console.log(req.query.keywords)
 
     // --------- Theme functions ---------
 
-    // Function to separate commas from string - Complexity: O(n + n)
-    function separateCommas(str) {
+    // Function to separate commas from string - Complexity: O(2n)
+    function separateThemeCommas(str) {
         // O(n) algorithm to find indices of location of commas
         let commaLocations = []
         for (let i = 0; i < str.length; i++) {
@@ -48,6 +47,37 @@ const getFilteredProjects = async (req, res) => {
         }
     }
 
+    // --------- Keywords functions ---------
+    function separateKeywordCommas(str) {
+        // O(n) algorithm to find indices of location of commas
+        let commaLocations = []
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === ',') {
+                console.log(i)
+                commaLocations.push(i)
+            }
+        }
+        
+        // O(n) algorithm to separate commas from strings and extract words
+        let keywords = []
+        var l = 0 // Left pointer
+
+        for (let i = 0; i <= commaLocations.length; i++) {
+            var tempKeywords = str.slice(l, commaLocations[i])
+            l = commaLocations[i]+1
+            keywords.push(tempKeywords)
+        }
+
+        // Add the themes to the search query
+        addKeywordToRequest(keywords.sort())
+    }
+
+    // Function to add keywords to request object
+    function addKeywordToRequest(keywords) {
+        if (keywords.length) {
+            request['keywords'] = { $all: keywords }
+        }
+    }
 
     // ------ Checking for whether categories are specified by user ------
 
@@ -62,16 +92,24 @@ const getFilteredProjects = async (req, res) => {
     // See if theme selected
     if (req.query.theme !== '') {
         // If there are more than one themes 
-        if (req.query.theme.length > 14) {
-            separateCommas(req.query.theme)
+        if (req.query.theme.indexOf(',') > -1) {
+            separateThemeCommas(req.query.theme)
         }
         // If there is just one theme
         else {
             addThemeToRequest(req.query.theme)
         }
     }
+    // See if keywords are selected
     if (req.query.keywords !== '') {
-        request["keywords"] = { $all: req.query.keywords}
+        // If there are more than one themes 
+        if (req.query.keywords.indexOf(',') > -1) {
+            separateKeywordCommas(req.query.keywords)
+        }
+        // If there is just one theme
+        else {
+            addKeywordToRequest(req.query.keywords)
+        }
     }
 
     console.log(request)

@@ -54,6 +54,7 @@ const ProjectAdminForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault() // Prevents refresh of page from happening
         console.log('button clicked')
+
         const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme: [...theme].sort(), keywords: [kw1, kw2, kw3], sharepoint_link, statement}
         console.log(project)
         console.log(theme)                
@@ -117,21 +118,21 @@ const ProjectAdminForm = () => {
                 required
             />
 
-            <label>Organization:</label>
+            <label>OPTIONAL - Organization:</label>
             <input 
                 type="text"
                 onChange={(e) => setOrginization(e.target.value)}
                 value={orginization}
             />
 
-            <label>Source:</label>
+            <label>OPTIONAL - Source:</label>
             <input 
                 type="text"
                 onChange={(e) => setSource(e.target.value)}
                 value={source}
             />
 
-            <label>Location:</label>
+            <label>OPTIONAL - Location:</label>
             <input 
                 type="text"
                 onChange={(e) => setLocation(e.target.value)}

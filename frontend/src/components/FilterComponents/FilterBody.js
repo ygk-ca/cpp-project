@@ -3,43 +3,11 @@ import ProjectDetails from '../ProjectDetails'
 import Multiselect from "multiselect-react-dropdown"
 import Select from 'react-select';
 
-// Array to hold the 17 options of SDG's
-const SDGOptions = [
-    "SDG 1: No Poverty", 
-    "SDG 2: Zero Hunger", 
-    "SDG 3: Good Health & Well Being", 
-    "SDG 4: Quality Education", 
-    "SDG 5: Gender Equality", 
-    "SDG 6: Clean Water & Sanitation", 
-    "SDG 7: Affordable & Clean Energy", 
-    "SDG 8: Decent Work & Economic Growth", 
-    "SDG 9: Industry, Innovation, & Infrastructure",
-    "SDG 10: Reduced Inequalities",
-    "SDG 11: Sustainable Cities & Communities",
-    "SDG 12: Responsible Consumption & Production",
-    "SDG 13: Climate Action",
-    "SDG 14: Life Below Water",
-    "SDG 15: Life On Land",
-    "SDG 16: Peace, Justice, & Strong Institutions",
-    "SDG 17: Partnerships for the Goals"
-]
-
-// Array of list to hold all 6 options for themes
-const themesOptions = ["People", "Economy", "Culture", "Technology", "Environment", "Politic"]
-
-// Array of list to hold options for assignments
-const assingmentOptions = [
-    { value: '', label: 'Any'},
-    { value: 'Discussion Topics', label: 'Discussion Topics'},
-    { value: 'Assessment Ideas', label: 'Assessment Ideas'},
-    { value: 'Mini Case Studies', label: 'Mini Case Studies'}
-]
-
-// Array to hold all possible keywords
-const keywordsOptions = [
-    "Homeless",
-    ""
-]
+// Importing different arrays
+import { keywordsOptions } from './CategoryArrays/KeywordsOptions'
+import { themesOptions } from './CategoryArrays/ThemesOptions';
+import { SDGOptions } from './CategoryArrays/SdgOptions';
+import { assingmentOptions } from './CategoryArrays/AssignmentOptions';
 
 // Main component handling the filter body
 class FilterBody extends React.Component {
@@ -51,7 +19,7 @@ class FilterBody extends React.Component {
             assignment_type: "",
             sdg: [""],
             theme: [""],
-            search: "",
+            keywords: [""],
             
             showProjects: true,
             // Select module features
@@ -81,7 +49,7 @@ class FilterBody extends React.Component {
     }
 
     handleSearchChange(event) {
-        this.setState({search: event.target.value});
+        this.setState({keywords: event.target.value});
     }
 
 
@@ -90,6 +58,7 @@ class FilterBody extends React.Component {
         event.preventDefault();
         console.log(this.state.theme)
         console.log(this.state.projects)
+        console.log(this.state.keywords)
 
         this.setState({ showProjects: true })
 
@@ -97,7 +66,7 @@ class FilterBody extends React.Component {
             sdg: this.state.sdg, 
             assignment_type: this.state.assignment_type,
             theme: this.state.theme,
-            keywords: this.state.search
+            keywords: this.state.keywords
         }
 
         fetch(`/api/projects/filter?sdg=${encodeURIComponent(data.sdg)}&assignment_type=${encodeURIComponent(data.assignment_type)}&theme=${encodeURIComponent(data.theme)}&keywords=${encodeURIComponent(data.keywords)}`, {
@@ -145,22 +114,6 @@ class FilterBody extends React.Component {
                                     }}
                                     options={SDGOptions}
                                 />
-                                <br></br>
-
-                                <div className="filter-subtitle">Assignment Type:</div>
-                                <Select
-                                    className="basic-single"
-                                    classNamePrefix="select"
-                                    placeholder="Select"
-                                    // isClearable={this.state.isClearable}
-                                    isSearchable={this.state.isSearchable}
-                                    name="color"
-                                    onChange={(e) => {
-                                        console.log(e.value)
-                                        this.setState({ assignment_type: e.value })
-                                    }}
-                                    options={assingmentOptions}                 
-                                />
 
                                 <br></br>
 
@@ -178,11 +131,32 @@ class FilterBody extends React.Component {
 
                                 <br></br>
                                 <div className="filter-subtitle">Keyword Search:</div>
-                                <input
-                                    type="text"
-                                    placeholder='Enter a Keyword'
-                                    className="search-bar"
-                                    onChange={this.handleSearchChange}
+                                <Multiselect
+                                    isObject={false}
+                                    onRemove={(e) => {
+                                        this.setState({keywords: e});
+                                    }}
+                                    onSelect={(e) => {
+                                        this.setState({keywords: e});
+                                    }}
+                                    options={keywordsOptions}
+                                />
+
+                                <br></br>
+
+                                <div className="filter-subtitle">Assignment Type:</div>
+                                <Select
+                                    className="basic-single"
+                                    classNamePrefix="select"
+                                    placeholder="Select"
+                                    // isClearable={this.state.isClearable}
+                                    isSearchable={this.state.isSearchable}
+                                    name="color"
+                                    onChange={(e) => {
+                                        console.log(e.value)
+                                        this.setState({ assignment_type: e.value })
+                                    }}
+                                    options={assingmentOptions}                 
                                 />
                             </div>
 
