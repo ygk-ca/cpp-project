@@ -55,7 +55,7 @@ const ProjectAdminForm = () => {
         e.preventDefault() // Prevents refresh of page from happening
         console.log('button clicked')
 
-        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme: [...theme].sort(), keywords: [kw1, kw2, kw3], sharepoint_link, statement}
+        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords: [kw1, kw2, kw3], sharepoint_link, statement}
         console.log(project)
         console.log(theme)                
         // Sending form response to backend
@@ -162,11 +162,6 @@ const ProjectAdminForm = () => {
                 value={assignment_type}
                 required
             />
-
-            <hr></hr>
-
-            <label>Select Theme(s):</label>
-            {themeselector}
 
             <hr></hr>
 

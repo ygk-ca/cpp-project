@@ -33,17 +33,7 @@ const AdminProjectDetails = ({ project }) => {
                 <div className="card-body">
                     <strong>Description:</strong> {project.goal}
                 </div>
-                <div className="card-themes">
-                    <strong>Theme(s):</strong> {project.theme.map((theme)=>{
-                                if (theme !== project.theme[project.theme.length - 1]) {
-                                    return theme + ', '
-                                }
-                                else {
-                                    return theme
-                                }
-                            }
-                        )}
-                </div>
+
                 <div className="card-assignment">
                     <strong>Assignment Type:</strong> {project.assignment_type}
                 </div>
@@ -58,6 +48,7 @@ const AdminProjectDetails = ({ project }) => {
                                 }
                             }
                         )}
+                        
                 </div>
 
                 <div className="card-footer">

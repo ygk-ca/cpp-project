@@ -118,20 +118,6 @@ class FilterBody extends React.Component {
                                 />
 
                                 <br></br>
-
-                                <div className="filter-subtitle">Theme(s):</div>
-                                <Multiselect
-                                    isObject={false}
-                                    onRemove={(e) => {
-                                        this.setState({theme: e});
-                                    }}
-                                    onSelect={(e) => {
-                                        this.setState({theme: e});
-                                    }}
-                                    options={themesOptions}
-                                />
-
-                                <br></br>
                                 <div className="filter-subtitle">Keyword(s):</div>
                                 <Multiselect
                                     isObject={false}

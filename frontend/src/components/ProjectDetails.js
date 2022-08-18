@@ -22,22 +22,12 @@ const ProjectDetails = ({ project }) => {
                 <div className="card-body">
                     <strong>Description:</strong> {project.goal}
                 </div>
-                <div className="card-themes">
-                    <strong>Theme(s):</strong> {project.theme.map((theme)=>{
-                                if (theme !== project.theme[project.theme.length - 1]) {
-                                    return theme + ', '
-                                }
-                                else {
-                                    return theme
-                                }
-                            }
-                        )}
-                </div>
+
                 <div className="card-assignment">
                     <strong>Assignment Type:</strong> {project.assignment_type}
                 </div>
 
-                <div className="card-assignment">
+                <div className="card-keywords">
                     <strong>Keywords:</strong> {project.keywords.map((kw)=>{
                                 if (kw !== project.keywords[project.keywords.length - 1]) {
                                     return kw + ', '

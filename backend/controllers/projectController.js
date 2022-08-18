@@ -13,41 +13,9 @@ const getFilteredProjects = async (req, res) => {
     // Initializing request object that will be sent to retrieve DB information
     var request = {}
 
-    // --------- Theme functions ---------
-
-    // Function to separate commas from string - Complexity: O(2n)
-    function separateThemeCommas(str) {
-        // O(n) algorithm to find indices of location of commas
-        let commaLocations = []
-        for (let i = 0; i < str.length; i++) {
-            if (str[i] === ',') {
-                console.log(i)
-                commaLocations.push(i)
-            }
-        }
-        
-        // O(n) algorithm to separate commas from strings and extract words
-        let themes = []
-        var l = 0 // Left pointer
-
-        for (let i = 0; i <= commaLocations.length; i++) {
-            var tempTheme = str.slice(l, commaLocations[i])
-            l = commaLocations[i]+1
-            themes.push(tempTheme)
-        }
-
-        // Add the themes to the search query
-        addThemeToRequest(themes.sort())
-    }
-
-    // Function to add theme to request object
-    function addThemeToRequest(themes) {
-        if (themes.length) {
-            request['theme'] = { $all: themes }
-        }
-    }
-
     // --------- Keywords functions ---------
+
+    // Function Complexity: O(2n)
     function separateKeywordCommas(str) {
         // O(n) algorithm to find indices of location of commas
         let commaLocations = []
@@ -89,17 +57,6 @@ const getFilteredProjects = async (req, res) => {
     if (req.query.assignment_type !== '') {
         request["assignment_type"] = req.query.assignment_type
     }
-    // See if theme selected
-    if (req.query.theme !== '') {
-        // If there are more than one themes 
-        if (req.query.theme.indexOf(',') > -1) {
-            separateThemeCommas(req.query.theme)
-        }
-        // If there is just one theme
-        else {
-            addThemeToRequest(req.query.theme)
-        }
-    }
     // See if keywords are selected
     if (req.query.keywords !== '') {
         // If there are more than one themes 
@@ -139,7 +96,7 @@ const getProject = async (req, res) => {
 
 // create new project
 const createProject = async (req, res) => {
-    const {sdg, goal, orginization, source, location, published, website_url, assignment_type, theme, keywords, sharepoint_link, statement} = req.body
+    const {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords, sharepoint_link, statement} = req.body
     const newProject = new Project({
         sdg: sdg,
         goal : goal,
@@ -149,7 +106,6 @@ const createProject = async (req, res) => {
         published : published,
         website_url : website_url,
         assignment_type : assignment_type,
-        theme: theme,
         keywords: keywords,
         sharepoint_link : sharepoint_link,
         statement : statement

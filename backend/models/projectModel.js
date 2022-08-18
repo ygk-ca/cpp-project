@@ -37,11 +37,6 @@ const projectSchema = new Schema({
         type: String,
         required: true
     },
-    // array of themes
-    theme: [{
-        type: String,
-        required: true
-    }],
 
     // array of keywords
     keywords: [{

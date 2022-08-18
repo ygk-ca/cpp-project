@@ -49,14 +49,15 @@
 }
 
 .card-body {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     padding: 0 var(--padding);
     color: #555;
 }
 
-.card-themes {
+.card-keywords {
     color: #555;
-    padding: 0 var(--padding);
+    padding: var(--padding);
+    padding-bottom: 0;
 }
 
 .card-assignment {
