@@ -70,6 +70,8 @@
     margin-top: 1rem;
     padding: var(--padding);
     padding-top: 0;
+    flex-direction: row;
+    display: flex;
 }
 
 .btn {
@@ -84,7 +86,7 @@
 }
 
 .btn:hover, .btn:focus {
-    background: #0dc06a;
+    background: #0dd876;
 }
 
 .btn.btn-outline {
@@ -99,4 +101,21 @@
 
 .btn + .btn {
     margin-left: .25rem;
+}
+
+.num-icon {
+    margin-left: auto;
+    /* padding: 10px; */
+    /* border: 1px solid black; */
+    background: #0dd876;
+    border-radius: 50%;
+    color: #fff;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
 }

@@ -1,24 +1,34 @@
 import "../styles/ProjectDetails.css";
-import React, { useState } from 'react';
+import React from 'react';
 import PDF from './s.pdf'
 
 
 const ProjectDetails = ({ project }) => {
-    // Extracting SDG title name's number and storing it
+    // Extracting SDG title name's number and storing it in variable to use in details
     var str = project.sdg.toString()
-    var sdg_num = str.match(/(\d+)/)
+    var sdg_num = str.match(/(\d+)/) 
+
+    // Extracting just the SDG name and storing it in variable to use in details
+    var indOfColon = 0
+    for (let i = 0; i < project.sdg[0].length; i++) {
+        if (project.sdg[0][i] === ':') {
+            indOfColon = i
+        }
+    }
+    var sdg_name = project.sdg[0].slice([indOfColon + 1])
 
     return (
      <>
         <div className="card-grid">
             <div className="card">
+                
                 <div className="card-header card-image">
                     <img 
                         src={require('../assets/SDGBanners/banner' + sdg_num[0] + '.jpg')}
                         alt="Banner to indicate different SDG's"
                     />
                 </div>
-                <div className="card-title"><strong>{project.sdg}</strong></div>
+                <div className="card-title"><strong>{sdg_name}</strong></div>
                 <div className="card-body">
                     <strong>Description:</strong> {project.goal}
                 </div>
@@ -45,9 +55,9 @@ const ProjectDetails = ({ project }) => {
                             <a href={project.sharepoint_link} without="true" rel="noopener noreferrer" target="_blank">
                                 <button className="btn btn-outline">Download</button>
                             </a>
-                            <a href={PDF} without="true" rel="noopener noreferrer" target="_blank">
+                            {/* <a href={PDF} without="true" rel="noopener noreferrer" target="_blank">
                                 <button className="btn">Preview</button>
-                            </a>
+                            </a> */}
                         </>
                     }
                     {project.assignment_type !== 'Mini Case Studies' &&
