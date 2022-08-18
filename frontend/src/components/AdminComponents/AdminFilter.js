@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import ProjectDetails from '../ProjectDetails'
+import AdminProjectDetails from './AdminProjectDetails'
 import Multiselect from "multiselect-react-dropdown"
 import Select from 'react-select';
 
 // Importing different arrays
-import { keywordsOptions } from './CategoryArrays/KeywordsOptions'
-import { SDGOptions } from './CategoryArrays/SdgOptions';
-import { assingmentOptions } from './CategoryArrays/AssignmentOptions';
+import { SDGOptions } from '../FilterComponents/CategoryArrays/SdgOptions';
+import { assingmentOptions } from '../FilterComponents/CategoryArrays/AssignmentOptions';
+import { keywordsOptions } from "../FilterComponents/CategoryArrays/KeywordsOptions";
+import ProjectAdminForm from './ProjectAdminForm';
 
 // Main component handling the filter body
-class FilterBody extends React.Component {
+class AdminFilter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,9 +34,6 @@ class FilterBody extends React.Component {
     // Handling all 3 input submissions
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.state.theme)
-        console.log(this.state.projects)
-        console.log(this.state.keywords)
 
         this.setState({ showProjects: true })
 
@@ -72,7 +70,9 @@ class FilterBody extends React.Component {
       return (
         <>
             <div className="filterHome">
+                
                 <div className="filterContainer">
+                
                     <div className="filterTableContainer">
                         <div className="filterTableTitle">
                             Filter Table
@@ -131,6 +131,7 @@ class FilterBody extends React.Component {
                             </button>
                         </div>
                     </div>
+                    <ProjectAdminForm />
                 </div>
                 
 
@@ -139,7 +140,7 @@ class FilterBody extends React.Component {
                     {this.state.showProjects === true &&
                         <div className="content">
                             {this.state.projects && this.state.projects.map((project) => (
-                                <ProjectDetails key={project._id} project={project}/>
+                                <AdminProjectDetails key={project._id} project={project}/>
                             ))}
                         </div>
                     }
@@ -156,5 +157,5 @@ class FilterBody extends React.Component {
       );
     }
   }
-export default FilterBody
+export default AdminFilter
 

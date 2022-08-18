@@ -61,7 +61,14 @@ const ProjectDetails = ({ project }) => {
                         </>
                     }
                     {project.assignment_type !== 'Mini Case Studies' &&
-                        <button className="btn btn-outline" onClick={function(e){ navigator.clipboard.writeText(project.goal); alert('Text copied to clipboard!') }}
+                        <button className="btn btn-outline" onClick={function(e){ navigator.clipboard.writeText(project.goal)
+                            .then(() => {
+                                alert('Text copied to clipboard!')
+                            })
+                            .catch(() => {
+                                alert("Something went wrong!")
+                            });
+                        }}
                             >
                             Copy to Clipboard
                         </button>

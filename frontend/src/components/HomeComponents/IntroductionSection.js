@@ -7,7 +7,8 @@ const IntroductionSection = () => {
                 
                 <div className="intro-title">About This Website</div>
                 <div className="para-text-container">
-                    <div className="para-text">Welcome to a program our team created to help instructional designers and instructors find inspiration or content to use in their curriculum. Our focus is on the 17 Sustainable Development Goals proposed by the United Nations. <br></br><br></br>By incorporating these ideologies into your courses, you are becoming a part of Queen's University's mission as we strive to foster global change. Our Team has made the assessments accessible to you under the "Catalogue" tab to browse at your leisure.</div>
+                    <div className="para-text">
+                    This website has been developed for Instructors at Queen’s University to use as a tool when looking to find activities, assessments or just inspiration related to the 17 UN Sustainable Development Goals (SDGs). <br></br><br></br>By embedding a range of activities that address the SDGs, you play an active role in helping Queen's to meet their mission of fostering global change, as well as providing students with opportunities to work on issues that matter to them. </div>
                 </div>
                 
             </div>
