@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { SDGOptions } from "../FilterComponents/CategoryArrays/SdgOptions";
-import { assingmentOptions } from "../FilterComponents/CategoryArrays/AssignmentOptions";
+import { adminSDGOptions } from "./AdminCategoryLists";
+import { adminAssingmentOptions } from "./AdminCategoryLists";
+import { keywordsOptions } from "../FilterComponents/CategoryArrays/KeywordsOptions";
 import Multiselect from "multiselect-react-dropdown"
 import Select from 'react-select';
 
@@ -21,16 +22,13 @@ const ProjectAdminForm = () => {
 
     // Adding keywords
     const [keywords, setKeywords] = useState([]);
-    const [kw1, setKW1] = useState('');
-    const [kw2, setKW2] = useState('');
-    const [kw3, setKW3] = useState('');
 
 
     const handleSubmit = async (e) => {
         e.preventDefault() // Prevents refresh of page from happening
         console.log('button clicked')
 
-        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords: [kw1, kw2, kw3], sharepoint_link, statement}
+        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords, sharepoint_link, statement}
         console.log(project)
              
         // Sending form response to backend
@@ -59,9 +57,6 @@ const ProjectAdminForm = () => {
             setWebsiteURL('')
             setAssignmentType('')
             setKeywords([])
-            setKW1('')
-            setKW2('')
-            setKW3('')
             setSharepointLink('')
             setStatement('')
             
@@ -83,8 +78,9 @@ const ProjectAdminForm = () => {
                 classNamePrefix="select"
                 placeholder="Select"
                 name="color"
-                options={SDGOptions}
+                options={adminSDGOptions}
                 onChange={(selection) => setSDG(selection.value)}
+                required
             />
 
             <label>Description:</label>
@@ -137,32 +133,21 @@ const ProjectAdminForm = () => {
                 classNamePrefix="select"
                 placeholder="Select"
                 name="color"
-                options={assingmentOptions}
+                options={adminAssingmentOptions}
                 onChange={(selection) => setAssignmentType(selection.value)}
+                required
             />
 
             <hr></hr>
 
-            <label>Enter Keyword 1:</label>
-            <input 
-                type="text"
-                onChange={(e) => setKW1(e.target.value)}
-                value={kw1}
+            <label>Enter Keyword(s):</label>
+            <Multiselect
+                className="multiselect-admin"
+                isObject={false}
+                onRemove={(selection) => setKeywords(selection)}
+                onSelect={(selection) => setKeywords(selection)}
+                options={keywordsOptions}
                 required
-            />
-
-            <label>Enter Keyword 2:</label>
-            <input 
-                type="text"
-                onChange={(e) => setKW2(e.target.value)}
-                value={kw2}
-            />
-
-            <label>Enter Keyword 3:</label>
-            <input 
-                type="text"
-                onChange={(e) => setKW3(e.target.value)}
-                value={kw3}
             />
 
             <hr></hr>
