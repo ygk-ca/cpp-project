@@ -112,4 +112,21 @@ h1, p{
       padding:1em;
       float:left;
     }
+
+    
   }
+
+@media (max-width: 600px) {
+  .contact {
+    height: 100vh;
+  }
+  .contact-page-body {
+    margin-top: 10em;
+    margin-bottom: 5em;
+    max-height: fit-content;
+  }
+  textarea{
+    max-height: 220px;
+  }
+  
+}
