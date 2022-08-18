@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { SDGOptions } from "../FilterComponents/CategoryArrays/SdgOptions";
+import { assingmentOptions } from "../FilterComponents/CategoryArrays/AssignmentOptions";
+import Multiselect from "multiselect-react-dropdown"
+import Select from 'react-select';
 
 const ProjectAdminForm = () => {
     // Adding basic info
@@ -21,35 +25,6 @@ const ProjectAdminForm = () => {
     const [kw2, setKW2] = useState('');
     const [kw3, setKW3] = useState('');
 
-    // Adding themes
-    const [theme, setThemes] = useState([]);
-    const available_themes = ['People', 'Economy', 'Culture', 'Technology', 'Environment', 'Politic'];
-
-    const addTheme = (name) =>{
-        if(!theme.includes(name)){
-        setThemes([...theme, name])
-        }
-
-    }
-
-    const removeTheme = (name) =>{
-        const index = theme.indexOf(name);
-        if(index !== -1) {
-            let temp_themes = [...theme];
-            temp_themes.splice(index, 1);
-            setThemes(temp_themes);
-        }
-
-    }
-
-    const themeselector = available_themes.map((name)=>{
-        let checked = false;
-        if(theme.includes(name)){
-            checked = true;
-        }
-        return <div key={uuidv4()} className=""><input type="checkbox" {...(checked ? {checked: 'checked'}: {})}  value={name} onChange={(ev)=>{ if(ev.target.checked) {  addTheme(name)  } else { removeTheme(name)} } } /> {name}</div>;
-    });
-
 
     const handleSubmit = async (e) => {
         e.preventDefault() // Prevents refresh of page from happening
@@ -57,7 +32,7 @@ const ProjectAdminForm = () => {
 
         const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords: [kw1, kw2, kw3], sharepoint_link, statement}
         console.log(project)
-        console.log(theme)                
+             
         // Sending form response to backend
         const response = await fetch('/api/projects', {
             method: 'POST',
@@ -83,10 +58,10 @@ const ProjectAdminForm = () => {
             setPublished('')
             setWebsiteURL('')
             setAssignmentType('')
+            setKeywords([])
             setKW1('')
             setKW2('')
             setKW3('')
-            setThemes([])
             setSharepointLink('')
             setStatement('')
             
@@ -103,12 +78,13 @@ const ProjectAdminForm = () => {
             <hr></hr>
 
             <label>Sustainable Development Goal:</label>
-            <input 
-                type="text"
-                placeholder="e.g. SDG 2: Zero Hunger"
-                onChange={(e) => setSDG(e.target.value)}
-                value={sdg}
-                required
+            <Select
+                className="basic-single"
+                classNamePrefix="select"
+                placeholder="Select"
+                name="color"
+                options={SDGOptions}
+                onChange={(selection) => setSDG(selection.value)}
             />
 
             <label>Description:</label>
@@ -140,7 +116,7 @@ const ProjectAdminForm = () => {
                 value={location}
             />
 
-            <label>Published:</label>
+            <label>Published (YEAR ONLY):</label>
             <input 
                 type="text"
                 onChange={(e) => setPublished(e.target.value)}
@@ -156,11 +132,13 @@ const ProjectAdminForm = () => {
             />
 
             <label>Assignment Type:</label>
-            <input 
-                type="text"
-                onChange={(e) => setAssignmentType(e.target.value)}
-                value={assignment_type}
-                required
+            <Select
+                className="basic-single"
+                classNamePrefix="select"
+                placeholder="Select"
+                name="color"
+                options={assingmentOptions}
+                onChange={(selection) => setAssignmentType(selection.value)}
             />
 
             <hr></hr>

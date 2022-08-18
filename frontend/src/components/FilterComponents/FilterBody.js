@@ -5,7 +5,6 @@ import Select from 'react-select';
 
 // Importing different arrays
 import { keywordsOptions } from './CategoryArrays/KeywordsOptions'
-import { themesOptions } from './CategoryArrays/ThemesOptions';
 import { SDGOptions } from './CategoryArrays/SdgOptions';
 import { assingmentOptions } from './CategoryArrays/AssignmentOptions';
 
