@@ -22,11 +22,11 @@ const IntroductionSection = () => {
                 </div>
                 <div className="list">
                     <ul>
-                        <li><u>Resources</u> will take you to a page of external resources where you can filter using keywords to find what you need. Please check back often as this list will be updated on a regular basis. </li>
+                        <li><strong>Resources</strong> will take you to a page of external resources where you can filter using keywords to find what you need.  </li>
                         <br></br>
-                        <li><u>Catalogue</u> will take you to a table where filters will help you to find relevant discussion topics, assessment ideas and mini case studies.  For the most part, the goals and priorities are from non-profit organizations, with a few for-profit organizations added into the mix.  </li>
+                        <li><strong>Catalogue</strong> will take you to a table where filters will help you to find relevant discussion topics, assessment ideas and mini case studies (most being from non-profit organizations). </li>
                         <br></br>
-                        <li><u>Contact</u> want to know more, set up a consultation with one of our team or just need a bit of help navigating this resource?  Fill out the contact form and we’ll get back in touch, usually the same day! </li>
+                        <li><strong>Contact Us</strong> to learn more about this resource or set up a consultation with us. </li>
                         
                     </ul>
                 </div>
