@@ -2,10 +2,7 @@ import "../styles/Home.css";
 import "../styles/Admin.css";
 import { useEffect, useState } from 'react'
 import AdminFilter from "../components/AdminComponents/AdminFilter";
-import AdminProjectDetails from "../components/AdminComponents/AdminProjectDetails";
-import ProjectAdminForm from "../components/AdminComponents/ProjectAdminForm";
 import AdminTitle from "../components/AdminComponents/AdminTitle";
-import FilterBody from "../components/FilterComponents/FilterBody";
 
 export default function Admin(){
     // React States
@@ -101,18 +98,8 @@ export default function Admin(){
             <div >
                 <AdminTitle />
             </div>
-            <div className="admin-page">
-                {/* Temp HomePage body */}
-                <div className="form">
-                    <ProjectAdminForm />
-                </div>
-                
-                <div className="projects">
-                    {projects && projects.map((project) => (
-                            <AdminProjectDetails key={project._id} project={project}/>
-                    ))}
-                </div>
-                
+            <div>
+                <AdminFilter />
             </div>
         </>
     );

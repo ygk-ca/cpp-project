@@ -72,7 +72,8 @@ class AdminFilter extends React.Component {
             <div className="filterHome">
                 
                 <div className="filterContainer">
-                
+                    <div>
+
                     <div className="filterTableContainer">
                         <div className="filterTableTitle">
                             Filter Table
@@ -131,7 +132,11 @@ class AdminFilter extends React.Component {
                             </button>
                         </div>
                     </div>
-                    <ProjectAdminForm />
+                    <div className="admin-form">
+                        <ProjectAdminForm />
+                    </div>
+                    </div>
+                    
                 </div>
                 
 
