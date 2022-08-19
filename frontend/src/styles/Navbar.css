@@ -71,7 +71,8 @@
 }
 
 .nav div.main_list ul li a:hover {
-  color: #00e676;
+  /* color: #00e676; */
+  color: #ececec;
 }
 
 
@@ -122,7 +123,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: #111;
+    background-color: #b90e31;
     /*same background color of navbar*/
     background-position: center top;
   }
@@ -133,7 +134,7 @@
   .nav div.main_list ul li a {
     text-align: center;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 20px;
   }
   .nav div.media_button {
@@ -341,7 +342,7 @@
 
 .affix {
   padding: 0;
-  background-color: #111;
+  background-color: #b90e31;
 }
 
 .myH2 {

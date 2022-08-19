@@ -74,6 +74,7 @@ export default function Admin(){
         <div className="login-background">
             <div className="login-form-container">
                 <form className="login-form" onSubmit={handleSubmit}>
+                    <h1>Admin Login</h1>
                     <div className="input-container">
                         <label>Username </label>
                         <input type="text" name="uname" required />

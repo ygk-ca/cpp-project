@@ -18,14 +18,14 @@
     font-size: 1.5rem;
     margin-bottom: .5rem;
     font-size: 1.2em;
-    color: #1aac83;
 }
 
 .card-title {
     font-size: 1.5rem;
     margin-bottom: .5rem;
     font-size: 1.2em;
-    color: #1aac83;
+    /* color: #1aac83; */
+    color: #002452;
     padding: var(--padding);
     padding-bottom: 0;
 }
@@ -75,7 +75,8 @@
 }
 
 .btn {
-    background: #0dc06a;
+    /* background: #0dc06a; */
+    background: #002452;
     color: white;
     border: none;
     font-size: 1rem;
@@ -86,13 +87,16 @@
 }
 
 .btn:hover, .btn:focus {
-    background: #0dd876;
+    /* background: #0dd876; */
+    background: #033372;
 }
 
 .btn.btn-outline {
     background: none;
-    border: 1px solid #0dc06a;
-    color: #0dc06a
+    /* border: 1px solid #0dc06a;
+    color: #0dc06a; */
+    border: 1px solid #002452;
+    color: #002452;
 }
 
 .btn.btn-outline:hover, .btn.btn-outline:focus {

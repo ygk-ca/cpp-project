@@ -35,6 +35,7 @@
   .intro-container1 {
     display: flex;
     background-color: white;
+    padding: 0em 5em 0em 5em;
   }
   
   .left-half {
@@ -60,6 +61,7 @@
   @media (max-width: 1215px) {
     .intro-container1 {
       flex-direction: column;
+      padding: 0;
     }
 
     .intro-title {

@@ -82,7 +82,7 @@ h1, p{
   }
   
   input[type=submit]{
-    background:#00e676;
+    background:#002452;
     margin:1em 0 0;
     color:white;
     border:none;
@@ -95,7 +95,7 @@ h1, p{
   /* hover and focus states */
   input[type=submit]:hover,
   input[type=submit]:focus{
-    background: #03cf6d;;
+    background: #063c83;
     outline:none;
     cursor: pointer;
   }

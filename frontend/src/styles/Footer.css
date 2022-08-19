@@ -11,7 +11,7 @@ strong {
 /* ==== SIMPLE FOOTER ==== */
 
 footer {
-  background: url('https://orange.codeberryschool.com/content/images/project-assets/simple-footer.png') repeat center;
+  background-color: #b90e31;
   display: table;
   width: 100vw;
   height: 8rem;
@@ -27,21 +27,23 @@ footer {
 }
 
 footer small {
-  color: #ccc;
+  color: #ffffff;
   letter-spacing: .025rem;
   margin-bottom: 1.5rem;
   display: block;
 }
 
 .footer-nav a {
-  color: #00e676;
+  /* color: #00e676; */
+  color: #ffffff;
   text-decoration: none;
   margin: 0 .5rem;
   display: inline-block;
 }
 
 .footer-nav a:hover {
-  color: #05c96a;
+  /* color: #05c96a; */
+  color: #ececec;
   transition: color .15s ease-in-out;
 }
 

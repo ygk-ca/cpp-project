@@ -18,7 +18,6 @@ class AdminFilter extends React.Component {
             projects: null,
             assignment_type: "",
             sdg: [""],
-            theme: [""],
             keywords: [""],
             
             showProjects: true,
@@ -40,11 +39,10 @@ class AdminFilter extends React.Component {
         const data = {
             sdg: this.state.sdg, 
             assignment_type: this.state.assignment_type,
-            theme: this.state.theme,
             keywords: this.state.keywords
         }
 
-        fetch(`/api/projects/filter?sdg=${encodeURIComponent(data.sdg)}&assignment_type=${encodeURIComponent(data.assignment_type)}&theme=${encodeURIComponent(data.theme)}&keywords=${encodeURIComponent(data.keywords)}`, {
+        fetch(`/api/projects/filter?sdg=${encodeURIComponent(data.sdg)}&assignment_type=${encodeURIComponent(data.assignment_type)}&keywords=${encodeURIComponent(data.keywords)}`, {
             method: "GET",
             headers: {
                     'Content-Type': 'application/json;charset=utf-8', 
@@ -72,69 +70,68 @@ class AdminFilter extends React.Component {
             <div className="filterHome">
                 
                 <div className="filterContainer">
-                    <div>
-
-                    <div className="filterTableContainer">
-                        <div className="filterTableTitle">
-                            Filter Table
-                        </div>
-                        
-                        <div className="filterSDGDropDown">
-                            <div className="themeDropdown">
-                                <div className="filter-subtitle">Sustainable Development Goal:</div>
-                                <Select
-                                    className="basic-single"
-                                    classNamePrefix="select"
-                                    placeholder="Select"
-                                    // isClearable={this.state.isClearable}
-                                    isSearchable={this.state.isSearchable}
-                                    name="color"
-                                    onChange={(e) => {
-                                        this.setState({ sdg: e.value })
-                                    }}
-                                    options={SDGOptions}   
-                                />
-
-                                <br></br>
-                                <div className="filter-subtitle">Keyword(s):</div>
-                                <Multiselect
-                                    isObject={false}
-                                    onRemove={(e) => {
-                                        this.setState({keywords: e});
-                                    }}
-                                    onSelect={(e) => {
-                                        this.setState({keywords: e});
-                                    }}
-                                    options={keywordsOptions}
-                                />
-
-                                <br></br>
-
-                                <div className="filter-subtitle">Assignment Type:</div>
-                                <Select
-                                    className="basic-single"
-                                    classNamePrefix="select"
-                                    placeholder="Select"
-                                    // isClearable={this.state.isClearable}
-                                    isSearchable={this.state.isSearchable}
-                                    name="color"
-                                    onChange={(e) => {
-                                        this.setState({ assignment_type: e.value })
-                                    }}
-                                    options={assingmentOptions}                 
-                                />
+                    <div className="form-filter-container">
+                        <div className="filterTableContainer">
+                            <div className="filterTableTitle">
+                                Filter Table
                             </div>
+                            
+                            <div className="filterSDGDropDown">
+                                <div className="themeDropdown">
+                                    <div className="filter-subtitle">Sustainable Development Goal:</div>
+                                    <Select
+                                        className="basic-single"
+                                        classNamePrefix="select"
+                                        placeholder="Select"
+                                        // isClearable={this.state.isClearable}
+                                        isSearchable={this.state.isSearchable}
+                                        name="color"
+                                        onChange={(e) => {
+                                            this.setState({ sdg: e.value })
+                                        }}
+                                        options={SDGOptions}   
+                                    />
 
+                                    <br></br>
+                                    <div className="filter-subtitle">Keyword(s):</div>
+                                    <Multiselect
+                                        isObject={false}
+                                        onRemove={(e) => {
+                                            this.setState({keywords: e});
+                                        }}
+                                        onSelect={(e) => {
+                                            this.setState({keywords: e});
+                                        }}
+                                        options={keywordsOptions}
+                                    />
+
+                                    <br></br>
+
+                                    <div className="filter-subtitle">Assignment Type:</div>
+                                    <Select
+                                        className="basic-single"
+                                        classNamePrefix="select"
+                                        placeholder="Select"
+                                        // isClearable={this.state.isClearable}
+                                        isSearchable={this.state.isSearchable}
+                                        name="color"
+                                        onChange={(e) => {
+                                            this.setState({ assignment_type: e.value })
+                                        }}
+                                        options={assingmentOptions}                 
+                                    />
+                                </div>
+
+                            </div>
+                            <div className="filterButtonContainer">
+                                <button className="filterButton" onClick={this.handleSubmit}>
+                                    Filter
+                                </button>
+                            </div>
                         </div>
-                        <div className="filterButtonContainer">
-                            <button className="filterButton" onClick={this.handleSubmit}>
-                                Filter
-                            </button>
+                        <div className="admin-form">
+                            <ProjectAdminForm />
                         </div>
-                    </div>
-                    <div className="admin-form">
-                        <ProjectAdminForm />
-                    </div>
                     </div>
                     
                 </div>
