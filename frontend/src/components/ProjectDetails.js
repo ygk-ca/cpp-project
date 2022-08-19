@@ -28,26 +28,62 @@ const ProjectDetails = ({ project }) => {
                         alt="Banner to indicate different SDG's"
                     />
                 </div>
-                <div className="card-title"><strong>{sdg_name}</strong></div>
-                <div className="card-body">
-                    <strong>Description:</strong> {project.goal}
-                </div>
 
-                <div className="card-assignment">
-                    <strong>Assignment Type:</strong> {project.assignment_type}
-                </div>
+                {/* Project descripton for Mini Case Studies */}
+                {project.assignment_type === 'Mini Case Studies' &&
+                    <>
+                        <div className="card-title"><strong>{sdg_name}</strong></div>
+                        <div className="card-body">
+                            <strong>Description:</strong> {project.goal}
+                        </div>
 
-                <div className="card-keywords">
-                    <strong>Keywords:</strong> {project.keywords.map((kw)=>{
-                                if (kw !== project.keywords[project.keywords.length - 1]) {
-                                    return kw + ', '
-                                }
-                                else {
-                                    return kw
-                                }
-                            }
-                        )}
-                </div>
+                        <div className="card-assignment">
+                            <strong>Assignment Type:</strong> {project.assignment_type}
+                        </div>
+
+                        <div className="card-keywords">
+                            <strong>Keywords:</strong> {project.keywords.map((kw)=>{
+                                        if (kw !== project.keywords[project.keywords.length - 1]) {
+                                            return kw + ', '
+                                        }
+                                        else {
+                                            return kw
+                                        }
+                                    }
+                                )}
+                        </div>
+                    </>
+                }
+
+                {/* Project descripton for Discussion Topics and Assessment Ideas */}
+                {project.assignment_type !== 'Mini Case Studies' &&
+                    <>
+                        <div className="card-title"><strong>{sdg_name}</strong></div>
+                        <div className="card-mid">
+                            <strong>Organization:</strong> {project.orginization}
+                        </div>
+                        <div className="card-body">
+                            <strong>Organization Goal(s):</strong> {project.goal}
+                        </div>
+
+                        <div className="card-assignment">
+                            <strong>Assignment Type:</strong> {project.assignment_type}
+                        </div>
+
+                        <div className="card-keywords">
+                            <strong>Keywords:</strong> {project.keywords.map((kw)=>{
+                                        if (kw !== project.keywords[project.keywords.length - 1]) {
+                                            return kw + ', '
+                                        }
+                                        else {
+                                            return kw
+                                        }
+                                    }
+                                )}
+                        </div>
+                    </>
+                }
+                
                 <div className="card-footer">
                     <button className="btn">Details</button>
                     {project.assignment_type === 'Mini Case Studies' &&

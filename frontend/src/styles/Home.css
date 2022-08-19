@@ -137,7 +137,7 @@
     border-radius: 16px;
     background-color: linear-gradient(90deg,rgba(244,247,252,0.5) 0%,rgba(244,247,252,0.5) 100%);
     justify-content: center;
-    padding-top: 3.5vw;
+    /* padding-top: 3.5vw; */
     padding-bottom: 3.5vw;
     padding-left: 7vw;
     padding-right: 7vw;
@@ -172,12 +172,13 @@
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
+
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
-  
+
   /* Position the front and back side */
   .flip-card-front, .flip-card-back {
     position: absolute;

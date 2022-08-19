@@ -77,6 +77,9 @@ class FilterBody extends React.Component {
                         <div className="filterTableTitle">
                             Filter Table
                         </div>
+                        <div className="filterInstructBlurb">
+                            <div>To filter your results, please select one or more of the following categories. When you have finished making your selections, please click anywhere outside of the <em>Filter Table</em> dropdown lists and then click <em>‘Filter’</em>.</div>
+                        </div>
                         
                         <div className="filterSDGDropDown">
                             <div className="themeDropdown">
