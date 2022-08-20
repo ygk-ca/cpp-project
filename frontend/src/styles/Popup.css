@@ -26,6 +26,13 @@
     position: absolute;
     top: 16px;
     right: 16px;
+    background-color: #002452;
+    border-radius: 10px;
+    color: white;
+}
+
+.close-btn:hover {
+    background-color: #0a3875;
 }
 
 @media (max-width: 750px) {

@@ -126,7 +126,12 @@ const ProjectDetails = ({ project }) => {
                     </div>
 
                     <div className="card-assignment">
-                        <strong>Organization:</strong> {project.orginization}
+                        
+                        {project.website_url !== '' ?
+                            <div><strong>Organization:</strong> {project.orginization}</div>
+                            :
+                            <div><strong>Organization:</strong> No organization available</div>
+                        }
                     </div>
 
                     <div className="card-assignment">
@@ -134,15 +139,31 @@ const ProjectDetails = ({ project }) => {
                     </div>
 
                     <div className="card-assignment">
-                        <strong>Website source URL:</strong> <a href={project.website_url}><u>Website Link</u></a>
+                        <strong>Website source URL: </strong> 
+                        {project.website_url !== '' ?
+                            <a href={project.website_url} target="_blank"><u>Website Link</u></a>
+                            :
+                            " No website link available"
+                        }
+                        
                     </div>
 
                     <div className="card-assignment">
-                        <strong>Location:</strong> {project.location}
+                        {project.location !== '' ?
+                            <div><strong>Location:</strong> {project.location}</div>
+                            :
+                            <div><strong>Location:</strong> No location available</div>
+                        }
                     </div>
 
                     <div className="card-assignment">
-                        <strong>Source:</strong> <a href={project.source}><u>Source Link</u></a>
+                        <strong>Source:</strong> 
+                        {project.source !== '' ?
+                            <a href={project.source} target="_blank"><u>Source Link</u></a>
+                            :
+                            " No source link available"
+                        }
+                        
                     </div>
                 </Popup>
             </div>
