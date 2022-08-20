@@ -78,7 +78,7 @@
     margin-left: 50px;
     width: 85%;
     color: #212121;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .list {
@@ -88,7 +88,7 @@
     margin-left: 50px;
     width: 92%;
     color: #212121;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding-left: 2.5em;
     padding-right: 5em;
 }
@@ -124,15 +124,22 @@
         margin: 0;
         text-align: center;
     }
+
+    .list-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
     
     .list {
-        width: 100%;
+        width: 70%;
         /* padding-left: 7em; */
         padding-right: 7em;
         margin: 0;
         text-align: center;
+        /* border: 1px solid black; */
         display: block;
-       padding-left: auto;
+        padding-left: auto;
     }
 
     ul {
@@ -154,6 +161,7 @@
     }
     .list {
         padding: 0;
+        
     }
   }
   
@@ -171,3 +179,6 @@ hr {
     margin-left: auto;
   }
 
+.dash {
+    padding-bottom: 1.5em;
+}

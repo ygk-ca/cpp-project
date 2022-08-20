@@ -1,9 +1,12 @@
 import "../styles/ProjectDetails.css";
-import React from 'react';
+import React, { useState } from 'react';
 import PDF from './s.pdf'
-
+import Popup from "./Popup";
 
 const ProjectDetails = ({ project }) => {
+    const [buttonPopup, setButtonPopup] = useState(false);
+
+
     // Extracting SDG title name's number and storing it in variable to use in details
     var str = project.sdg.toString()
     var sdg_num = str.match(/(\d+)/) 
@@ -85,7 +88,7 @@ const ProjectDetails = ({ project }) => {
                 }
                 
                 <div className="card-footer">
-                    <button className="btn">Details</button>
+                    <button className="btn" onClick={() => setButtonPopup(true)}>Details</button>
                     {project.assignment_type === 'Mini Case Studies' &&
                         <>
                             <a href={project.sharepoint_link} without="true" rel="noopener noreferrer" target="_blank">
@@ -110,6 +113,38 @@ const ProjectDetails = ({ project }) => {
                         </button>
                     }
                 </div>
+                
+                {/* Pop up component that outlines the details of each project */}
+                <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                    <div className="card-title"><strong>{sdg_name}</strong></div>
+                    <div className="card-body">
+                        <strong>Description:</strong> {project.goal}
+                    </div>
+
+                    <div className="card-assignment">
+                        <strong>Assignment Type:</strong> {project.assignment_type}
+                    </div>
+
+                    <div className="card-assignment">
+                        <strong>Organization:</strong> {project.orginization}
+                    </div>
+
+                    <div className="card-assignment">
+                        <strong>Published:</strong> {project.published}
+                    </div>
+
+                    <div className="card-assignment">
+                        <strong>Website source URL:</strong> <a href={project.website_url}><u>Website Link</u></a>
+                    </div>
+
+                    <div className="card-assignment">
+                        <strong>Location:</strong> {project.location}
+                    </div>
+
+                    <div className="card-assignment">
+                        <strong>Source:</strong> <a href={project.source}><u>Source Link</u></a>
+                    </div>
+                </Popup>
             </div>
         </div>
      </>

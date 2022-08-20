@@ -39,6 +39,26 @@ const AdminProjectDetails = ({ project }) => {
                 </div>
 
                 <div className="card-assignment">
+                    <strong>Organization:</strong> {project.orginization}
+                </div>
+
+                <div className="card-assignment">
+                    <strong>Published:</strong> {project.published}
+                </div>
+
+                <div className="card-assignment">
+                    <strong>Website source URL:</strong> {project.website_url}
+                </div>
+
+                <div className="card-assignment">
+                    <strong>Location:</strong> {project.location}
+                </div>
+
+                <div className="card-assignment">
+                    <strong>Source:</strong> {project.source}
+                </div>
+
+                <div className="card-assignment">
                     <strong>Keywords:</strong> {project.keywords.map((kw)=>{
                                 if (kw !== project.keywords[project.keywords.length - 1]) {
                                     return kw + ', '
@@ -48,7 +68,7 @@ const AdminProjectDetails = ({ project }) => {
                                 }
                             }
                         )}
-                        
+
                 </div>
 
                 <div className="card-footer">

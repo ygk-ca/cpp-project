@@ -134,13 +134,12 @@
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    border-radius: 16px;
-    background-color: linear-gradient(90deg,rgba(244,247,252,0.5) 0%,rgba(244,247,252,0.5) 100%);
+    /* background-color: linear-gradient(90deg,rgba(244,247,252,0.5) 0%,rgba(244,247,252,0.5) 100%); */
     justify-content: center;
     /* padding-top: 3.5vw; */
-    padding-bottom: 3.5vw;
-    padding-left: 7vw;
-    padding-right: 7vw;
+    padding-bottom: 2em;
+    padding-left: 5em;
+    padding-right: 5em;
     background-color: white;
 }
   
@@ -160,7 +159,7 @@
     height: 20vh;
     margin: 15px;
     /* border: 1px solid #f1f1f1; */
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 700px; /* Remove this if you don't want the 3D effect */
   }
   
   /* This container is needed to position the front and back side */
@@ -199,7 +198,14 @@
     color: white;
     transform: rotateY(180deg);
     align-items: center;
-    font-family: "Poppins";
+    font-size: 15px;
+  }
+
+  .click-more {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 .sdg1Color {
