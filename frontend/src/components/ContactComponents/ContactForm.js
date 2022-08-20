@@ -7,7 +7,7 @@ const ContactForm = () => {
             {/* change string query when activating new email */}
             <form action="https://formsubmit.co/7e9607ca308334260faec51a813cd22e" method="POST">
                 <h1>Contact Us</h1>
-                <p>Please take a moment to get in touch, we will get back to you shortly.</p>
+                <p style={{padding: "20px"}}>Do you want assistance in coordinating a community partnership for your course, update/add to the resources on this website or just talk through options for embedding the SDGs into your curriculum?  Fill out the contact form and we’ll get back in touch, usually the same day! </p>
 
                     <div class="column">
                         <label for="the-name">Your Name</label>

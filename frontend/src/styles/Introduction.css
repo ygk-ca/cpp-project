@@ -58,6 +58,40 @@
     padding-top: 3em;
     padding-bottom: 3em;
   }
+
+  .intro-img {
+    height:100%;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 10px 8px #888888;
+  }
+
+  .learn-more {
+    font-size: 1.07em;
+    letter-spacing: 1.5px;
+    padding: 1.5em;
+    padding-top: 0em;
+    padding-bottom: 0;
+    margin-right: 0px;
+    margin-left: 50px;
+    width: 85%;
+    color: #212121;
+    border: 1px solid black;
+}
+
+.list {
+    font-size: 1.07em;
+    letter-spacing: 1.5px;
+    margin-right: 0px;
+    margin-left: 50px;
+    width: 92%;
+    color: #212121;
+    border: 1px solid black;
+    padding-left: 2.5em;
+    padding-right: 5em;
+}
   
   @media (max-width: 1215px) {
     .intro-container1 {
@@ -85,23 +119,29 @@
 
     .learn-more {
         width: 100%;
-        padding-left: 7em;
-        padding-right: 7em;
+        /* padding-left: 7em;
+        padding-right: 7em; */
         margin: 0;
         text-align: center;
     }
     
     .list {
         width: 100%;
-        padding-left: 7em;
+        /* padding-left: 7em; */
         padding-right: 7em;
         margin: 0;
         text-align: center;
+        display: block;
+       padding-left: auto;
     }
 
     ul {
         text-align: center;
         list-style-position: inside;
+    }
+
+    .intro-img {
+        width: 80%;
     }
   }
 
@@ -117,35 +157,9 @@
     }
   }
   
-  .intro-img {
-    width: 100%;
-    box-shadow: 5px 10px 8px #888888;
-  }
+  
 
-.learn-more {
-    font-size: 1.07em;
-    letter-spacing: 1.5px;
-    padding: 1.5em;
-    padding-top: 0em;
-    padding-bottom: 0;
-    margin-right: 0px;
-    margin-left: 50px;
-    width: 85%;
-    color: #212121;
-    /* border: 1px solid black; */
-}
 
-.list {
-    font-size: 1.07em;
-    letter-spacing: 1.5px;
-    margin-right: 0px;
-    margin-left: 50px;
-    width: 92%;
-    color: #212121;
-    /* border: 1px solid black; */
-    padding-left: 2.5em;
-    padding-right: 5em;
-}
 
 hr {
     border: 0;
@@ -157,7 +171,3 @@ hr {
     margin-left: auto;
   }
 
-.dash {
-    /* border: 1px solid black; */
-    padding-bottom: 1.5em;
-}

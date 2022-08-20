@@ -1,7 +1,7 @@
 .homeBackground {
     height: 85vh;
     /* background: url("../assets/titleImage.jpg") no-repeat; */
-    background: rgba(0, 0, 0, 0.5) url('../assets/titleImage.jpg');
+    background: rgba(0, 0, 0, 0.5) url('../assets/titleImage.jpg') center no-repeat;
     background-blend-mode: darken;
     background-position: center; 
     background-repeat: no-repeat;
@@ -60,11 +60,11 @@
 
 @media (max-width: 1000px) {
   .title {
-    font-size: 4em;
+    font-size: 3em;
   }
 
   .subtitle {
-    font-size: 1.5em;
+    font-size: 0.8em;
   }
 }
 
