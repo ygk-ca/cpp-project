@@ -1,6 +1,5 @@
 import "../styles/ProjectDetails.css";
 import React, { useState } from 'react';
-import PDF from './s.pdf'
 import Popup from "./Popup";
 
 const ProjectDetails = ({ project }) => {

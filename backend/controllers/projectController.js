@@ -108,7 +108,7 @@ const createProject = async (req, res) => {
         assignment_type : assignment_type,
         keywords: keywords,
         sharepoint_link : sharepoint_link,
-        statement : statement
+        statement : statement,
     });
     try {
         await newProject.save();

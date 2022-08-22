@@ -53,7 +53,12 @@ const projectSchema = new Schema({
     // ONLY APPLIES TO TIER 2 ASSIGNMENTS, NOT REQUIRED
     sharepoint_link: {
         type: String
-    }
+    },
+
+    // preview_img: {
+    //     data: Buffer,
+    //     contentType: String
+    // }
     
 }, { timestamps: true })
 

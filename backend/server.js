@@ -5,24 +5,46 @@ const multer = require('multer')
 const mongoose = require('mongoose')
 const projectRoutes = require('./routes/projects')
 
+// const bodyParser = require("body-parser")
+
 // express app
 const app = express()
 
-// multer app engine
-const fileStorageEngine = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "./files")
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + '--' + file.originalname)
-    }
-})
-const upload = multer({ storage: fileStorageEngine })
 
-app.post("/single", upload.single("file"), (req, res) => {
-    console.log(req.file);
-    res.send('Single file upload success');
-})
+// app.use(bodyParser.urlencoded(
+//     { extended:true }
+// ))
+
+// // SET STORAGE
+// var storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, 'uploads')
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.fieldname + '-' + Date.now())
+//     }
+//   })
+ 
+// var upload = multer({ storage: storage })
+
+// app.post("/uploadphoto",upload.single('preview_img'),(req,res)=>{
+//     var img = fs.readFileSync(req.file.path);
+//     var encode_img = img.toString('base64');
+//     var final_img = {
+//         contentType:req.file.mimetype,
+//         image:new Buffer(encode_img,'base64')
+//     };
+//     imageModel.create(final_img,function(err,result){
+//         if(err){
+//             console.log(err);
+//         }else{
+//             console.log(result.img.Buffer);
+//             console.log("Saved To database");
+//             res.contentType(final_img.contentType);
+//             res.send(final_img.image);
+//         }
+//     })
+// })
 
 // middleware
 app.use(express.json())

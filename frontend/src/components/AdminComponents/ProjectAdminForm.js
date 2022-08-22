@@ -18,6 +18,8 @@ const ProjectAdminForm = () => {
     const [assignment_type, setAssignmentType] = useState('')
     const [sharepoint_link, setSharepointLink] = useState('')
     const [statement, setStatement] = useState('')
+    // const [preview_img, setPreviewImg] = useState([])
+
     const [error, setError] = useState(null)
 
     // Adding keywords
@@ -30,7 +32,7 @@ const ProjectAdminForm = () => {
 
         const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords, sharepoint_link, statement}
         console.log(project)
-             
+            
         // Sending form response to backend
         const response = await fetch('/api/projects', {
             method: 'POST',
@@ -152,19 +154,27 @@ const ProjectAdminForm = () => {
 
             <hr></hr>
 
-            <label>OPTIONAL - Statement (Tier 1 & 2):</label>
+            <label>OPTIONAL - Statement (ONLY Assessment Ideas and Discussion Topics):</label>
             <input 
                 type="text"
                 onChange={(e) => setStatement(e.target.value)}
                 value={statement}
             />
 
-            <label>OPTIONAL - Qualtrics Link (Tier 3):</label>
+            <label>OPTIONAL - Qualtrics Link (ONLY Mini Case Study):</label>
             <input 
                 type="text"
                 onChange={(e) => setSharepointLink(e.target.value)}
                 value={sharepoint_link}
             />
+
+            {/* <label>OPTIONAL - Preview image:</label>
+            <input
+                type="file"
+                name="preview_img"
+                accept="image/*"
+                onChange={(e) => setPreviewImg(e.target.value)}
+            /> */}
             
             <div className="add-proj">
                 <button>Add Project</button>

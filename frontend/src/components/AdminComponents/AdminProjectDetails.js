@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PDF from '../s.pdf'
 
 
 const AdminProjectDetails = ({ project }) => {
@@ -77,9 +76,6 @@ const AdminProjectDetails = ({ project }) => {
                         <>
                             <a href={project.sharepoint_link} without="true" rel="noopener noreferrer" target="_blank">
                                 <button className="btn btn-outline">Download</button>
-                            </a>
-                            <a href={PDF} without="true" rel="noopener noreferrer" target="_blank">
-                                <button className="btn">Preview</button>
                             </a>
                         </>
                     }

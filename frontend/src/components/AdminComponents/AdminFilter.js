@@ -93,19 +93,6 @@ class AdminFilter extends React.Component {
                                     />
 
                                     <br></br>
-                                    <div className="filter-subtitle">Keyword(s):</div>
-                                    <Multiselect
-                                        isObject={false}
-                                        onRemove={(e) => {
-                                            this.setState({keywords: e});
-                                        }}
-                                        onSelect={(e) => {
-                                            this.setState({keywords: e});
-                                        }}
-                                        options={keywordsOptions}
-                                    />
-
-                                    <br></br>
 
                                     <div className="filter-subtitle">Assignment Type:</div>
                                     <Select
@@ -119,6 +106,19 @@ class AdminFilter extends React.Component {
                                             this.setState({ assignment_type: e.value })
                                         }}
                                         options={assingmentOptions}                 
+                                    />
+
+                                    <br></br>
+                                    <div className="filter-subtitle">Keyword(s):</div>
+                                    <Multiselect
+                                        isObject={false}
+                                        onRemove={(e) => {
+                                            this.setState({keywords: e});
+                                        }}
+                                        onSelect={(e) => {
+                                            this.setState({keywords: e});
+                                        }}
+                                        options={keywordsOptions}
                                     />
                                 </div>
 
