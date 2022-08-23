@@ -1,50 +1,96 @@
-/* ==== GENERAL STYLES ==== */
-
+/* Generic styling */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-strong {
-  font-weight: 700;
+ul {
+  list-style: none;
+  padding-left: 0;
 }
-
-/* ==== SIMPLE FOOTER ==== */
-
 footer {
-  background-color: #b90e31;
-  display: table;
-  width: 100vw;
-  height: 8rem;
-  text-align: center;
-  padding: 1rem;
-  font-family: 'Arial', sans-serif;
-  font-size: .875rem;
+  background-color: #002452;
+  color: white;
+  line-height: 1.5;
 }
-
-.wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-footer small {
-  color: #ffffff;
-  letter-spacing: .025rem;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.footer-nav a {
-  /* color: #00e676; */
-  color: #ffffff;
+footer a {
   text-decoration: none;
-  margin: 0 .5rem;
-  display: inline-block;
+  color: #eee;
+}
+a:hover {
+  text-decoration: underline;
+}
+.ft-title {
+  color: #fff;
+  font-size: 1.375rem;
+  padding-bottom: 0.625rem;
+}
+/* Sticks footer to bottom */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.container {
+  flex: 1;
+}
+/* Footer main */
+.ft-main {
+  padding: 1.25rem 1.875rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.footer-nav a:hover {
-  /* color: #05c96a; */
-  color: #ececec;
-  transition: color .15s ease-in-out;
+.copyright-item {
+  width: 20rem;
+  word-wrap: break-word;
+  /* border: 1px solid black; */
 }
 
+@media only screen and (min-width: 29.8125rem /* 477px */) {
+  .ft-main {
+    justify-content: space-evenly;
+  }
+}
+@media only screen and (min-width: 77.5rem /* 1240px */) {
+  .ft-main {
+    justify-content: space-evenly;
+  }
+}
+.ft-main-item {
+  padding: 1.25rem;
+  min-width: 12.5rem;
+}
 
+/* Footer social */
+.ft-social {
+  padding: 0 1.875rem 1.25rem;
+}
+.ft-social-list {
+  display: flex;
+  justify-content: center;
+  border-top: 1px white solid;
+  padding-top: 1.25rem;
+}
+.ft-social-list li {
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+/* Footer legal */
+.ft-legal {
+  padding: 0.9375rem 1.875rem;
+  background-color: #b90e31;
+}
+.ft-legal-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ft-legal-list li {
+  margin: 0.125rem 0.625rem;
+  white-space: nowrap;
+}
+/* one before the last child */
+.ft-legal-list li:nth-last-child(2) {
+    flex: 1;
+}

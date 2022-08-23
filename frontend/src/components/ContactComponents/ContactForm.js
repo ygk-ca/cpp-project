@@ -5,7 +5,7 @@ const ContactForm = () => {
 
         <div className="contact-page-body">
             {/* change string query when activating new email */}
-            <form action="https://formsubmit.co/7e9607ca308334260faec51a813cd22e" method="POST">
+            <form action="https://formsubmit.co/asc.el@queensu.ca" method="POST">
                 <h1>Contact Us</h1>
                 <p style={{padding: "20px"}}>Do you want assistance in coordinating a community partnership for your course, update/add to the resources on this website or just talk through options for embedding the SDGs into your curriculum?  Fill out the contact form and we’ll get back in touch, usually the same day! </p>
 
