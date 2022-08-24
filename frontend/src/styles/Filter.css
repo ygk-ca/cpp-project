@@ -1,5 +1,5 @@
 .filterBackground {
-    height: 60vh;
+    height: 70vh;
     background: rgba(0, 0, 0, 0.55) url('../assets/catalogue_img.jpg');
     background-blend-mode: darken;
     background-position: center; 

@@ -8,13 +8,13 @@ const Footer = () => {
                 <div class="ft-main-item">
                     <h2 class="ft-title">Website Copyright</h2>
                     <div className="copyright-item">
-                        This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. It is attributed to the Experiential Learning & Programming team, Faculty of Arts & Science, Queen’s University and the original version can be found here (insert link).
+                    Unless otherwise specified, this work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. This means that you are free to Share (copy and redistribute the material in any medium or format) and Adapt (remix, transform, and build upon the material), under the following terms. 
                     </div>
                 </div>
                 <div class="ft-main-item">
                     <h2 class="ft-title">United Nations Copyright</h2>
                     <div className="copyright-item">
-                        UN logo (without emblem)<br></br>Icons and logos are reproduced in accordance with the UN SDG Guidelines, May 2020.
+                        TODO -- UN logo (without emblem)<br></br>Icons and logos are reproduced in accordance with the UN SDG Guidelines, May 2020.
                     </div>
                 </div>
                 {/* <div class="ft-main-item">
@@ -41,6 +41,7 @@ const Footer = () => {
                         <a href="#"> Back to Top </a>
                         <a target="_blank" href="https://www.queensu.ca/artsci/terms-and-conditions"> Terms &amp; Conditions </a>
                         <a target="_blank" href="https://www.queensu.ca/accessandprivacy/"> Privacy Policy </a>
+                        <a target="_blank" href="/admin-page"> Admin Login </a>
                     </div>
                     <div className="ft-btm-right">
                         &copy;2022-present. Queen's University Arts and Science Experiential Learning Team, All Rights Reserved.

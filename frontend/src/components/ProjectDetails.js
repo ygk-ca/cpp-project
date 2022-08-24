@@ -75,6 +75,10 @@ const ProjectDetails = ({ project }) => {
                             <strong>Assignment Type:</strong> {project.assignment_type}
                         </div>
 
+                        <div className="card-assignment">
+                            <strong>{project.assignment_type.slice(0, project.assignment_type.length - 1)}:</strong> {project.statement}
+                        </div>
+
                         <div className="card-keywords">
                             <strong>Keywords:</strong> {project.keywords.map((kw)=>{
                                         if (kw !== project.keywords[project.keywords.length - 1]) {

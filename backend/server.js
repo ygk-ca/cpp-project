@@ -49,6 +49,9 @@ const app = express()
 // middleware
 app.use(express.json())
 
+const bodyParser = require("express").json
+app.use(bodyParser())
+
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
@@ -70,4 +73,48 @@ mongoose.connect(process.env.MONGO_URI)
     })
 
 
+// nodemailer config
+const nodemailer = require("nodemailer")
 
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: process.env.AUTH_EMAIL,
+        pass: process.env.AUTH_PASS // generated app password
+    }
+})
+
+// testing nodemailer success
+transporter.verify((error, success) => {
+    if (error) {
+        console.log(error)
+    }
+    else {
+        console.log("ready for messages")
+        console.log(success)
+    }
+})
+
+app.post("/api/sendmail", (req, res) => {
+    const {name, email, phone, message} = req.body;
+
+    const mailOptions = {
+        from: process.env.AUTH_EMAIL,
+        to: 'vs61@queensu.ca',
+        subject: 'Community Partnership Project Contact Form Inquiry',
+        // html: <div>Name: {name}<br/>Email: {email}<br/>Phone: {phone}<br/>Message: {message}</div>
+    }
+
+    transporter.sendMail(mailOptions)
+        .then(() => {
+            res.json({
+                status: "SUCCESS",
+                message: "Message sent successfuly"
+            })
+        })
+        .catch((error) => {
+            //An error occured
+            console.log(error);
+            res.json({status: "FAILED", message: "An error occured!"})
+        })
+})

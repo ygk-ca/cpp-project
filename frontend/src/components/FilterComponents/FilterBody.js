@@ -93,7 +93,7 @@ class FilterBody extends React.Component {
                 <div className="no-project-container">
                     <div className="no-project-card">
                         <div className="no-project-msg">
-                            <strong>Sorry!</strong> There are no projects available given your specified search queries! If you can't find the project that you're looking for, <strong><a href="/contact">Contact Us</a></strong>!
+                            <strong>Sorry!</strong> There are no projects available given your specified search queries! If you can't find the project that you're looking for, <strong><a href="/contact" style={{color: "blue"}}>Contact Us</a></strong>!
                         </div>
                     </div>
                 </div>

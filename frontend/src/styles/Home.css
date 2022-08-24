@@ -1,5 +1,5 @@
 .homeBackground {
-    height: 75vh;
+    height: 85vh;
     /* background: url("../assets/titleImage.jpg") no-repeat; */
     background: rgba(0, 0, 0, 0.5) url('../assets/titleImage.jpg') center no-repeat;
     background-blend-mode: darken;
@@ -55,7 +55,7 @@
   font-weight: 300;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 @media (max-width: 1000px) {
