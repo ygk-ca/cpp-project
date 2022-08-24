@@ -4,7 +4,7 @@ const TitleBackground = () => {
             <div className="background">
                 <div id="header-content">
                     <div className="title">Social Impact Learning Lab</div>
-                    <div className="subtitle">PROVIDING ACTIVITIES, ASSESSMENTS & OPPORTUNITIES <br></br>THAT CONNECT STUDENT LEARNING WITH OUR COMMUNITY </div>
+                    <div className="subtitle">PROVIDING ACTIVITIES, ASSESSMENTS & OPPORTUNITIES THAT CONNECT STUDENT LEARNING WITH THE UN SUSTAINABLE DEVELOPMENT GOALS </div>
                 </div>
             </div>
         </div>
@@ -13,8 +13,3 @@ const TitleBackground = () => {
 }
 
 export default TitleBackground
-
-
-
-
-

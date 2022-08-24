@@ -48,6 +48,7 @@ const getFilteredProjects = async (req, res) => {
     }
 
     // ------ Checking for whether categories are specified by user ------
+    console.log(req.query.orginization)
 
     // See if sdg selected
     if (req.query.sdg !== '') {
@@ -56,6 +57,10 @@ const getFilteredProjects = async (req, res) => {
     // See if assignment type selected
     if (req.query.assignment_type !== '') {
         request["assignment_type"] = req.query.assignment_type
+    }
+    // See if organization is selected
+    if (req.query.orginization !== '') {
+        request["orginization"] = req.query.orginization
     }
     // See if keywords are selected
     if (req.query.keywords !== '') {

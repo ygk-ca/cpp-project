@@ -1,9 +1,8 @@
 /* Generic styling */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -41,6 +40,10 @@ body {
   flex-wrap: wrap;
 }
 
+.ft-image {
+  margin-left: auto;
+}
+
 .copyright-item {
   width: 20rem;
   word-wrap: break-word;
@@ -50,8 +53,17 @@ body {
 @media only screen and (min-width: 29.8125rem /* 477px */) {
   .ft-main {
     justify-content: space-evenly;
+    /* flex-direction: column; */
+  }
+  
+}
+
+@media (max-width: 1108px) {
+  .ft-image {
+    margin: 0;
   }
 }
+
 @media only screen and (min-width: 77.5rem /* 1240px */) {
   .ft-main {
     justify-content: space-evenly;

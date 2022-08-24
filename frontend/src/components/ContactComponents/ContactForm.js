@@ -17,7 +17,7 @@ const ContactForm = () => {
                         <input type="email" name="email" id="the-email" required/>
 
                         <label for="the-phone">Phone Number</label>
-                        <input type="tel" name="phone" id="the-phone" required/>
+                        <input type="tel" name="phone" id="the-phone"/>
 
                         <label for="the-reason">How can we help you?</label>
                         <select name="reason" id="the-reason" required>

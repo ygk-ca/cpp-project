@@ -7,6 +7,7 @@ import Select from 'react-select';
 import { keywordsOptions } from './CategoryArrays/KeywordsOptions'
 import { SDGOptions } from './CategoryArrays/SdgOptions';
 import { assingmentOptions } from './CategoryArrays/AssignmentOptions';
+import { organizationOptions } from './CategoryArrays/OrganizationOptions';
 
 // Main component handling the filter body
 class FilterBody extends React.Component {
@@ -19,6 +20,7 @@ class FilterBody extends React.Component {
             sdg: [""],
             theme: [""],
             keywords: [""],
+            orginization: "",
             
             showProjects: true,
             // Select module features
@@ -36,17 +38,18 @@ class FilterBody extends React.Component {
         console.log(this.state.theme)
         console.log(this.state.projects)
         console.log(this.state.keywords)
+        console.log(this.state.orginization)
 
         this.setState({ showProjects: true })
 
         const data = {
             sdg: this.state.sdg, 
             assignment_type: this.state.assignment_type,
-            theme: this.state.theme,
+            orginization: this.state.orginization,
             keywords: this.state.keywords
         }
 
-        fetch(`/api/projects/filter?sdg=${encodeURIComponent(data.sdg)}&assignment_type=${encodeURIComponent(data.assignment_type)}&theme=${encodeURIComponent(data.theme)}&keywords=${encodeURIComponent(data.keywords)}`, {
+        fetch(`/api/projects/filter?sdg=${encodeURIComponent(data.sdg)}&assignment_type=${encodeURIComponent(data.assignment_type)}&orginization=${encodeURIComponent(data.orginization)}&keywords=${encodeURIComponent(data.keywords)}`, {
             method: "GET",
             headers: {
                     'Content-Type': 'application/json;charset=utf-8', 
@@ -114,7 +117,24 @@ class FilterBody extends React.Component {
                                 />
 
                                 <br></br>
-                                
+
+                                <div className="filter-subtitle">Organization:</div>
+                                <Select
+                                    className="basic-single"
+                                    classNamePrefix="select"
+                                    placeholder="Select"
+                                    // isClearable={this.state.isClearable}
+                                    isSearchable={this.state.isSearchable}
+                                    name="color"
+                                    onChange={(e) => {
+                                        this.setState({ orginization: e.value })
+                                        console.log(e)
+                                    }}
+                                    options={organizationOptions}                 
+                                />
+
+                                <br></br>
+
                                 <div className="filter-subtitle">Keyword(s):</div>
                                 <Multiselect
                                     isObject={false}

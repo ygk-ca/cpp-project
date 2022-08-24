@@ -1,4 +1,5 @@
 import "../styles/Footer.css";
+import FooterLogo from './footer-logo.png'
 
 const Footer = () => {
     return (
@@ -16,16 +17,18 @@ const Footer = () => {
                         UN logo (without emblem)<br></br>Icons and logos are reproduced in accordance with the UN SDG Guidelines, May 2020.
                     </div>
                 </div>
-                <div class="ft-main-item">
-                    <h2 class="ft-title">Contact</h2>
-                    <ul>
-                        <li><a href="/contact">Need more help?</a></li>
-
-                    </ul>
+                {/* <div class="ft-main-item">
+                    
                 </div>
                 <div class="ft-main-item">
-                    <img src=""></img>
+                    
+                </div> */}
+                <div className="ft-image">
+                    <div class="ft-main-item">
+                        <img src={FooterLogo} height="200"/>
+                    </div>
                 </div>
+                
             </section>
 
             <section class="ft-social">

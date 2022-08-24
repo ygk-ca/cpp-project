@@ -35,6 +35,9 @@ const ProjectDetails = ({ project }) => {
                 {project.assignment_type === 'Mini Case Studies' &&
                     <>
                         <div className="card-title"><strong>{sdg_name}</strong></div>
+                        <div className="card-mid">
+                            <strong>Organization:</strong> {project.orginization}
+                        </div>
                         <div className="card-body">
                             <strong>Description:</strong> {project.goal}
                         </div>
