@@ -2,6 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { adminSDGOptions } from "./AdminCategoryLists";
 import { adminAssingmentOptions } from "./AdminCategoryLists";
+import { adminOrganizationOptions } from "./AdminCategoryLists";
 import { keywordsOptions } from "../FilterComponents/CategoryArrays/KeywordsOptions";
 import Multiselect from "multiselect-react-dropdown"
 import Select from 'react-select';
@@ -94,10 +95,14 @@ const ProjectAdminForm = () => {
             />
 
             <label>OPTIONAL - Organization:</label>
-            <input 
-                type="text"
-                onChange={(e) => setOrginization(e.target.value)}
-                value={orginization}
+            <Select
+                className="basic-single"
+                classNamePrefix="select"
+                placeholder="Select"
+                name="color"
+                options={adminOrganizationOptions}
+                onChange={(selection) => setOrginization(selection.value)}
+                required
             />
 
             <label>OPTIONAL - Source:</label>
@@ -151,8 +156,8 @@ const ProjectAdminForm = () => {
                 options={keywordsOptions}
                 required
             />
-
-            <hr></hr>
+            
+            <hr/>
 
             <label>OPTIONAL - Statement (ONLY Assessment Ideas and Discussion Topics):</label>
             <input 

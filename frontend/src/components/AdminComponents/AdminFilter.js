@@ -7,6 +7,7 @@ import Select from 'react-select';
 import { SDGOptions } from '../FilterComponents/CategoryArrays/SdgOptions';
 import { assingmentOptions } from '../FilterComponents/CategoryArrays/AssignmentOptions';
 import { keywordsOptions } from "../FilterComponents/CategoryArrays/KeywordsOptions";
+import { organizationOptions } from '../FilterComponents/CategoryArrays/OrganizationOptions';
 import ProjectAdminForm from './ProjectAdminForm';
 
 // Main component handling the filter body
@@ -19,6 +20,7 @@ class AdminFilter extends React.Component {
             assignment_type: "",
             sdg: [""],
             keywords: [""],
+            orginization: "",
             
             showProjects: true,
             // Select module features
@@ -39,10 +41,11 @@ class AdminFilter extends React.Component {
         const data = {
             sdg: this.state.sdg, 
             assignment_type: this.state.assignment_type,
+            orginization: this.state.orginization,
             keywords: this.state.keywords
         }
 
-        fetch(`/api/projects/filter?sdg=${encodeURIComponent(data.sdg)}&assignment_type=${encodeURIComponent(data.assignment_type)}&keywords=${encodeURIComponent(data.keywords)}`, {
+        fetch(`/api/projects/filter?sdg=${encodeURIComponent(data.sdg)}&assignment_type=${encodeURIComponent(data.assignment_type)}&orginization=${encodeURIComponent(data.orginization)}&keywords=${encodeURIComponent(data.keywords)}`, {
             method: "GET",
             headers: {
                     'Content-Type': 'application/json;charset=utf-8', 
@@ -109,6 +112,24 @@ class AdminFilter extends React.Component {
                                     />
 
                                     <br></br>
+
+                                    <div className="filter-subtitle">Organization:</div>
+                                    <Select
+                                        className="basic-single"
+                                        classNamePrefix="select"
+                                        placeholder="Select"
+                                        // isClearable={this.state.isClearable}
+                                        isSearchable={this.state.isSearchable}
+                                        name="color"
+                                        onChange={(e) => {
+                                            this.setState({ orginization: e.value })
+                                            console.log(e)
+                                        }}
+                                        options={organizationOptions}                 
+                                    />
+
+                                    <br></br>
+
                                     <div className="filter-subtitle">Keyword(s):</div>
                                     <Multiselect
                                         isObject={false}

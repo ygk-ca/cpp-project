@@ -143,7 +143,7 @@ const ProjectDetails = ({ project }) => {
                     <div className="card-assignment">
                         <strong>Website source URL: </strong> 
                         {project.website_url !== '' ?
-                            <a href={project.website_url} target="_blank"><u>Website Link</u></a>
+                            <a style={{color: "blue"}}href={project.website_url} target="_blank"><u>Website Link</u></a>
                             :
                             " No website link available"
                         }
@@ -159,9 +159,9 @@ const ProjectDetails = ({ project }) => {
                     </div>
 
                     <div className="card-assignment">
-                        <strong>Source:</strong> 
+                        <strong>Source: </strong> 
                         {project.source !== '' ?
-                            <a href={project.source} target="_blank"><u>Source Link</u></a>
+                            <a style={{color: "blue"}} href={project.source} target="_blank"><u>Source Link</u></a>
                             :
                             " No source link available"
                         }
@@ -176,3 +176,4 @@ const ProjectDetails = ({ project }) => {
 }
 
 export default ProjectDetails
+
