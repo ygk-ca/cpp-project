@@ -114,6 +114,8 @@
     height: 50vh;
 }
 
+
+
 .content {
     opacity: 100;
     transition-duration: 2s;
@@ -162,4 +164,26 @@
     padding: 32px;
     padding-top: 0;
     padding-bottom: 15px;
+}
+
+.no-project-container {
+    /* height: auto; */
+    padding: 3em;
+    display: flex;
+}
+
+.no-project-card {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.no-project-msg {
+    padding: 3em;
+    font-size: 25px;
+    color: #002452;
+    text-align: center;
 }

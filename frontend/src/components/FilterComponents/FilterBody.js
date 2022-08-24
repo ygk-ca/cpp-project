@@ -21,6 +21,8 @@ class FilterBody extends React.Component {
             theme: [""],
             keywords: [""],
             orginization: "",
+
+            jsonLength: 1,
             
             showProjects: true,
             // Select module features
@@ -56,7 +58,11 @@ class FilterBody extends React.Component {
                 },
         })
             .then(response => response.json())
-            .then(json => this.setState({projects: json}))
+            .then(json => (this.setState({projects: json, jsonLength: json.length})))
+            .then(jsonLength => console.log(jsonLength))
+
+        console.log(this.state.projects.length)
+        
     }
 
     async componentDidMount() {
@@ -69,7 +75,32 @@ class FilterBody extends React.Component {
         
     }
 
-    
+    projectDisplay() {
+        return (
+            <>
+                <div className="content">
+                    {this.state.projects && this.state.projects.map((project) => (
+                        <ProjectDetails key={project._id} project={project}/>
+                    ))}
+                </div>
+            </>
+        )
+    }
+
+    noProjectDisplay() {
+        return (
+            <>
+                <div className="no-project-container">
+                    <div className="no-project-card">
+                        <div className="no-project-msg">
+                            <strong>Sorry!</strong> There are no projects available given your specified search queries! If you can't find the project that you're looking for, <strong><a href="/contact">Contact Us</a></strong>!
+                        </div>
+                    </div>
+                </div>
+            </>
+        )
+    }
+
 
     render() {
       return (
@@ -112,6 +143,7 @@ class FilterBody extends React.Component {
                                     name="color"
                                     onChange={(e) => {
                                         this.setState({ assignment_type: e.value })
+                                        
                                     }}
                                     options={assingmentOptions}                 
                                 />
@@ -156,24 +188,11 @@ class FilterBody extends React.Component {
                         </div>
                     </div>
                 </div>
-                
 
                 {/* Lists projects */}
+                
                 <div className="projects">
-                    {this.state.showProjects === true &&
-                        <div className="content">
-                            {this.state.projects && this.state.projects.map((project) => (
-                                <ProjectDetails key={project._id} project={project}/>
-                            ))}
-                        </div>
-                    }
-                    {this.state.showProjects === false &&
-                        <div className="initial-screen"> 
-                            Enter filter options to get started!
-                        </div>
-                    }
-                    
-                    
+                    {this.state.jsonLength > 0 ? this.projectDisplay() : this.noProjectDisplay()}
                 </div>
             </div>
         </>

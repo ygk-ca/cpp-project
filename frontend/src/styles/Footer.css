@@ -106,3 +106,31 @@ body {
 .ft-legal-list li:nth-last-child(2) {
     flex: 1;
 }
+
+.ft-btm-left {
+  text-align: center;
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.ft-btm-right {
+  margin-left: auto;
+  text-align: center;
+}
+
+@media (max-width: 1578px) {
+  .ft-legal-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ft-btm-left {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .ft-btm-right {
+    margin-left: 0;
+    width: 100%;
+  }
+}

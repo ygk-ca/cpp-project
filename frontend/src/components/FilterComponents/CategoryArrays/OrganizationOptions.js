@@ -4,6 +4,7 @@ export const organizationOptions = [
     { value: 'Addiction & Mental Health Services, Kingston', label: 'Addiction & Mental Health Services, Kingston'},
     { value: 'Agnes Etherington Arts Centre', label: 'Agnes Etherington Arts Centre'},
     { value: 'Arctic Youth Network', label: 'Arctic Youth Network'},
+    { value: "Athletics & Recreation, Queen's University", label: "Athletics & Recreation, Queen's University"},
     { value: 'Atlantic Science Enterprise Centre', label: 'Atlantic Science Enterprise Centre'},
     { value: 'Beyond Classrooms Kingston', label: 'Beyond Classrooms Kingston'},
     { value: 'Big Brothers, Big Sisters of Kingston, Frontenac, Lennox and Addington', label: 'Big Brothers, Big Sisters of Kingston, Frontenac, Lennox and Addington'},

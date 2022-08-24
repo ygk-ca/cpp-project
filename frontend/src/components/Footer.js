@@ -35,13 +35,24 @@ const Footer = () => {
                 <ul class="ft-social-list"/>
             </section>
 
-            <section class="ft-legal">
-                <ul class="ft-legal-list">
+            <section className="ft-legal">
+                <div className="ft-legal-list">
+                    <div className="ft-btm-left">
+                        <a href="#"> Back to Top </a>
+                        <a target="_blank" href="https://www.queensu.ca/artsci/terms-and-conditions"> Terms &amp; Conditions </a>
+                        <a target="_blank" href="https://www.queensu.ca/accessandprivacy/"> Privacy Policy </a>
+                    </div>
+                    <div className="ft-btm-right">
+                        &copy;2022-present. Queen's University Arts and Science Experiential Learning Team, All Rights Reserved.
+                    </div>
+                </div>
+
+                {/* <ul className="ft-legal-list">
                     <li><a href="#">Back to Top</a></li>
                     <li><a target="_blank" href="https://www.queensu.ca/artsci/terms-and-conditions">Terms &amp; Conditions</a></li>
                     <li><a target="_blank" href="https://www.queensu.ca/accessandprivacy/">Privacy Policy</a></li>
-                    <li>&copy;2022-present. Queen's University Arts and Science Experiential Learning Team, All Rights Reserved. </li>
-                </ul>
+                    <li>&copy;2022-present. Queen's University Arts and Science Experiential Learning Team, All Rights Reserved.</li>
+                </ul> */}
             </section>
         </footer>
     )
