@@ -55,7 +55,11 @@ const projectSchema = new Schema({
         type: String
     },
 
-    // preview_img: {
+    relationship_manager: {
+        type: String
+    }
+
+    // img: {
     //     data: Buffer,
     //     contentType: String
     // }

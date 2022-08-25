@@ -5,6 +5,7 @@ const multer = require('multer')
 const mongoose = require('mongoose')
 const projectRoutes = require('./routes/projects')
 
+
 // const bodyParser = require("body-parser")
 
 // express app
@@ -45,6 +46,16 @@ const app = express()
 //         }
 //     })
 // })
+
+// var storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, 'uploads')
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.fieldname + '-' + Date.now())
+//     }
+//   })
+//   var upload = multer({ storage: storage })
 
 // middleware
 app.use(express.json())

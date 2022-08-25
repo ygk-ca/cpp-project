@@ -38,6 +38,10 @@ const AdminProjectDetails = ({ project }) => {
                 </div>
 
                 <div className="card-assignment">
+                    <strong>{project.assignment_type.slice(0, project.assignment_type.length - 1)}:</strong> {project.statement}
+                </div>
+
+                <div className="card-assignment">
                     <strong>Organization:</strong> {project.orginization}
                 </div>
 
@@ -71,19 +75,12 @@ const AdminProjectDetails = ({ project }) => {
                 </div>
 
                 <div className="card-footer">
-                    <button className="btn">Details</button>
                     {project.assignment_type === 'Mini Case Studies' &&
                         <>
                             <a href={project.sharepoint_link} without="true" rel="noopener noreferrer" target="_blank">
-                                <button className="btn btn-outline">Download</button>
+                                <button className="btn btn-outline">View Qualtrics</button>
                             </a>
                         </>
-                    }
-                    {project.assignment_type !== 'Mini Case Studies' &&
-                        <button className="btn btn-outline" onClick={function(event){ navigator.clipboard.writeText(project.goal); alert('Text copied to clipboard!') }}
-                            >
-                            Copy to Clipboard
-                        </button>
                     }
                     <button className="del-btn" onClick={handleDelete}>Delete</button>
                 </div>

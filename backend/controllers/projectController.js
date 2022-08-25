@@ -99,9 +99,12 @@ const getProject = async (req, res) => {
     res.status(200).json(project)
 }
 
+
+
 // create new project
 const createProject = async (req, res) => {
     const {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords, sharepoint_link, statement} = req.body
+    
     const newProject = new Project({
         sdg: sdg,
         goal : goal,

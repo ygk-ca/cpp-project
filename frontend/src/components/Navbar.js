@@ -42,7 +42,7 @@ const Navbar = () => {
                                     <a href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a target="_blank" href="https://queensuca-my.sharepoint.com/:x:/g/personal/cd88_queensu_ca/EQPKQCyBZV9IgN8bef55Xc4Bw1eC8idlkICHTwXJ5C8lyg?e=V91bfJ">Resources</a>
+                                    <a target="_blank" href="https://queensuca.sharepoint.com/:x:/s/ASO-Courses/ESbN-yc9Hp9Dn5zjwgdKmCUBWKQeGPXxDaYUzaYKDBT0JQ?email=simerus.mahesh%40queensu.ca&e=4%3AALpsCC&at=9&CID=8355a1f3-7e97-ea73-bf88-c6fc2961b7c7">Resources</a>
                                 </li>
                                 <li>
                                     <a href="/filter">Catalogue</a>

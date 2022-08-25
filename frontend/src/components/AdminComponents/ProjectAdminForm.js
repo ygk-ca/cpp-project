@@ -19,7 +19,7 @@ const ProjectAdminForm = () => {
     const [assignment_type, setAssignmentType] = useState('')
     const [sharepoint_link, setSharepointLink] = useState('')
     const [statement, setStatement] = useState('')
-    // const [preview_img, setPreviewImg] = useState([])
+    // const [img, setImg] = useState([])
 
     const [error, setError] = useState(null)
 
@@ -32,7 +32,6 @@ const ProjectAdminForm = () => {
         console.log('button clicked')
 
         const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords, sharepoint_link, statement}
-        console.log(project)
             
         // Sending form response to backend
         const response = await fetch('/api/projects', {
@@ -70,10 +69,8 @@ const ProjectAdminForm = () => {
     }
 
     return (
-        <form className="create project-form" onSubmit={handleSubmit}>
+        <form className="create project-form" enctype="multipart/form-data" onSubmit={handleSubmit}>
             <h2 style={{"textAlign": "center"}}>Add a New Project</h2>
-
-            <hr></hr>
 
             <label>Sustainable Development Goal:</label>
             <Select
@@ -85,6 +82,8 @@ const ProjectAdminForm = () => {
                 onChange={(selection) => setSDG(selection.value)}
                 required
             />
+
+            <br></br>
 
             <label>Description:</label>
             <input 
@@ -104,6 +103,8 @@ const ProjectAdminForm = () => {
                 onChange={(selection) => setOrginization(selection.value)}
                 required
             />
+
+            <br></br>
 
             <label>OPTIONAL - Source:</label>
             <input 
@@ -145,7 +146,7 @@ const ProjectAdminForm = () => {
                 required
             />
 
-            <hr></hr>
+            <br></br>
 
             <label>Enter Keyword(s):</label>
             <Multiselect
@@ -156,8 +157,7 @@ const ProjectAdminForm = () => {
                 options={keywordsOptions}
                 required
             />
-            
-            <hr/>
+            <br></br>
 
             <label>OPTIONAL - Statement (ONLY Assessment Ideas and Discussion Topics):</label>
             <input 
@@ -176,9 +176,9 @@ const ProjectAdminForm = () => {
             {/* <label>OPTIONAL - Preview image:</label>
             <input
                 type="file"
-                name="preview_img"
+                name="myImage"
                 accept="image/*"
-                onChange={(e) => setPreviewImg(e.target.value)}
+                onChange={(e) => setImg(e.target.value)}
             /> */}
             
             <div className="add-proj">
