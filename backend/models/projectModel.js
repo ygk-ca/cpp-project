@@ -45,12 +45,12 @@ const projectSchema = new Schema({
     }],
 
     // assignment specific schema templates
-    // ONLY APPLIES TO TIER 1 ASSIGNMENTS, NOT REQUIRED
+    // ONLY APPLIES TO TIER 1 AND 2 ASSIGNMENTS, NOT REQUIRED
     statement: {
         type: String
     },
 
-    // ONLY APPLIES TO TIER 2 ASSIGNMENTS, NOT REQUIRED
+    // ONLY APPLIES TO TIER 3 ASSIGNMENTS, NOT REQUIRED
     sharepoint_link: {
         type: String
     },

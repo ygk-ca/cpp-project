@@ -6,7 +6,7 @@ import "../styles/Contact.css";
 
 const Contact = () => {
     return (
-        <div className="contact">
+        <div className="contact-page">
             <div className="contact-form-container">
                 <ContactForm />
             </div>

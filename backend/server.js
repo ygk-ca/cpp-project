@@ -96,13 +96,23 @@ transporter.verify((error, success) => {
 })
 
 app.post("/api/sendmail", (req, res) => {
-    const {name, email, phone, message} = req.body;
+    const {name, email, course, phone, message} = req.body;
 
     const mailOptions = {
         from: process.env.AUTH_EMAIL,
         to: 'vs61@queensu.ca',
         subject: 'Community Partnership Project Contact Form Inquiry',
-        // html: <div>Name: {name}<br/>Email: {email}<br/>Phone: {phone}<br/>Message: {message}</div>
+        html: `<div>
+                    <strong>Name: </strong>${name}
+                    <br/><hr/>
+                    <strong>Email: </strong>${email}
+                    <br/><hr/>
+                    <strong>Course code: </strong>${course}
+                    <br/><hr/>
+                    <strong>Phone: </strong>${phone}
+                    <br/><hr/>
+                    <strong>Message: </strong>${message}
+                </div>`
     }
 
     transporter.sendMail(mailOptions)

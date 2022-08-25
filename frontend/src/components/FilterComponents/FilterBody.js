@@ -96,6 +96,7 @@ class FilterBody extends React.Component {
                             <strong>Sorry!</strong> There are no projects available given your specified search queries! If you can't find the project that you're looking for, <strong><a href="/contact" style={{color: "blue"}}>Contact Us</a></strong>!
                         </div>
                     </div>
+                    
                 </div>
             </>
         )
@@ -112,7 +113,7 @@ class FilterBody extends React.Component {
                             Filter Table
                         </div>
                         <div className="filterInstructBlurb">
-                            <div>To filter your results, please select one or more of the following categories. When you have finished making your selections, please click anywhere outside of the <em>Filter Table</em> dropdown lists and then click <em>‘Filter’</em>.</div>
+                            <div>To filter your results, please type in or select search queries from the following categories. When you have finished making your selections, please click out of the <em>Filter Table</em> dropdown and then click <em>‘Filter’</em>.</div>
                         </div>
                         
                         <div className="filterSDGDropDown">

@@ -42,7 +42,7 @@
 .title {
   animation: fade-slide-down-rotate 2s 2s cubic-bezier(0, 0.5, 0, 1) forwards;
   animation-delay: 800ms;
-  font-size: calc(5vw + 1vmin);
+  font-size: calc(4.5vw + 1vmin);
   font-weight: 400;
   margin-bottom: 2.5%;
   
