@@ -90,7 +90,7 @@ class ContactForm extends React.Component {
                     </p>
 
                     <p>
-                        <label>Course Code</label>
+                        <label>Course</label>
                         <input placeholder="optional" type="text" name="course" onChange={this.handleChange} />
                     </p>
 

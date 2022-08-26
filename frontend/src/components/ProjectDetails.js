@@ -4,6 +4,7 @@ import Popup from "./Popup";
 
 const ProjectDetails = ({ project }) => {
     const [buttonPopup, setButtonPopup] = useState(false);
+    const [buttonImagePopup, setButtonImagePopup] = useState(false);
 
 
     // Extracting SDG title name's number and storing it in variable to use in details
@@ -100,9 +101,10 @@ const ProjectDetails = ({ project }) => {
                             <a href={project.sharepoint_link} without="true" rel="noopener noreferrer" target="_blank">
                                 <button className="btn btn-outline">Download</button>
                             </a>
-                            <a href={'http://localhost:4000/images/' + project.img_filename} without="true" rel="noopener noreferrer" target="_blank">
-                                <button className="btn">Preview</button>
-                            </a>
+                            {/* <a href={'http://localhost:4000/images/' + project.img_filename} without="true" rel="noopener noreferrer" target="_blank">
+                                <button className="btn" onClick={() => setButtonPopup(true)}>Preview</button>
+                            </a> */}
+                            <button className="btn" onClick={() => setButtonImagePopup(true)}>Preview</button>
                         </>
                     }
                     {project.assignment_type !== 'Mini Case Studies' &&
@@ -176,6 +178,11 @@ const ProjectDetails = ({ project }) => {
                         
                     </div>
                 </Popup>
+                
+                <Popup trigger={buttonImagePopup} setTrigger={setButtonImagePopup}>
+                    <img src={'http://localhost:4000/images/' + project.img_filename} className="preview-img"></img>
+                </Popup>
+
             </div>
         </div>
      </>

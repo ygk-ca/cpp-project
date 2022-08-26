@@ -13,12 +13,13 @@ const app = express()
 
 // image upload
 const multer = require('multer')
+const { v4: uuidv4 } = require('uuid');
 const fileStorageEngine = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, './public')
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + '--' + file.originalname)
+        cb(null, uuidv4() + '--' + file.originalname)
     }
 });
 
@@ -38,8 +39,6 @@ app.use('/images', express.static('public'))
 // middleware
 app.use(express.json())
 
-// const bodyParser = require("express").json
-// app.use(bodyParser())
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)

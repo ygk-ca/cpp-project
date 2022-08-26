@@ -37,9 +37,11 @@ const AdminProjectDetails = ({ project }) => {
                     <strong>Assignment Type:</strong> {project.assignment_type}
                 </div>
 
-                <div className="card-assignment">
-                    <strong>{project.assignment_type.slice(0, project.assignment_type.length - 1)}:</strong> {project.statement}
-                </div>
+                {project.assignment_type !== 'Mini Case Studies' &&
+                    <div className="card-assignment">
+                        <strong>{project.assignment_type.slice(0, project.assignment_type.length - 1)}:</strong> {project.statement}
+                    </div>
+                }
 
                 <div className="card-assignment">
                     <strong>Organization:</strong> {project.orginization}
