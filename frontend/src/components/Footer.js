@@ -12,7 +12,7 @@ const Footer = () => {
                 </div>
                 <div class="ft-main-item">
                     <div className="copyright-item">
-                    Queen’s University support(s) the Sustainable Development Goals. <br/>Icons and logos are reproduced in accordance with the UN SDG Guidelines, May 2020. <br/><br/>The Faculty of Arts and Science sits on the traditional lands of the Haudenosaunee and Anishinaabe peoples (<a style={{color: "#a7a9ac"}} href="https://www.queensu.ca/artsci/about/equity-diversity-and-inclusion">learn more</a>).
+                    Queen’s University support(s) the Sustainable Development Goals. Icons and logos are reproduced in accordance with the United Nations Sustainable Development Goals Guidelines, May 2020. <br/><br/>The Faculty of Arts and Science sits on the traditional lands of the Haudenosaunee and Anishinaabe peoples (<a style={{color: "#a7a9ac"}} href="https://www.queensu.ca/artsci/about/equity-diversity-and-inclusion">learn more</a>).
                     </div>
                 </div>
                 <div className="ft-image">

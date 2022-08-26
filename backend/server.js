@@ -88,7 +88,7 @@ app.post("/api/sendmail", (req, res) => {
 
     const mailOptions = {
         from: process.env.AUTH_EMAIL,
-        to: 'vs61@queensu.ca',
+        to: process.env.CPP_EMAIL,
         subject: 'Community Partnership Project Contact Form Inquiry',
         html: `<div>
                     <strong>Name: </strong>${name}
