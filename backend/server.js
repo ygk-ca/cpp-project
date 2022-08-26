@@ -1,7 +1,6 @@
 require('dotenv').config()
 
 const express =  require('express')
-const multer = require('multer')
 const mongoose = require('mongoose')
 const projectRoutes = require('./routes/projects')
 
@@ -12,56 +11,35 @@ const projectRoutes = require('./routes/projects')
 const app = express()
 
 
-// app.use(bodyParser.urlencoded(
-//     { extended:true }
-// ))
+// image upload
+const multer = require('multer')
+const fileStorageEngine = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './public')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '--' + file.originalname)
+    }
+});
 
-// // SET STORAGE
-// var storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, 'uploads')
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, file.fieldname + '-' + Date.now())
-//     }
-//   })
- 
-// var upload = multer({ storage: storage })
+const upload = multer({ storage: fileStorageEngine });
 
-// app.post("/uploadphoto",upload.single('preview_img'),(req,res)=>{
-//     var img = fs.readFileSync(req.file.path);
-//     var encode_img = img.toString('base64');
-//     var final_img = {
-//         contentType:req.file.mimetype,
-//         image:new Buffer(encode_img,'base64')
-//     };
-//     imageModel.create(final_img,function(err,result){
-//         if(err){
-//             console.log(err);
-//         }else{
-//             console.log(result.img.Buffer);
-//             console.log("Saved To database");
-//             res.contentType(final_img.contentType);
-//             res.send(final_img.image);
-//         }
-//     })
-// })
+app.post('/api/single', upload.single('image'), (req, res) => {
+    console.log(req.file)
+    // res.send("Single File upload success")
+    res.json({filename: req.file.filename})
+});
 
-// var storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, 'uploads')
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, file.fieldname + '-' + Date.now())
-//     }
-//   })
-//   var upload = multer({ storage: storage })
+app.use('/images', express.static('public'))
+
+
+
 
 // middleware
 app.use(express.json())
 
-const bodyParser = require("express").json
-app.use(bodyParser())
+// const bodyParser = require("express").json
+// app.use(bodyParser())
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)

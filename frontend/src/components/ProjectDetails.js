@@ -100,9 +100,9 @@ const ProjectDetails = ({ project }) => {
                             <a href={project.sharepoint_link} without="true" rel="noopener noreferrer" target="_blank">
                                 <button className="btn btn-outline">Download</button>
                             </a>
-                            {/* <a href={PDF} without="true" rel="noopener noreferrer" target="_blank">
+                            <a href={'http://localhost:4000/images/' + project.img_filename} without="true" rel="noopener noreferrer" target="_blank">
                                 <button className="btn">Preview</button>
-                            </a> */}
+                            </a>
                         </>
                     }
                     {project.assignment_type !== 'Mini Case Studies' &&
@@ -152,6 +152,10 @@ const ProjectDetails = ({ project }) => {
                             " No website link available"
                         }
                         
+                    </div>
+
+                    <div className="card-assignment">
+                        <strong>Relationship Manager:</strong> {project.relationship_manager}
                     </div>
 
                     <div className="card-assignment">

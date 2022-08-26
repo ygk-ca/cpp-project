@@ -16,10 +16,17 @@
     flex-direction: column;
     position: relative;
     padding: 3em;
-    width: 100%;
-    max-width: 640px;
+    width: 60%;
+    max-width: fit-content;
     background-color: white;
     margin: 0.5em;
+}
+
+@media (max-width: 1000px) {
+    .popup-inner {
+        width: 100%;
+        max-width: fit-content;
+    }
 }
 
 .popup-inner .close-btn {

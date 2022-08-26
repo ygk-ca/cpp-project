@@ -19,7 +19,8 @@ const ProjectAdminForm = () => {
     const [assignment_type, setAssignmentType] = useState('')
     const [sharepoint_link, setSharepointLink] = useState('')
     const [statement, setStatement] = useState('')
-    // const [img, setImg] = useState([])
+    const [relationship_manager, setRelationManager] = useState('')
+    const [img, setImg] = useState([])
 
     const [error, setError] = useState(null)
 
@@ -30,9 +31,24 @@ const ProjectAdminForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault() // Prevents refresh of page from happening
         console.log('button clicked')
+        console.log(img)
 
-        const project = {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords, sharepoint_link, statement}
-            
+        // get the image data from the form submission
+
+        // Convert image file to form data
+
+        const imageForm = new FormData()
+        imageForm.append('image', img[0])
+
+        const imgResponse = await fetch('/api/single', {
+            method: 'POST',
+            body: imageForm
+        })
+
+        const imgResponseJson = await imgResponse.json()
+
+        const project = {img_filename: imgResponseJson.filename, sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords, sharepoint_link, statement, relationship_manager}
+        console.log({project})
         // Sending form response to backend
         const response = await fetch('/api/projects', {
             method: 'POST',
@@ -42,7 +58,6 @@ const ProjectAdminForm = () => {
             }
         })
         const json = await response.json
-        
 
         // Checking for error
         if (!response.ok) {
@@ -61,6 +76,7 @@ const ProjectAdminForm = () => {
             setKeywords([])
             setSharepointLink('')
             setStatement('')
+            setRelationManager('')
             
             setError(null)
             alert('Project added!')
@@ -135,6 +151,13 @@ const ProjectAdminForm = () => {
                 value={website_url}
             />
 
+            <label>OPTIONAL - Relationship Manager:</label>
+            <input 
+                type="text"
+                onChange={(e) => setRelationManager(e.target.value)}
+                value={relationship_manager}
+            />
+
             <label>Assignment Type:</label>
             <Select
                 className="basic-single"
@@ -173,19 +196,20 @@ const ProjectAdminForm = () => {
                 value={sharepoint_link}
             />
 
-            {/* <label>OPTIONAL - Preview image:</label>
+            <label>OPTIONAL - Preview image:</label>
             <input
                 type="file"
                 name="myImage"
                 accept="image/*"
-                onChange={(e) => setImg(e.target.value)}
-            /> */}
+                onChange={(e) => setImg(e.target.files)}
+            />
             
             <div className="add-proj">
                 <button>Add Project</button>
             </div>
             
             {error && <div className="error">{error}</div>}
+            
         </form>
     )
 }

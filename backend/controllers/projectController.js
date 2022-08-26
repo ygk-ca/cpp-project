@@ -103,7 +103,7 @@ const getProject = async (req, res) => {
 
 // create new project
 const createProject = async (req, res) => {
-    const {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords, sharepoint_link, statement} = req.body
+    const {sdg, goal, orginization, source, location, published, website_url, assignment_type, keywords, sharepoint_link, statement, relationship_manager, img_filename} = req.body
     
     const newProject = new Project({
         sdg: sdg,
@@ -113,10 +113,12 @@ const createProject = async (req, res) => {
         location : location,
         published : published,
         website_url : website_url,
-        assignment_type : assignment_type,
-        keywords: keywords,
-        sharepoint_link : sharepoint_link,
-        statement : statement,
+        assignment_type,
+        keywords,
+        sharepoint_link,
+        statement,
+        relationship_manager,
+        img_filename
     });
     try {
         await newProject.save();

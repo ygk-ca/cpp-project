@@ -57,12 +57,11 @@ const projectSchema = new Schema({
 
     relationship_manager: {
         type: String
-    }
+    },
 
-    // img: {
-    //     data: Buffer,
-    //     contentType: String
-    // }
+    img_filename: {
+        type: String
+    }
     
 }, { timestamps: true })
 
