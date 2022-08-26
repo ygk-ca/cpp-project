@@ -35,8 +35,8 @@ export default function Admin(){
   // User Login info
   const database = [
     {
-      username: "user1",
-      password: "pass1"
+      username: "QueensCPP",
+      password: "QueensELCPP"
     },
   ];
 
